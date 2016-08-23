@@ -16,6 +16,14 @@ your offline music library doesn't have any role in recommendations
 ## Requirements
 
 ## Use cases
+### Actors
+ - User
+ - Developer
+
+### Roles
+
+### Diagram
+
 ##### Entities
 - User
 - System
