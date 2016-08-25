@@ -9,3 +9,16 @@
 + Surajnath articulated his idea and vision onto paper and Rajdeep and Shakthi helped him in process.
 + Surajnath discussed about the API of Musicbrainz.org
 + Saumya discussed about the mechanics of the game she developed in Python in summers.
+
+* [25 August, 2016 Thursday 6.30 PM]
++ Attendees: Saumya, Rajdeep, Raghav, Surajnath, Pranshu
++ Discussed about git conflicts and commit guidelines.
++ Proposed the timeline for project development.
++ submitted first rough-draft
++ Research work assigned according to components
+- Raghav - PyQt, Music Player
+- Pranshu - Classifiers and API
+- Rajdeep - Updating metadata
+- Saumya - PyQt, Docs
+- Surajnath - Classifier
++ Shakthi was absent. Research work to be assigned to Shakthi.
