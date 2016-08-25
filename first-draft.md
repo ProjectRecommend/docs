@@ -1,6 +1,6 @@
 # Project Recommend
 
-## Intro
+## Introduction
 ##### This application will use your offline music collection for suggesting music similar to your choices and also from online music database of Musicbrainz.org.
 
 ## Motivation
