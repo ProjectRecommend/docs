@@ -16,9 +16,9 @@
 + Proposed the timeline for project development.
 + submitted first rough-draft
 + Research work assigned according to components
-- Raghav - PyQt, Music Player
-- Pranshu - Classifiers and API
-- Rajdeep - Updating metadata
-- Saumya - PyQt, Docs
-- Surajnath - Classifier
+    - Raghav - PyQt, Music Player
+    - Pranshu - Classifiers and API
+    - Rajdeep - Updating metadata
+    - Saumya - PyQt, Docs
+    - Surajnath - Classifier
 + Shakthi was absent. Research work to be assigned to Shakthi.
