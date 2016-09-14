@@ -70,41 +70,41 @@
 ## 1.1 Purpose
 
 Project Recommend is project to provide recommendation on your offline music collection that you have
-in your computer locally, This document describes Full system but it's emphasis is on Core part of system
-aka recommendation system
+in your computer locally.
+This document describes Full system but it's emphasis is on Core part of system aka recommendation system
+
+TODO - add component diagram here
 
 ## 1.2 Document Conventions
 
-TODO
+- TBD
 
 ## 1.3 Intended Audience and Reading Suggestions
 
-This document is intended for Developers, Software architects, Testers, Project managers and Documentation Writers
+This document is intended for Developers, Software architects, Testers, Project managers and Documentation Writers.
 
-TODO
+TODO - make it more clear
 
 ## 1.4 Product Scope
 
-This software aims to solve the basic problem of providing recommendation on all of your offline songs
+This software aims to solve the basic problem of providing recommendation on all of your offline music collection
 it has some extra benefits like
 - it works with low bandwidth connections
 - it is not platform or service specific
-- it is not bounded with any music provider services so it is not limited to particular service
+- it is not bounded with any music provider services so it is suggestions are not limited to particular service
 
-TODO
+TODO - talk about purpose, benefits, objectives and Goals  
 
 ## 1.5 References
 
-TODO
+- TBD
 
 # 2.Overall Description
-
-TODO
 
 ## 2.1 Product Perspective
 
 TODO
-- add diagram
+-
 
 ## 2.2 Product Functions
 
@@ -115,8 +115,7 @@ TODO
 
 ## 2.3 User Classes and Characteristics
 
-TODO
-- after class diagram
+TODO - will be added after class diagram
 
 ## 2.4 Operating Environment
 
@@ -136,9 +135,9 @@ TODO
 
 ## 2.6 User Documentation
 
-Basic guide on How to use software will be available online and shipped with software help as well
+Basic guide on How to use software will be available online and shipped with software help as well.
+Software Source code will also be available along with it's Documentation under suitable Open Source license
 
-TODO
 
 ## 2.7 Assumptions and Dependencies
 
@@ -163,8 +162,6 @@ TODO
 TODO
 
 # 4 System Features
-
-TODO
 
 ## 4.1 System Feature 1
 
@@ -214,7 +211,7 @@ TODO
 
 # 6. Appendix
 
-# 6.O ther Requirements
+# 6. Other Requirements
 
 TODO
 
