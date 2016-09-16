@@ -33,7 +33,19 @@ The purpose of this document is to provide a debriefed view of requirements and 
  TODO
 
 # Overall Description
+
 ## Product Perspective
+This system consists of three components packaged as one desktop application:
+* **Music player**: for playing music from local library.
+* **Classifier**: On the bases of present song playing, Classifier will generate suggestions.
+* **Metadata updater**: It update all the songs in library with their metadata tags. This is done using already available online database like "[MusicBrainz][musicbrainz-website]".  
+
+When music is played on offline _music player_ it sends the present track metadata to classifier.  
+
+_Classifier_ needs some song title and metadata as input to generate suggestions. On the bases of
+input song it suggests similar songs which may be already available in local library else will be linked to online domains.
+
+_Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] software. It takes a sound track or list of sound tracks as input and update their metadata information according to information available in [MusicBrainz database][musicbrainz-database-website].0 This component needs internet for functioning.
 
 ## Product Functions
 
@@ -71,3 +83,5 @@ The purpose of this document is to provide a debriefed view of requirements and 
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
 [musicbrainz-website]: https://musicbrainz.org
+[musicbrainz-database-website]: https://musicbrainz.org/doc/MusicBrainz_Database
+[picards-website]: https://picard.musicbrainz.org
