@@ -50,6 +50,11 @@ _Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] s
 ## Product Functions
 Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of mood, singer, genre, band. These songs may be present in offline library or online sources.
 
+* play/pause/forward/rewind/seek/stop > music controls
+* add songs/ remove songs
+* update metadata
+* get recommendation
+
 ### Definitions
 ### System overview
 ### References
