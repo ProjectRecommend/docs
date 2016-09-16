@@ -45,10 +45,10 @@ When music is played on offline _music player_ it sends the present track metada
 _Classifier_ needs some song title and metadata as input to generate suggestions. On the bases of
 input song it suggests similar songs which may be already available in local library else will be linked to online domains.
 
-_Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] software. It takes a sound track or list of sound tracks as input and update their metadata information according to information available in [MusicBrainz database][musicbrainz-database-website].0 This component needs internet for functioning.
+_Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] software. It takes a sound track or list of sound tracks as input and update their metadata information according to information available in [MusicBrainz database][musicbrainz-database-website]. This component needs internet for functioning.
 
 ## Product Functions
-
+Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of mood, singer, genre, band. These songs may be present in offline library or online sources.
 
 ### Definitions
 ### System overview
