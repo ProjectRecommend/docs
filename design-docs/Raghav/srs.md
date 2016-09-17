@@ -6,8 +6,9 @@
 > NIIT University  
 > 12-Sep-2016
 
+# Table of Contents
+TODO
 # Introduction
-
 ## Purpose
 The purpose of this document is to provide a debriefed view of requirements and specifications of the project called “Music Recommendation System“, v1.0. This document discusses about whole system from backend to user interactions. It will give both high level and low level abstract view of the system.
 
@@ -54,41 +55,27 @@ _Local database_ maintains a list of tracks along their path in system which use
 ## Product Functions
 Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of their metadata tags like singer, genre, release year, rating etc. These songs may be present in offline library or online sources.
 
-User can perform following actions: 
+User can perform following actions:
 * play/pause/forward/rewind/seek/stop > music controls
 * add songs/ remove songs
 * update metadata
 * get recommendation
 
-### Definitions
-### System overview
-### References
-# Overall description
-#### Product perspective
-##### System Interfaces
-##### User Interfaces
-##### Hardware interfaces
-##### Software interfaces
-##### Communication Interfaces
-##### Memory Constraints
-### Design constraints
-##### Operations
-##### Site Adaptation Requirements
-### Product functions
-### User characteristics
-### Constraints, assumptions and dependencies
-# Specific requirements
-### External interface requirements
-### Functional requirements
-### Performance requirements
-### Logical database requirement
-### Software System attributes
-##### Reliability
-##### Availability
-##### Security
-##### Maintainability
-##### Portability
-### Others
+## User Classes and Characteristics
+
+| Actor  | Roles  | Description|API|
+|---|---|---||
+|  User | Play music |Fetches track path from database, get data from user system and plays it.||
+| | Pause music |???||
+| |    Rewind music|???||
+| |Forward music|Fetches next track path from database, get data from user system and plays it.||
+||Next track|Play track next to the presently playing track in the list.||
+||Previous track|Play track previous to the presently playing track in the list. ||
+| |Stop music|Stops the track.||
+|| Remove track|Removes the track from playlist and hence from database.||
+||Add new track|Adds new track to playlist and hence to database.||
+
+
 # Appendix
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
