@@ -64,7 +64,7 @@ User can perform following actions:
 ## User Classes and Characteristics
 
 | Actor  | Roles  | Description|API|
-|---|---|---||
+| --- | --- | --- | --- |
 |  User | Play music |Fetches track path from database, get data from user system and plays it.||
 | | Pause music |???||
 | |    Rewind music|???||
