@@ -38,18 +38,23 @@ The purpose of this document is to provide a debriefed view of requirements and 
 This system consists of three components packaged as one desktop application:
 * **Music player**: for playing music from local library.
 * **Classifier**: On the bases of present song playing, Classifier will generate suggestions.
-* **Metadata updater**: It update all the songs in library with their metadata tags. This is done using already available online database like "[MusicBrainz][musicbrainz-website]".  
+* **Metadata updater**: It update all the songs in library with their metadata tags. This is done using already available online database like "[MusicBrainz][musicbrainz-website]".
+* **Local database**: It is a MySQL Lite database which acts as a map between song titles, paths and keeps a check on each songs for its metadata information.
 
-When music is played on offline _music player_ it sends the present track metadata to classifier.  
+With _music player_ user can play/pause/stop/forward/rewind song tracks. It is fully functional music player like any other player present in public domain.
+When music is played, it sends the present track metadata to classifier.  
 
 _Classifier_ needs some song title and metadata as input to generate suggestions. On the bases of
 input song it suggests similar songs which may be already available in local library else will be linked to online domains.
 
 _Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] software. It takes a sound track or list of sound tracks as input and update their metadata information according to information available in [MusicBrainz database][musicbrainz-database-website]. This component needs internet for functioning.
 
-## Product Functions
-Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of mood, singer, genre, band. These songs may be present in offline library or online sources.
+_Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps system to keep all the tracks updated and minimizes the need of updating whole user library at once which can slow down the system.
 
+## Product Functions
+Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of their metadata tags like singer, genre, release year, rating etc. These songs may be present in offline library or online sources.
+
+User can perform following actions: 
 * play/pause/forward/rewind/seek/stop > music controls
 * add songs/ remove songs
 * update metadata
