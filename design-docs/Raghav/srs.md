@@ -7,19 +7,31 @@
 > 12-Sep-2016
 
 # Table of Contents
-TODO
-# Introduction
-## Purpose
+# Table of contents
+1. [Introduction](#introduction)  
+1.1 [Purpose](#introduction-purpose)  
+1.2 [Document Conventions](#introduction-dc)  
+1.3 [Intended Audience and Reading Suggestions](#introduction-iars)   
+1.4 [Product Scope](#introduction-product-scope)  
+1.5 [References](#introduction-references)  
+2. [Overall Description](#od)  
+2.1 [Product Perspective](#od-pp)  
+2.2 [Product Functions](#od-pf)  
+2.3 [User Classes and Characteristics](#od-ucc)  
+2.4 [Operating System](#od-os)  
+2.5 [Design and Implementation Constraints](#od-di)
+#  Introduction <a name="introduction"></a>
+## 1.1 Purpose <a name="introduction-purpose"></a>
 The purpose of this document is to provide a debriefed view of requirements and specifications of the project called “Music Recommendation System“, v1.0. This document discusses about whole system from backend to user interactions. It will give both high level and low level abstract view of the system.
 
-## Document Conventions
+## 1.2 Document Conventions <a name="introduction-dc"></a>
   TODO
 
-## Intended Audience and Reading Suggestions
+## 1.3 Intended Audience and Reading Suggestions <a name="introduction-iars"></a>
 * Anyone with some basic knowledge of programming can understand this document. The document is intended to developers.
 * It is divided into 5 phases with sections 3, 4, 5 being intended for developers and software managers but other sections can be understood by anyone having little knowledge about softwares.
 
-## Product Scope
+## 1.4 Product Scope <a name="introduction-product-scope"></a>
 * Name of the project is "Music Recommendation System". It is a Desktop App.
 * Plays music and provides suggestions based on song which user is listening to from both offline library which is available in user's machine as well as on internet.
 * Advantages:
@@ -30,12 +42,12 @@ The purpose of this document is to provide a debriefed view of requirements and 
 * Music recommendation system can also work offline because it utilizes tag information to give suggestions.
 * There are no specific audience for this software. Anyone can install it and use it.
 
-## References
+## 1.5 References <a name="introduction-references"></a>
  TODO
 
-# Overall Description
+# Overall Description <a name="od"></a>
 
-## Product Perspective
+## 2.1 Product Perspective <a name="od-pp"></a>
 This system consists of three components packaged as one desktop application:
 * **Music player**: for playing music from local library.
 * **Classifier**: On the bases of present song playing, Classifier will generate suggestions.
@@ -52,7 +64,7 @@ _Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] s
 
 _Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps system to keep all the tracks updated and minimizes the need of updating whole user library at once which can slow down the system.
 
-## Product Functions
+## 2.2 Product Functions <a name="od-pf"></a>
 Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of their metadata tags like singer, genre, release year, rating etc. These songs may be present in offline library or online sources.
 
 User can perform following actions:
@@ -61,19 +73,29 @@ User can perform following actions:
 * update metadata
 * get recommendation
 
-## User Classes and Characteristics
+## 2.3 User Classes and Characteristics <a name="od-ucc"></a>
 
-| Actor  | Roles  | Description|API|
-| --- | --- | --- | --- |
-|  User | Play music |Fetches track path from database, get data from user system and plays it.||
-| | Pause music |???||
-| |    Rewind music|???||
-| |Forward music|Fetches next track path from database, get data from user system and plays it.||
-||Next track|Play track next to the presently playing track in the list.||
-||Previous track|Play track previous to the presently playing track in the list. ||
-| |Stop music|Stops the track.||
-|| Remove track|Removes the track from playlist and hence from database.||
-||Add new track|Adds new track to playlist and hence to database.||
+| Actor  | Roles  | Description|
+| --- | --- | --- |
+|  User | Play music |Fetches track path from database, get data from user system and plays it.|
+| | Pause music |???|
+| |    Rewind music|???|
+| |Forward music|Fetches next track path from database, get data from user system and plays it.|
+||Next track|Play track next to the presently playing track in the list.|
+||Previous track|Play track previous to the presently playing track in the list. |
+| |Stop music|Stops the track.|
+|| Remove track|Removes the track from playlist and hence from database.|
+||Add new track|Adds new track to playlist and hence to database.|
+
+## 2.4 Operating System <a name="od-os"></a>
+Linux(Ubuntu, Fedora, Mint etc.), Windows 7 and up.
+
+## 2.5 Design and Implementation Constraints <a name="od-di"></a>
+TODO
+## 2.6 User Documentation
+TODO
+
+## 2.7 Assumptions and Dependencies
 
 
 # Appendix
