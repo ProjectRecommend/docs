@@ -1,17 +1,16 @@
  <div align=center>
    <h1>Software Requirements Specification</h1>
    <h2>Project Recommend</h2>
-   ** Music Recommendation System**    
-  ** Version _alpha_ **  </div><br /><br />
+   <b> Music Recommendation System </b>   
+  <b> Version <i>alpha</i> </b>  </div><br /><br />
 <div style="float:left">
-   Prepared by Raghav Mittal  
+   Prepared by Raghav Mittal<br />  
    NIIT University  
- </div>
+ </div>< br/>
 <div style="float:right">
    12-Sep-2016
- </div>
- <br />
-<hr/>
+ </div><br />
+<hr/><br />
 # Table of contents
 1. [Introduction](#introduction)  
 1.1 [Purpose](#introduction-purpose)  
@@ -32,7 +31,9 @@
 3.4 [Communications Interfaces](#eir-ci)  
 4. [System Features](#sf)  
 [_Appendix_](#appendix)  
-<hr />
+<hr />  
+
+
 # 1. Introduction <a name="introduction"></a>
 ## 1.1 Purpose <a name="introduction-purpose"></a>
 The purpose of this document is to provide a debriefed view of requirements and specifications of the project called “Music Recommendation System“, v1.0. This document discusses about whole system from backend to user interactions. It will give both high level and low level abstract view of the system.
