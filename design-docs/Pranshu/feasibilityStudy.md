@@ -53,14 +53,14 @@ Some amount of memory space will always be required to store offline music. This
 
 
 #### Inference:
-<p> This pie-chart shows that most of the people prefer to listen music almost all the time(app. **60%** in our case). </p>
+<p> This pie-chart shows that most of the people prefer to listen music almost all the time(app. <b>60%</b> in our case). </p>
 
 #### 2.
 <center><img src="Images/q2.png" alt = "Question 2 and its response!" height = auto width = "400px"></center>
 
 ####Inference:
 
-<p>This pie-chart shows that generally, people at least use a small proportion of their storage memory, for storing music offline(over **32%** people have music collection between *10-50* GBs and app. **39%** people have collection *<10* GBs, that is, the latter have got atleast some music offline).</p>
+<p>This pie-chart shows that generally, people at least use a small proportion of their storage memory, for storing music offline(over <b>32%</b> people have music collection between <i>10-50</i> GBs and app. <b>39%</b> people have collection <i><10</i> GBs, that is, the latter have got at least some music offline).</p>
 
 
 #### 3.
@@ -70,7 +70,7 @@ Some amount of memory space will always be required to store offline music. This
 #### Inference:
 
 <p>
-Nearly half of the people (**45%**), whom we surveyed, download music all the time. This result goes hand in hand with our idea in a sense that, if upon recommendation their collection does not have a particular song, they can download it, at that very instant. A larger part of remaining half(**46%**), do not download music that very often, but still once in a while, they can download.
+Nearly half of the people (<b>45%</b>), whom we surveyed, download music all the time. This result goes hand in hand with our idea in a sense that, if upon recommendation their collection does not have a particular song, they can download it, at that very instant. A larger part of remaining half(</b>46%</b>), do not download music that very often, but still once in a while, they can download.
 </p>
 
 #### 4.
@@ -78,7 +78,7 @@ Nearly half of the people (**45%**), whom we surveyed, download music all the ti
 
 #### Inference:
 <p>
-This pie-chart shows that a majority of people we surveyed(app. **81%**) prefer to discover music based on their taste(which will be performed by a *classifier* in our case).
+This pie-chart shows that a majority of people we surveyed(app. <b>81%</b>) prefer to discover music based on their taste(which will be performed by a <i>classifier</i> in our case).
 </p>
 
 #### 5.
@@ -87,7 +87,7 @@ This pie-chart shows that a majority of people we surveyed(app. **81%**) prefer 
 #### Inference:
 
 <p>
-This pie-chart shows that almost half the people(**49%** app.), find it difficult to search the songs similar to the ones they have in their offline music library. This suggests that they would like to get recommendations based on their music taste, automatically, and then accordingly download that particular kind of music.
+This pie-chart shows that almost half the people(<b>49%</b> app.), find it difficult to search the songs similar to the ones they have in their offline music library. This suggests that they would like to get recommendations based on their music taste, automatically, and then accordingly download that particular kind of music.
 </p>
 
 #### 6.
@@ -95,7 +95,7 @@ This pie-chart shows that almost half the people(**49%** app.), find it difficul
 
 #### Inference:
 <p>
-This pie-chart shows that almost half of the people do not have a fully updated metadata(app. **50%**), which made us to attach an extra component to our software, known as the *Metadata Updater*.
+This pie-chart shows that almost half of the people do not have a fully updated metadata(app. <b>50%</b>), which made us to attach an extra component to our software, known as the <i>Metadata Updater</i>.
 </p>
 
 #### 7.
