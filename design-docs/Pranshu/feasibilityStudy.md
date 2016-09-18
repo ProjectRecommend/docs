@@ -45,7 +45,7 @@ Some amount of memory space will always be required to store offline music. This
 
 ## <u>Conclusions From Our Survey</u>
 
-###### Given below is a list of questions we asked in our survey to over 110 people, and their corresponding responses, represented as pie-charts.  
+###### We surveyed 110 odd people, belonging to differnt sectors such as corporate, business etc. and belonging to different age groups.Given below is a list of questions we asked in our survey, and their corresponding responses, represented in the form of pie-charts.  
 
 
 #### 1.
