@@ -77,3 +77,26 @@ Talking about broader categories, our software will be compatible with  Windows 
 <tr><td>Memory/RAM</td><td>1 gigabyte (GB) RAM (32-bit) or 2 GB RAM (64-bit)</td> </tr>
 <tr><td>Hard Disk</td><td>16 GB available hard disk space (32-bit) or 20 GB (64-bit)<td></tr>
 </table>
+
+
+#### 2.5. *Design and Implementation Constraints*
+
+<ol>
+<li><u> Waveform Analysis</u></li>
+<p>
+This is one of the methods we could have used to classify music. In this method, we analyze and classify the music wave into genres such as pop, jazz etc., but there is not enough training data available to analyze the waveform. Also there is not enough research done in this field. Hence, this method could not be used in our case.
+</p>
+
+<li><u>Collaborative Filtering</u></li>
+<p>
+Here, in this method, we use user data to recommend next set of songs to the user. But, due to lack of time and resources we do not have enough user data to make this method feasible to use. If we did have the user data, that data would have been used by the training model to recommend new songs based on that data.
+</p>
+
+<li><u>Availability of other basic requirements</u></li>
+<p>
+Since, internet is one of the basic requirements for our software to work, availability of a reliable data connection is must, does not matter if it is fast or even as slow as 2g. Lack of internet means that our recommender will work like a plain music player, which has little to no use.
+</p>
+<p>
+Some amount of memory space will always be required to store offline music. This software will give a choice to download those songs after recommending, if those are not already in his offline library, but, since user has little to no space to store the songs offline, he won't be able to download those new songs. Therefore, this software is not suitable for such a user.  
+</p>
+</ol>
