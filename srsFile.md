@@ -1,3 +1,47 @@
+# Software Requirement specification
+
+## Music Recommender System
+#### Version: alpha
+#### Prepared by Rajdeep Mukherjee
+#### NIIT University
+#### 17 Sep, 2016
+
+## Table of contents
+1. Introduction  
+1.1 Purpose  
+1.2 Document Conventions  
+1.3 Intended Audience and Reading Suggestions  
+1.4  Product Scope  
+1.5  References
+2. Overall Description  
+2.1 Product Perspective    
+2.2 Product Functions  
+2.3 User Classes and Characteristics  
+2.4 Operating Environment  
+2.5 Design and Implementation Constraints  
+2.6 User Documentation  
+2.7	Assumptions and Dependencies  
+3.	External Interface Requirements  
+3.1	User Interfaces  
+3.2	Hardware Interfaces  
+3.3	Software Interfaces  
+3.4	Communications Interfaces  
+4.	System Features  
+4.1	System Feature  
+5.	Other Nonfunctional Requirements  
+5.1	Performance Requirements  
+5.2	Safety Requirements  
+5.3	Security Requirements  
+5.4	Software Quality Attributes  
+5.5	Business Rules  
+6.	Other Requirements  
+Appendix A: Glossary  
+Appendix B: Analysis Models  
+Appendix C: To Be Determined List  
+
+
+
+
 # Introduction
 ### Purpose
 
@@ -158,10 +202,10 @@ This database will be of use during metadata updation only.
 
 This section will state all the use cases of the application and what the user will be able to do with the application.
 
-**Use case: Music management**
+**Music management**
 > The user will be able to manage music import and export. The user will be able to import music files from offline music collection and also remove music files from the application.
 
-**Use case: Control music**
+**Control music**
 > The user can control music in the music player component by the following actions:
 * play music
 * pause music
@@ -192,8 +236,65 @@ A summary of the direct actions that the user can take is as follows:
 | manual metadata update | The user can update the metadata of the song simply by right clicking |
 | manual recommendation of song | The user can also get recommendations of the songs manually |
 
-Indirect set of actions that the user can perform is stated as follows:
+The following are the use cases and how the actor: user interacts with them:
+* **Use case: Manage songs**
 
-| Indirect action | Description |
-| --- | --- |
-| updation of all local database | Updation  of local database happens
+> Brief Description:
+The user manages songs import and remove from the application
+
+> User interaction:
+* The user can import songs from offline music collection
+* The directories, sub directories and files are added to the application
+* The local store updates the song
+* The user can remove the song from the application
+* The local store updates itself deleting the song
+
+
+ * **Use case: Control Music**
+
+> Brief Description:
+The user can control music which means he/she can play, pause, stop, go to the next track, go to the previous track, control the volume
+
+> User interaction:
+* Click events trigger all controlling of music operations.
+* On playing a song, the user triggers an event that gets recommendations for the song
+* The system checks whether the metadata is already updated or not, if not then the metadata is updated in the song
+* The system connects to the Musicbrainz database to update the song metadata.
+* The system fetches tags of the song.
+* After metadata updation the local store is updated for the current song.
+* The system then runs classifier on the song and gets all suggestions for that song.
+* The suggestions are updated into the local store.
+
+* **Use case: Manually get recommendation**
+
+> Brief Description:
+The user can manually get recommendation that of a song other than the song that is being played.
+
+> User interaction:
+* The user triggers event of getting recommendation of a song.
+The system checks whether the metadata is already updated or not, if not then the metadata is updated in the song
+* The system connects to the Musicbrainz database to update the song metadata.
+* The system fetches tags of the song.
+* After metadata updation the local store is updated for the current song.
+* The system then runs classifier on the song and gets all suggestions for that song.
+* The suggestions are updated into the local store.
+
+
+* **Use case: Edit metadata**
+
+> Brief Description
+The user can also manually edit his/her song's metadata
+
+> User interaction:
+* The user defined metadata of a song is going to be updated in the local store.
+
+* **Use case: Manually update metadata**
+
+> Brief Description:
+The user can manually update metadata of a song such that he/she can simply click on a file(song) and update the metadata.
+
+> User interaction:
+* The user triggers an event of manually updating the  metadata of a song
+* The system connects to the Musicbrainz database.
+* The system fetches the metadata of a song from the database
+* The system then updates the metadata into the local store.
