@@ -42,7 +42,8 @@ NIIT University
 The purpose of this document is to provide a debriefed view of requirements and specifications of the project called “Music Recommendation System“, v1.0. This document discusses about whole system from backend to user interactions. It will give both high level and low level abstract view of the system.
 
 ## 1.2 Document Conventions <a name="introduction-dc"></a>
-  TODO
+* All terms are in italics style.
+* Main features or important terms are in bold style.
 
 ## 1.3 Intended Audience and Reading Suggestions <a name="introduction-iars"></a>
 * Anyone with some basic knowledge of programming can understand this document. The document is intended to developers.
@@ -154,10 +155,28 @@ TODO
 The Internet connection is used for communication between [_Metadata updater_](#od-pp) and [_MusicBrainz Database_][musicbrainz-database-website].
 
 # 4. System Features <a name="sf"></a>
+## Music Player
+Using this feature user can
+* Play music
+* Pause music
+* Stop music
+* Go to previous track
+* Go to next track
+* Seek
+* Decrease Volume
+* Increase Volume
+
+## Song recommender
+It suggests songs similar to the song presently playing in the player. Suggested songs can be from user library or MusicBrainz Database
+
+## Library tag updater
+
+
+
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
 # 6. Other Requirements <a name="otherreq"></a>
-# Appendix <a name="appendix"></a>
 
+# Appendix <a name="appendix"></a>
 
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
