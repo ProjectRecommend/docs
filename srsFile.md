@@ -118,7 +118,7 @@ TODO
 Offline music recommender comes with the following set of system features:
 
 The following is the use case diagram for the application:
-![use case diagram](C:\Users\riflerRick\Desktop\Niit University CSE_course\3rd yr\semester5\softwareEngineering\project\useCase.PNG)
+![use case diagram](https://github.com/ProjectRecommend/docs/blob/rajdeep/useCase.PNG)
 
 > #### Music player
 Built into the offline music recommender system is a music player that can play music with a number of controls including **play, pause, stop, play next song and volume**.
@@ -196,4 +196,4 @@ Indirect set of actions that the user can perform is stated as follows:
 
 | Indirect action | Description |
 | --- | --- |
-| updation of all local database | Updation  of local database happens 
+| updation of all local database | Updation  of local database happens
