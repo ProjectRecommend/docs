@@ -25,4 +25,6 @@
 |   | R_03.6 | Increase Volume Button | The Button increases the Volume of the Music being played. | The user can Increase the music volume. |
 |   | R_03.7 | Decrease Volume Button | The Button helps in decreasing the volume of Music being played. | The user can Decrease music volume. |
 |   | R_03.8 | Mute Button | The Button allows the functionality of muting the volume of music being played. | User can mute the music player. |
-| 4. | R_04 | Manually Update Metadata | 
+| 4. | R_04 | Manually Update Metadata | This Function updates the metadata for songs in the Playlist. | Updating the metadata will help the in improvement of recommendations. |
+| 5. | R_05 | Manually Recommend Music | This Function recommends music from Local Library and from Database of MUSICBRAINZ. | User can manually ask for recommendations of similar songs. |
+| 6. | R_06 | Editing Song Details | This Function will help in editing the Detail fields of the Song. | Editing the song details might help in updating the metadata manually. |
