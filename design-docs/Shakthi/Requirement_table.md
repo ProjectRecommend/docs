@@ -19,4 +19,9 @@
 |   | R_03.1 | Play Button | This Button provides the function to Play the Music track. | The User can Play favorite Song from Local Library. |
 |   | R_03.2 | Stop Button | This Button provides the function to Stop the Music track being played. | User can Stop the Music track at will. |
 |   | R_03.3 | Seek Track | This Function allows the User to play whichever portion of the song he/she likes. | Through this function the user can Traverse through the timeline of a particular track and play from there. |
-|   |
+|   | R_03.4 | Forward Button | The button provides the functionality to play next track and also in forward seeking the track being played. | The User can change the track to next and use the forward seek function also. |
+|   | R_03.5 | Previous Button | The button provides the functionality to play previous track and also in backward seeking the track being played. | The User can change the track to previous and use the backward seek function also. |
+|   | R_03.6 | Increase Volume Button | The Button increases the Volume of the Music being played. | The user can Increase the music volume. |
+|   | R_03.7 | Decrease Volume Button | The Button helps in decreasing the volume of Music being played. | The user can Decrease music volume. |
+|   | R_03.8 | Mute Button | The Button allows the functionality of muting the volume of music being played. | User can mute the music player. |
+|   | R_03.9
