@@ -1,49 +1,46 @@
-# Software Requirement specification
+ <div align=center>
+   <h1>Software Requirements Specification</h1>
+   <h2>Project Recommend</h2>
+   <b> Music Recommendation System </b><br />
+   <b> Version <i>alpha</i></b>
+</div><br /><br />
 
-## Music Recommender System
-#### Version: alpha
-#### Prepared by Rajdeep Mukherjee
-#### NIIT University
-#### 17 Sep, 2016
+Prepared by Rajdeep Mukherjee
+NIIT University  
+17-Sep-2016  
 
-## Table of contents
-1. Introduction  
-1.1 Purpose  
-1.2 Document Conventions  
-1.3 Intended Audience and Reading Suggestions  
-1.4  Product Scope  
-1.5  References
-2. Overall Description  
-2.1 Product Perspective    
-2.2 Product Functions  
-2.3 User Classes and Characteristics  
-2.4 Operating Environment  
-2.5 Design and Implementation Constraints  
-2.6 User Documentation  
-2.7	Assumptions and Dependencies  
-3.	External Interface Requirements  
-3.1	User Interfaces  
-3.2	Hardware Interfaces  
-3.3	Software Interfaces  
-3.4	Communications Interfaces  
-4.	System Features  
-4.1	System Feature  
-5.	Other Nonfunctional Requirements  
-5.1	Performance Requirements  
-5.2	Safety Requirements  
-5.3	Security Requirements  
-5.4	Software Quality Attributes  
-5.5	Business Rules  
-6.	Other Requirements  
-Appendix A: Glossary  
-Appendix B: Analysis Models  
-Appendix C: To Be Determined List  
+<hr/><br />
+
+# Table of contents
+1. [Introduction](#introduction)  
+1.1 [Purpose](#introduction-purpose)  
+1.2 [Document Conventions](#introduction-dc)  
+1.3 [Intended Audience and Reading Suggestions](#introduction-iars)   
+1.4 [Product Scope](#introduction-product-scope)  
+1.5 [References](#introduction-references)  
+1.6 [Terminology](#introduction-terminology)
+2. [Overall Description](#od)  
+2.1 [Product Perspective](#od-pp)  
+2.2 [Product Functions](#od-pf)  
+2.3 [User Classes and Characteristics](#od-ucc)  
+2.4 [Operating System](#od-os)  
+2.5 [Design and Implementation Constraints](#od-di)  
+3. [External Interface Requirements](#eir)  
+3.1 [User Interfaces](#eir-ui)  
+3.2 [Hardware Interfaces](#eir-hi)  
+3.3 [Software Interfaces](#eir-si)  
+3.4 [Communications Interfaces](#eir-ci)  
+4. [System Features](#sf)  
+5. [Other Nonfunctional Requirements](#onr)
+6. [Other Requirements](#otherreq)  
+[_Appendix_](#appendix)  
+<hr />    
 
 
 
 
-# Introduction
-### Purpose
+# Introduction<a name="introduction"></a>
+### Purpose<a name="introduction-purpose"></a>
 
 This software requirement specification describes how our development team has been able to come up with the tools and techniques to build this application.
 
@@ -54,10 +51,10 @@ Tools include:
 * Database used for music referencing
 * Classifiers used for classifying data and yielding recommendations
 
-### Document Conventions
+### Document Conventions<a name="introduction-dc"></a>
 
 
-### Intended Audience and Reading suggestions
+### Intended Audience and Reading suggestions<a name="introduction-iars"></a>
 Intended for developers aspiring to build software involving the use of machine learning in order to classify files based on their metadata. This project includes an amalgamation of file metadata updation(in case of incorrect metadata in the corresponding file) and also classifier recommendation.
 
 This Software Requirement Specification includes:
@@ -66,7 +63,7 @@ This Software Requirement Specification includes:
 * System Features
 * Other non functional requirements
 
-### Product Scope
+### Product Scope<a name="introduction-product-scope"></a>
 Offline Music Recommendation is an area of application development that is yet to be fully explorer as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet one may get enough music recommenders online but that is really catch here, they are mostly **_online_**. Here our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
 
 Offline Music recommendation will involve recommendation of familiar songs and familiar genres of music available both on the internet and also on our mac or pcs.
@@ -75,21 +72,21 @@ Recommendation will involve suggestions based on the tags present for a particul
 
 The overall goal of this project will simply be to enhance listening experience of users so that they get all their favorite music collections in one place without having to scramble over the net to find music of their tastes. Now it is super easy just within a few clicks away in the same window
 
-### References
+### References<a name="introduction-references"></a>
 IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications. IEEE Computer Society, 1998.
 
 
 This Software Requirement specification has been entirely written with markdown([check it out](https://guides.github.com/features/mastering-markdown/) or [learn](http://www.markdowntutorial.com/)).
 
 
-# Overall description
-### Product Perspective
+# Overall description<a name="od"></a>
+### Product Perspective<a name="od-pp"></a>
 This is a new self contained product and therefore has nothing to do with a larger subsystem. The major subsystems of the overall application can be the following:
 * Music player
 * Updation of metadata of the music file in case of incorrect tags
 * Music recommendation based on the user specified music
 
-### Product Functions
+### Product Functions<a name="od-pf"></a>
 The user will be able to include music files and folders into the application and play them, get suggestions for the music that he wants and update the metadata of the music in order to get the right recommendations of the music that he/she plays.
 
 In short the user can do the following things:
@@ -98,12 +95,12 @@ In short the user can do the following things:
 * Request suggestions of a particular music or a whole collection of music
 * In order to get the preferred music recommendations it may be required to update the metadata of the music so that it he/she can get the right suggestions.
 
-### User Classes and Characteristics
+### User Classes and Characteristics<a name="od-ucc"></a>
 Almost any user will be able to easily get going with this application as it is perfectly meant for an average music lover. Music lovers especially interested in playing various genres of music in a playlist for background music playing for instance will be benefitted more than ever by this application as it does not require internet for playing the music.
 
 Countries with poor internet connectivity will benefit even more because the only place we require internet connection is where we are required to update the metadata of the music for giving correct suggestions.
 
-### Operating Environment
+### Operating Environment<a name="od-oe"></a>
 Platforms include:
 * Linux
 > Operating System	Red Hat Enterprise Linux 4 or 5 with the latest patches and upgrades
@@ -119,7 +116,7 @@ A Microsoft account and Internet access.
 
 A stable internet connection.
 
-### Design and Implementation Constraints
+### Design and Implementation Constraints<a name="od-dic"></a>
 In this application we are using music metadata in order to classify music according to its corresponding parameters so that the application can suggest the correct type of music for the listener.
 
 There are three approaches that had come to our mind:
@@ -129,10 +126,10 @@ There are three approaches that had come to our mind:
 * Waveform analysis
 > This technique is in its nascent stage and hence **cannot** be used as a **foolproof** method of recommender application to sort out music
 
-### User Documentation
+### User Documentation<a name="od-ud"></a>
 Users can find helpful resources about how and why they should use the software [here](www,resourcesMusicRecommender.com)
 
-### Assumptions and Dependencies
+### Assumptions and Dependencies<a name="od-ad"></a>
 We used various online open source material for most of our project work. We integrated various components from other projects in order to make the application work as a whole.
 
 The following lists the various open source material we had referred to:
@@ -142,23 +139,23 @@ The following lists the various open source material we had referred to:
 * Music player [**_cherrymusic_**](https://github.com/devsnd/cherrymusic)
 * Python cross platform GUI toolkit [**_PyQt_**](https://github.com/pyqt)
 
-# External Interface Requirements
-### User interfaces
+# External Interface Requirements<a name="eir"></a>
+### User interfaces<a name="eir-ui"></a>
 For user interface and user experience we used the PyQt toolkit as it had all the specific requirements that will be required for our application development. PyQt brings together the Qt C++ cross-platform application framework and the cross-platform interpreted language Python.
 Qt is more than a GUI toolkit. It includes abstractions of network sockets, threads, Unicode, regular expressions, SQL databases, SVG, OpenGL, XML, a fully functional web browser, a help system, a multimedia framework, as well as a rich collection of GUI widgets.
 Qt classes employ a signal/slot mechanism for communicating between objects that is type safe but loosely coupled making it easy to create re-usable software components.
 
 TODO
-### Hardware interfaces
+### Hardware interfaces<a name="eir-hi"></a>
 TODO
 
-### Software interfaces
+### Software interfaces<a name="eir-si"></a>
 TODO
 
-### Communication interfaces
+### Communication interfaces<a name="eir-ci"></a>
 TODO
 
-# System Features
+# System Features<a name="sf"></a>
 Offline music recommender comes with the following set of system features:
 
 The following is the use case diagram for the application:
