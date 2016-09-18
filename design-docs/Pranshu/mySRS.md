@@ -3,11 +3,11 @@
 ##### Approved Version 1.0
 << Annotated Version >><br>
 
-## <u> Project Recommend <u>
+##  <b>Project Recommend</b>
 (An offline/online music recommendation system)
 <br>
 
-### <i>Prepared by :</i> __Pranshu Sahijwani__
+### <i>Prepared by :</i> <u>Pranshu Sahijwani<u>
 
 <p>Submitted in partial fulfillment of the requirements of our course <br> <i>CS301 Software Engineering</i>.</p>
 
@@ -41,11 +41,11 @@
 ### 2.0 <b>Overall Description</b>
 #### 2.1. <i>Product Perspective</i>
 <p> India currently is a country where the internet speed is not up to the mark at many places, with only 2g spectrum, covering most of the regions. The recommendation systems that exist already recommend music, but that has to be played online, and these require a decent internet speed to play a particular song at decent bitrate, which is many a times not possible with 2g data speed. So, our idea is, basically, to use the offline music  of a user, to play music. Of course, 2g network can be used to recommend songs(fetching those from Musicbrainz API, in our case), but those songs will be played from the user's local music collection, hence minimizing the need of using 2g data in order to play music, of decent quality.
-Sometimes, it might happen the ID3 tags of a few songs are not updated. One part of our software (metadata updater), will update the metadata of the songs whose metadata is not fully updatedor does not exist.
+Sometimes, it might happen the ID3 tags of a few songs are not updated. One part of our software (metadata updater), will update the metadata of the songs whose metadata is not fully updated or does not exist.
 This was the context of our software. This will replace those systems that are solely dependent on reliable internet speed, and will provide the benefit of music recommendations to those, who are bound in the regions covered under 2g/GPRS spectrums.
  </p>
 
- #### 2.2. </i>Product Functions</i>
+ #### 2.2. <i>Product Functions</i>
  The basic functions of this offline music recommender system can be summarized under:
  <ul>
 <li>Automatically updating <u>ID3 tags</u> of existing music existing on local storage.</li>
