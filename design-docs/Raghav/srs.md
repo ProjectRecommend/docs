@@ -18,6 +18,7 @@ NIIT University
 1.3 [Intended Audience and Reading Suggestions](#introduction-iars)   
 1.4 [Product Scope](#introduction-product-scope)  
 1.5 [References](#introduction-references)  
+1.6 [Terminology](#introduction-terminology)
 2. [Overall Description](#od)  
 2.1 [Product Perspective](#od-pp)  
 2.2 [Product Functions](#od-pf)  
@@ -30,6 +31,8 @@ NIIT University
 3.3 [Software Interfaces](#eir-si)  
 3.4 [Communications Interfaces](#eir-ci)  
 4. [System Features](#sf)  
+5. [Other Nonfunctional Requirements](#onr)
+6. [Other Requirements](#otherreq)  
 [_Appendix_](#appendix)  
 <hr />  
 
@@ -59,6 +62,20 @@ The purpose of this document is to provide a debriefed view of requirements and 
 ## 1.5 References <a name="introduction-references"></a>
  * This document is written in Markdown.
  * IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications. IEEE Computer Society, 1998.
+
+## 1.6 Terminology <a name="introduction-terminology"></a>
+| Term | Description |
+| --- | --- |
+| User | Any living being who is interacting with the software is a _user_.|
+ | System | The package of all the components which takes input and gives output to demonstrate the features of the software is called System. |
+ | Database | Collection of information on different topics related to each other. |
+ | Library| The collection of songs inside a directory or across multiple directories forms up a _library_.|
+ | Store | This is the persistence layer of whole system. |
+ | Metadata | The set of data which describes and gives information about the sound track. |
+ | Recommender system | A system which takes a song as input and outputs set of songs closely related to the input. |
+ | Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
+ | Tags | A label attached to song which gives extra information about it. |
+
 
 # 2. Overall Description <a name="od"></a>
 
@@ -122,14 +139,26 @@ There are no assumptions and dependencies.
 
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
+User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions. There may be
+
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
+* Input device is needed for user to interact with system.
+* Software needs a display device to interact with user.
+* Music player needs playback device for sound output.
+
 ## 3.3 Software Interfaces <a name="eir-si"></a>
+TODO
+
 ## 3.4 Communications Interfaces <a name="eir-ci"></a>
+The Internet connection is used for communication between [_Metadata updater_](#od-pp) and [_MusicBrainz Database_][musicbrainz-database-website].
 
 # 4. System Features <a name="sf"></a>
-
+# 5. Other Nonfunctional Requirements <a name="onr"></a>
+# 6. Other Requirements <a name="otherreq"></a>
 # Appendix <a name="appendix"></a>
+
+
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
 
