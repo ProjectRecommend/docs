@@ -1,16 +1,16 @@
  <div align=center>
    <h1>Software Requirements Specification</h1>
    <h2>Project Recommend</h2>
-   <b> Music Recommendation System </b>   
-  <b> Version <i>alpha</i> </b>  </div><br /><br />
-<div style="float:left">
-   Prepared by Raghav Mittal<br />  
-   NIIT University  
- </div>< br/>
-<div style="float:right">
-   12-Sep-2016
- </div><br />
+   <b> Music Recommendation System </b><br />
+   <b> Version <i>alpha</i></b>
+</div><br /><br />
+
+Prepared by Raghav Mittal  
+NIIT University  
+12-Sep-2016  
+
 <hr/><br />
+
 # Table of contents
 1. [Introduction](#introduction)  
 1.1 [Purpose](#introduction-purpose)  
