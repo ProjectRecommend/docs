@@ -67,14 +67,14 @@ The purpose of this document is to provide a debriefed view of requirements and 
 | Term | Description |
 | --- | --- |
 | User | Any living being who is interacting with the software is a _user_.|
- | System | The package of all the components which takes input and gives output to demonstrate the features of the software is called System. |
- | Database | Collection of information on different topics related to each other. |
- | Library| The collection of songs inside a directory or across multiple directories forms up a _library_.|
- | Store | This is the persistence layer of whole system. |
- | Metadata | The set of data which describes and gives information about the sound track. |
- | Recommender system | A system which takes a song as input and outputs set of songs closely related to the input. |
- | Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
- | Tags | A label attached to song which gives extra information about it. |
+| System | The package of all the components which takes input and gives output to demonstrate the features of the software is called System. |
+| Database | Collection of information on different topics related to each other. |
+| Library| The collection of songs inside a directory or across multiple directories forms up a _library_.|
+| Store | This is the persistence layer of whole system. |
+| Metadata | The set of data which describes and gives information about the sound track. |
+| Recommender system | A system which takes a song as input and outputs set of songs closely related to the input. |
+| Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
+| Tags | A label attached to song which gives extra information about it. |
 
 
 # 2. Overall Description <a name="od"></a>
