@@ -8,7 +8,7 @@
 
 **Prepared by: Saumya Gupta**
 
-**Project Name : Music Recommendation System **
+**Project Name : Music Recommendation System**
 
 **Project Description :** A music player that in addition to playing music, recommends user with music
 similar to what he/she is listening from the offline as well as online music database. Also it updates
