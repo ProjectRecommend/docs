@@ -21,7 +21,7 @@ Sometimes, it might happen the ID3 tags of a few songs are not updated. One part
 This will replace those systems that are solely dependent on reliable internet speed, and will provide the benefit of music recommendations to those, who are bound in the regions covered under 2g/GPRS spectrum.
 </p>
 
-## <u>Constraints</u>
+## __Constraints__
 
 <ol>
 <li><u> Waveform Analysis</u></li>
@@ -49,7 +49,7 @@ Some amount of memory space will always be required to store offline music. This
 
 
 #### 1.
-<center><img src="Images/q1.PNG" alt = "Question 1 and its response!" height = "250px" width = "400px" ></center>
+<center><img src="Images/q1.PNG" alt = "Question 1 and its response!" height = auto width = "400px" ></center>
 
 
 ### Inference:
