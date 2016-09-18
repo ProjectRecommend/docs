@@ -107,4 +107,8 @@ This pie-chart shows that almost half of the people do not have a fully updated 
 Finally, here we ask people, if they want to use such a music player that recommends similar songs from and outside of their offline music library. Seeing the number of people(<b>76%</b>) who want this to happen, we concluded that our product is feasible for a majority, and started working for the same.
 </p>
 
-## Checking Economic Feasibility
+## Economic Feasibility
+
+<p>
+Since our project is an open-source one, we do not have any business goals, and are not intended towards earning any profit. The software will be available for all, to download and share.    
+</p>
