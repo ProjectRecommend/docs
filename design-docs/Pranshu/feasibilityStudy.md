@@ -12,29 +12,29 @@ A feasibility study report basically covers the following points:-
 </ol>
 </p>
 
-## __Analysis of the problem__
+## Analysis of the problem
 
 <p>India currently is a country where the <i>internet speed</i> is not up to the mark at many places, with only 2g spectrum, covering most of the regions.
-Sometimes, while listening to music, switching to a song of similar taste *manually*, from the user's entire collection of music, does not seem to be a good idea.<br>
-The recommendation systems that exist already, do recommend music, but that **has to be played online**, and these require a decent internet speed to play a particular song at decent *bitrate*, which is many a times not possible with 2g data speed. So, our idea is, basically, to *use the offline music collection of a user, to play music.* Of course, 2G network can be used to recommend songs(fetching those from *Musicbrainz* API, in our case), but those songs will be played from the user's local music collection, hence *minimizing the need of using 2G data in order to play music, of good quality*. <br>
-Sometimes, it might happen the ID3 tags of a few songs are not updated. One part of our software (*metadata updater*), will update the metadata of those songs whose metadata is either not fully updated or does not exist.
-This will replace those systems that are *solely dependent on reliable internet speed, and will provide the benefit of music recommendations to those, who are bound in the regions covered under 2G/GPRS spectrum*.
+Sometimes, while listening to music, switching to a song of similar taste <i>manually</i>, from the user's entire collection of music, does not seem to be a good idea.<br>
+The recommendation systems that exist already, do recommend music, but that <b>has to be played online</b>, and these require a decent internet speed to play a particular song at decent *bitrate*, which is many a times not possible with 2g data speed. So, our idea is, basically, to *use the offline music collection of a user, to play music.* Of course, 2G network can be used to recommend songs(fetching those from <i>Musicbrainz</i> API, in our case), but those songs will be played from the user's local music collection, hence *minimizing the need of using 2G data in order to play music, of good quality*. <br>
+Sometimes, it might happen the ID3 tags of a few songs are not updated. One part of our software (<i>metadata updater</i>), will update the metadata of those songs whose metadata is either not fully updated or does not exist.
+This will replace those systems that are <i>solely dependent on reliable internet speed, and will provide the benefit of music recommendations to those, who are bound in the regions covered under 2G/GPRS spectrum<i>.
 </p>
 
-## __Constraints__
+## Constraints
 
 <ol>
-<li> **Waveform Analysis**</li>
+<li> <b> Waveform Analysis </b></li>
 <p>
 This is one of the methods we could have used to classify music. In this method, we analyze and classify the music wave into genres such as pop, jazz etc., but there is not enough training data available to analyze the waveform. Also there is not enough research done in this field. Hence, this method could not be used in pratical (For instance, Spotify tried it and got worst of results).
 </p>
 
-<li>**Collaborative Filtering**</li>
+<li><b>Collaborative Filtering</b></li>
 <p>
 Here, in this method, we use user data to recommend next set of songs to the user. But, due to lack of time and resources we do not have enough user data to make this method feasible to use. If we did have the user data, that data would have been used by the training model to recommend new songs based on that data.
 </p>
 
-<li>**Availability of other basic requirements**</li>
+<li><b>Availability of other basic requirements</b></li>
 <p>
 Since, internet is one of the basic requirements for our software to work, availability of a reliable data connection is must, does not matter if it is fast or even as slow as 2g. Lack of internet means that our recommender will work like a plain music player, which has little to no use.
 </p>
