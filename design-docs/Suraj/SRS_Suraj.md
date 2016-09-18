@@ -73,17 +73,16 @@ Project Recommend is project to provide recommendation on your offline music col
 in your computer locally.
 This document describes Full system but it's emphasis is on Core part of system aka recommendation system
 
-TODO - add component diagram here
-
 ## 1.2 Document Conventions
 
-- TBD
+- TBD - to be decided
+- WIP - work in progress
+
 
 ## 1.3 Intended Audience and Reading Suggestions
 
 This document is intended for Developers, Software architects, Testers, Project managers and Documentation Writers.
-
-TODO - make it more clear
+But anyone with programming background and some experience with UML can understand this document.
 
 ## 1.4 Product Scope
 
@@ -93,8 +92,6 @@ it has some extra benefits like
 - it is not platform or service specific
 - it is not bounded with any music provider services so it is suggestions are not limited to particular service
 
-TODO - talk about purpose, benefits, objectives and Goals  
-
 ## 1.5 References
 
 - TBD
@@ -103,8 +100,7 @@ TODO - talk about purpose, benefits, objectives and Goals
 
 ## 2.1 Product Perspective
 
-TODO
--
+- This is self contained product
 
 ## 2.2 Product Functions
 
@@ -189,23 +185,35 @@ TODO
 
 ## 5.1 Performance Requirements
 
-TODO
+- System will be fast enough to play music without any shattering or buffering, otherwise
+that will result in undesirable experience.
+- System will be robust to deal and act accordingly  with common error scenarios like no
+internet connection, unavailable metadata, unsupported file types.
+- In case of failures it should be able to fail or recover gracefully.
+- System will be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
+
 
 ## 5.2 Safety Requirements
 
-TODO
+- In scenario when there is not enough data to automatically tag Metadata we rely [AcoustID](https://acoustid.org/) and [MusicBrainz](https://musicbrainz.org/) for metadata
+based on AcoustID fingerprint, in some but rare scenarios it can result in incorrect metadata of song,
+to prevent that scenarios user can manually edit metadata of songs when it see an incorrect tagged song
 
 ## 5.3 Security Requirements
 
-TODO
+- Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS).
 
 ## 5.4 Software Quality Attributes
 
-TODO
+- System will not leak memory.
+- System will peacefully co-exist with other software
+- System will not cause or trigger any events that will leave Operating System in unrecoverable state
 
 ## 5.5 Business Rules
 
-TODO
+- This software is an Open Source software.
+- Unless required by applicable law or agreed to in writing, software distributed is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 ----
 
