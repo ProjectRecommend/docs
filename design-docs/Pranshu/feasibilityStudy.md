@@ -49,7 +49,7 @@ Some amount of memory space will always be required to store offline music. This
 
 
 #### 1.
-<center><img src="Images/q1.PNG" alt = "Question 1 and its response!" height = auto width = "400px" ></center>
+<center><img src="Images/q1.PNG" alt = "Question 1 and its response!" height = "250px" width = "400px" ></center>
 
 
 ### Inference:
