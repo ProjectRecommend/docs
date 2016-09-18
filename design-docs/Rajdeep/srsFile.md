@@ -64,9 +64,9 @@ This Software Requirement Specification includes:
 * Other non functional requirements
 
 ### Product Scope<a name="introduction-product-scope"></a>
-Offline Music Recommendation is an area of application development that is yet to be fully explorer as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet one may get enough music recommenders online but that is really catch here, they are mostly **_online_**. Here our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
+Offline Music Recommendation is an area of application development that is yet to be fully explored as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet one may get enough music recommenders online but that is really catch here, they are mostly **_online_**. Here our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
 
-Offline Music recommendation will involve recommendation of familiar songs and familiar genres of music available both on the internet and also on our mac or pcs.
+Offline Music recommendation will involve recommendation of familiar songs and familiar genres of music available both on the internet and from offline library
 
 Recommendation will involve suggestions based on the tags present for a particular song. This would mean that we would have to update the tags or in general the metadata of the song incase they are not appropriate.
 
@@ -90,6 +90,7 @@ This is a new self contained product and therefore has nothing to do with a larg
 The user will be able to include music files and folders into the application and play them, get suggestions for the music that he wants and update the metadata of the music in order to get the right recommendations of the music that he/she plays.
 
 In short the user can do the following things:
+
 >* Add files and folders containing music
 * Play the music of his/her choice
 * Request suggestions of a particular music or a whole collection of music
@@ -102,12 +103,16 @@ Countries with poor internet connectivity will benefit even more because the onl
 
 ### Operating Environment<a name="od-oe"></a>
 Platforms include:
+
 * Linux
+
 > Operating System	Red Hat Enterprise Linux 4 or 5 with the latest patches and upgrades
 CPU Type	Pentium 4 or higher; 2 GHz or higher
 Memory/RAM	1 GB minimum, up to the system limit
 Hard Disk	4 GB minimum
+
 * Windows
+
 > Processor: 1 gigahertz (GHz) or faster.
 RAM: 1 gigabyte (GB) (32-bit) or 2 GB (64-bit)
 Free hard disk space: 16 GB.

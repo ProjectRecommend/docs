@@ -69,7 +69,7 @@
 
 ## 1.1 Purpose
 
-Project Recommend is project to provide recommendation on your offline music collection that you have
+Project Recommend is a project to provide recommendation on your offline music collection that you have
 in your computer locally.
 This document describes Full system but it's emphasis is on Core part of system aka recommendation system
 
@@ -111,7 +111,6 @@ it has some extra benefits like
 
 ## 2.3 User Classes and Characteristics
 
-TODO - will be added after class diagram
 
 ## 2.4 Operating Environment
 
@@ -122,7 +121,6 @@ System Requirements
 OS
 - GNU/Linux
 - Windows
-- MacOS
 
 
 ## 2.5 Design and Implementation Constraints
