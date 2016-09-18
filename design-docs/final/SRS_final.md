@@ -107,18 +107,17 @@ This Software Requirement Specification also includes:
 
 ## 1.4 Product Scope <a name="introduction-product-scope"></a>
 
-- Offline Music Recommendation is an area of application development that is yet to be fully explored as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet one may get enough music recommenders online but that is really catch here, they are mostly **_online_**. Here our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
+- Offline Music Recommendation is an area of application development that is yet to be fully explored as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet one may get enough music recommenders online but that is the real catch here, they are mostly **_online_**. Here our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
 
 - Offline Music recommendation will involve recommendation of familiar tracks and familiar genres of music available both on the internet and from offline library
 
 - Name of the project is "Project Recommend". It is a Desktop App.
-- Plays music and provides suggestions based on track which user is listening to from both offline library which is available in user's machine as well as on internet.
+- It plays music and provides suggestions based on track which user is listening to from both offline library which is available in user's machine as well as on internet.
 
-##### Advantages:
-- it provides suggestions from local music library.
+##### Advantages
+- It provides suggestions from local music library.
 - Works with slower internet connection because it needs less bandwidth for providing recommendations.
 - It uses [MusicBrainz][musicbrainz-website] database for getting metadata of all the music present in user's local library and recommend tracks.
-- Most of the Music services are either paid, and require high bandwidth internet connection.
 - it is not platform or service specific
 - it is not bounded with any music provider services so it is suggestions are not limited to particular service
 - There are no specific audience for this software. Anyone can install it and use it.
@@ -140,6 +139,7 @@ This Software Requirement Specification also includes:
 | Recommender system | A system which takes a track as input and outputs set of tracks closely related to the input. |
 | Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
 | Tags | A label attached to track which gives extra information about it. |
+| NIC | A network interface card (NIC) is a computer circuit board or card that is installed in a computer so that it can be connected to a network |
 
 
 # 2. Overall Description <a name="od"></a>
@@ -150,19 +150,19 @@ This system consists of three components packaged as one desktop application:
 - **Music player**: for playing music from local library.
 - **Classifier**: On the bases of present track playing, Classifier will generate suggestions.
 - **Metadata updater**: It update all the tracks in library with their metadata tags. This is done using already available online database like "[MusicBrainz][musicbrainz-website]".
-- **Local database**: It is a [SQLite](https://www.sqlite.org) database which acts as a map between track titles, paths and keeps a check on each tracks for its metadata information.
+- **Local Store**: It is implemented as a [SQLite](https://www.sqlite.org) database which acts as a map between track titles, paths and keeps a check on each track for its metadata information.
 
-With _music player_ user can play/pause/stop/forward/rewind track tracks. It is fully functional music player like any other player present in public domain.
+With _music player_ user can play/pause/stop/seek a track. It is a fully functional music player like any other music player currently available.
 
 _Classifier_ needs some track title and metadata as input to generate suggestions. On the bases of
 input track it suggests similar tracks which may be already available in local library or available on The Internet.
 
 _Metadata updater_ is very similar to MusicBrainz's [Picard][picards-website] software. It takes a sound track or list of sound tracks as input and update their metadata information according to information available in [MusicBrainz database][musicbrainz-database-website]. This component needs internet for functioning.
 
-_Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps system to keep all the tracks updated and minimizes the need of updating whole user library at once which can slow down the system.
+_Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps the system to keep all the tracks updated and minimizes the need of updating whole user library at once which may slow down the system.
 
 #### Component Diagram
-![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/Suraj/Component_Dirgram_PR.jpg)
+![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Component_Dirgram_PR.jpg)
 
 
 ## 2.2 Product Functions <a name="od-pf"></a>
@@ -170,7 +170,7 @@ Using this app, user can play tracks available in offline library. While playing
 
 User can perform following actions:
 
-- play/pause/forward/rewind/seek/stop
+- play/pause/stop/seek, control volume
 - add tracks/ remove tracks
 - update metadata
 - get recommendation
@@ -178,7 +178,7 @@ User can perform following actions:
 ## 2.3 User Classes and Characteristics <a name="od-ucc"></a>
 Almost any user will be able to easily get going with this application as it is perfectly meant for an average music lover. Music lovers especially interested in playing various genres of music in a playlist for background music playing for instance will be benefitted more than ever by this application as it does not require internet for playing the music.
 
-Countries with poor internet connectivity will benefit even more because the only place we require internet connection is where we are required to update the metadata of the music for giving correct suggestions.
+Users with poor internet connectivity will benefit even more because the only place we require internet connection is where we are required to update the metadata of the music for giving correct suggestions.
 
 
 ## 2.4 Operating Environment <a name="od-os"></a>
@@ -211,9 +211,9 @@ For recommendation of music we are using metadata available in individual tracks
 In [_content based filtering_][content_based_filtering_wikipedia], tracks are grouped into different views on bases of their metadata(properties like genre, singer, mood etc) which is already available. Unlike _collaborative filtering_, user behavior is not analyzed here and this may lead to less accurate results. Also this method needs a standard metadata schema over all the tracks that is the reason we are using [_MusicBrainz database_][musicbrainz-database-website] here.  
 
 
-We could have implemented [_collaborative filtering_][collaborative_filtering_wikipedia] for generating suggestions which is more accurate then metadata approach but because we are don't have user data and there is no user data available in public domain so due to lack of Training data we cannot implement that.
+We could have implemented [_collaborative filtering_][collaborative_filtering_wikipedia] for generating suggestions which is more accurate then metadata approach but because we don't have user data and there is no user data available in public domain so due to lack of training data we cannot implement that.
 
-The other way is [_waveform analysis_](http://www.academia.edu/4631247/Waveform-Based_Musical_Genre_Classification). In this method sound tracks are analysed and grouped into different genres according to their waveform but it was found that this method is inaccurate. This technique is under research and development and is not proven successful.
+The other way is [_waveform analysis_](http://www.academia.edu/4631247/Waveform-Based_Musical_Genre_Classification). In this method sound tracks are analyzed and grouped into different genres according to their waveform but it was found that this method is inaccurate. This technique is under research and development and is not proven successful.
 
 
 ## 2.6 User Documentation <a name="od-ud"></a>
@@ -237,10 +237,10 @@ The following lists the various open source material we had referred to:
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
 
-User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions. There may be
+User interface is implemented in PyQt that is a python library. There is one front page which interacts with user. It is divided into frames for different functions. There may be
 
 #### UI Mockup
-![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/Suraj/Component_Dirgram_PR.jpg)
+![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/mockup.png)
 
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
@@ -254,14 +254,14 @@ User interface is implemented in QtPy that is a python library. There is one fro
 TBD
 
 ## 3.4 Communications Interfaces <a name="eir-ci"></a>
-- The Internet connection is used for communication between [_Metadata updater_](#od-pp), _Classifier_ and [_MusicBrainz Database_][musicbrainz-database-website].
+- The Internet connection is used by [_Metadata updater_](#od-pp) and _Classifier_ to communicate with [_MusicBrainz Database_][musicbrainz-database-website].
 - Internet communication will be Encrypted
 - All Network Communications will use HTTPS/TLS
 
 # 4. System Features <a name="sf"></a>
 
 Following is the use case diagram for the application
-![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/Suraj/PR_Use_case.jpg)
+![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
 
 ----
 
@@ -269,13 +269,13 @@ Following is the use case diagram for the application
 
 #### Music player
 
-Built into the offline music recommender system is a music player that can play music with a number of controls including **play, pause, stop, play next or previous track and volume control**.
+Built into the offline music recommender system is a music player that can play music with a number of controls including **play, pause, stop, play next or previous track, seek and volume control**.
 
 - The user will be able to import music from his offline music collection which may simply refer to a hard-drive or a flash memory.
 
-- In import stage software will build an Internal Local Store with Information about  added tracks.
+- In import stage software will build an Internal Local Store with Information about added tracks.
 
-- user can remove a track from imported music and that will remove the corresponding entry from Local Store
+- User can remove a track from imported music and that will remove the corresponding entry from Local Store
 
 #### Local Store
 
@@ -289,8 +289,9 @@ it will store all the information required for software to work
 - On adding a track or importing a track from the offline music library of the user to the application the track will be added into the local store.
 
 - On removing the track from the application the track will also be removed from the Local store. In short the Local store maintains the library of the application.
+- It will not be available for user to direct interaction, This component will be used by other components internally.
 
-#### Music metadata Updater
+#### Music Metadata Updater
 
 - This component of the application is simply involved with updating the metadata or tags of music optionally from MusicBrainz database.
 
@@ -300,7 +301,7 @@ it will store all the information required for software to work
 
 #### Classifier
 
-- The classifier is the core of this application as it is gonna take the heavy lifting of suggesting the right tracks for the user.
+- The classifier is the core of this application as it takes the heavy lifting of suggesting the right tracks for the user.
 
 - The classifier comes into effect in 2 different situations
 
@@ -309,8 +310,8 @@ it will store all the information required for software to work
 
 #### Musicbrainz database
 
-- The Musicbrainz database is gonna be the primary database for collection of **correct** music metadata and it contains almost every single track.
-This database will be of used during metadata updation and getting data for classifier to generate suggestions.
+- The Musicbrainz database is the primary database for collection of **correct** music metadata and it contains almost every single track.
+This database is used during metadata updation and getting data for classifier to generate suggestions.
 
 #### User actions
 
@@ -329,6 +330,7 @@ The user can control music in the music player component by the following action
 - control volume
 - go to the next track
 - go to the previous track
+- seek a playing track
 
 **manual updation of metadata**
 
@@ -336,17 +338,18 @@ The user will be able to manage metadata of the tracks that he/she chooses.
 
 **manual recommendation of music**
 
-The user will be able to get recommendation of a music by manually simply by clicking on a track.
+The user can get recommendation of a track manually by clicking on it.
 
 A summary of the direct actions that the user can take is as follows:
 
 **Actor: User**
 
-| action | description |
+| action  | description |
 | --- | --- | --- |
 | import music from external system | the user will be able to import music from his external music collection, simply a hard drive or a flash drive |  
-| remove music from the application | The user will be able to remove any music from the application |
+| remove tracks from playlist | The user will be able to remove any track from the playlist |
 | play music | Part of the music player |
+| seek track | seek a playing track |
 | pause music | Part of the music player |
 | stop music | Part of the music player |
 | go to the next track | Part of the music player |
@@ -363,13 +366,12 @@ The following are the use cases and how the actor: user interacts with them
 
 **Brief Description**
 
-The user manages tracks import and remove from the application
+The user manages tracks, can import and remove them from the application
 
 **User interaction**
 
-- The user can import tracks from offline music collection
-- The directories, sub directories and files are added to the application
-- The local store updates the track
+- Import tracks from offline music collection
+- Add directories, sub directories and files to the music player.
 - The user can remove the track from the application
 - The local store updates itself deleting the track
 
@@ -394,7 +396,7 @@ The user can control music which means he/she can play, pause, stop, go to the n
 
 **Brief Description**
 
-The user can manually get recommendation that of a track other than the track that is being played.
+The user can manually get recommendation of a track other than the track that is being played.
 
 **User interaction**
 
@@ -435,12 +437,12 @@ The user can manually trigger updation of metadata of a track such that he/she c
 
 ## 5.1 Performance Requirements
 
-- System will be fast enough to play music without any shattering or buffering, otherwise
+- System should be fast enough to play music without any shattering or buffering, otherwise
 that will result in undesirable experience.
-- System will be robust to deal and act accordingly  with common error scenarios like no
+- System should be robust to deal and act accordingly  with common error scenarios like no
 internet connection, unavailable metadata, unsupported file types.
 - In case of failures it should be able to fail or recover gracefully.
-- System will be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
+- System should be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
 
 
 ## 5.2 Safety Requirements
@@ -455,9 +457,9 @@ to prevent that scenarios user can manually edit metadata of songs when it see a
 
 ## 5.4 Software Quality Attributes
 
-- System will not leak memory.
-- System will peacefully co-exist with other software
-- System will not cause or trigger any events that will leave Operating System in unrecoverable state
+- System should not leak memory.
+- System should peacefully co-exist with other software
+- System should not cause or trigger any events that will leave Operating System in unrecoverable state
 
 ## 5.5 Business Rules
 
