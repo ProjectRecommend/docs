@@ -19,8 +19,16 @@
 2.2 [Product Functions](#od-pf)  
 2.3 [User Classes and Characteristics](#od-ucc)  
 2.4 [Operating System](#od-os)  
-2.5 [Design and Implementation Constraints](#od-di)
-#  Introduction <a name="introduction"></a>
+2.5 [Design and Implementation Constraints](#od-di)  
+3. [External Interface Requirements](#eir)  
+3.1 [User Interfaces](#eir-ui)  
+3.2 [Hardware Interfaces](#eir-hi)  
+3.3 [Software Interfaces](#eir-si)  
+3.4 [Communications Interfaces](#eir-ci)  
+4. [System Features](#sf)  
+[_Appendix_](#appendix)  
+
+# 1. Introduction <a name="introduction"></a>
 ## 1.1 Purpose <a name="introduction-purpose"></a>
 The purpose of this document is to provide a debriefed view of requirements and specifications of the project called “Music Recommendation System“, v1.0. This document discusses about whole system from backend to user interactions. It will give both high level and low level abstract view of the system.
 
@@ -45,7 +53,7 @@ The purpose of this document is to provide a debriefed view of requirements and 
 ## 1.5 References <a name="introduction-references"></a>
  TODO
 
-# Overall Description <a name="od"></a>
+# 2. Overall Description <a name="od"></a>
 
 ## 2.1 Product Perspective <a name="od-pp"></a>
 This system consists of three components packaged as one desktop application:
@@ -92,13 +100,20 @@ Linux(Ubuntu, Fedora, Mint etc.), Windows 7 and up.
 
 ## 2.5 Design and Implementation Constraints <a name="od-di"></a>
 TODO
-## 2.6 User Documentation
+## 2.6 User Documentation <a name="od-ud"></a>
 TODO
 
-## 2.7 Assumptions and Dependencies
+## 2.7 Assumptions and Dependencies <a name="od-ad"></a>
 
+# 3. External Interface Requirements <a name="eir"></a>
+## 3.1 User Interfaces <a name="eir-ui"></a>
+## 3.2 Hardware Interfaces <a name="eir-hi"></a>
+## 3.3 Software Interfaces <a name="eir-si"></a>
+## 3.4 Communications Interfaces <a name="eir-ci"></a>
 
-# Appendix
+# 4. System Features <a name="sf"></a>
+
+# Appendix <a name="appendix"></a>
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
 [musicbrainz-website]: https://musicbrainz.org
