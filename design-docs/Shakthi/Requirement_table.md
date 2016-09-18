@@ -11,10 +11,12 @@
 
 |No | ID | Title | Requirement Specification | Usage |
 |---|---|---|---|---|
-| 1. | R_01 | Music Player UI | Contains all the functions a user needs to Play and Recommend Songs. | Helps user to play songs and the player will accordingly recommend songs based on the metadata available from MUSICBRAINZ. |
-| 2. | R_02 | Manage Songs | The User can Add, Remove Songs from or to the Music Player. | Add and Remove functionality helps the user to easily manage his Songs Library. |
-|   | R_02.1 | Add Songs  | Adding New Songs to Library of the user from the recommendations he gets based on songs user plays and the recommendations can be from the Local Library the user maintains and also from the database of MUSICBRAINZ. | This Feature helps adding new songs to the library user maintains. |
-|   | R_02.2 | Remove Songs | Removing Songs which user is not interested in listening. | Helps the User to maintain a collection of songs he Likes. |
+| 1. | R_01 | Music Player UI | Contains all the functions a user needs to Play and get recommendations of Similar Songs. | Helps user to play songs and the player will accordingly recommend songs based on the metadata available from MUSICBRAINZ. |
+| 2. | R_02 | Manage Songs | The User can Add, Remove Songs from the current playlist of Music Player. | Add and Remove functionality helps the user to easily manage his Songs Playlist. |
+|   | R_02.1 | Add Songs  | Adding New Songs to Library of the user from the recommendations which are based on songs played and the recommendations can be from the Local Library the user maintains and also from the database of MUSICBRAINZ. | This Feature helps adding new songs to the library user maintains. |
+|   | R_02.2 | Remove Songs | Removing Songs which user is not interested in listening. | Helps the User to maintain a collection of songs he/she Likes. |
 | 3. | R_03 | Control Menu | Functionalities available to the user to Control the Music that's been played or the one user wants to play. | This functionality helps user to Play, Stop, Seek the track been played. To change it to Previous, Next track and to control the Volume of the Music been played.|
-|   | R_03.1 | Play Button | This Button provides the function to play the music | The User can play the music whenever he wishes to listen to Music |
-|   | R_03.2 |
+|   | R_03.1 | Play Button | This Button provides the function to Play the Music track. | The User can Play favorite Song from Local Library. |
+|   | R_03.2 | Stop Button | This Button provides the function to Stop the Music track being played. | User can Stop the Music track at will. |
+|   | R_03.3 | Seek Track | This Function allows the User to play whichever portion of the song he/she likes. | Through this function the user can Traverse through the timeline of a particular track and play from there. |
+|   |
