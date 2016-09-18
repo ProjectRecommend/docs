@@ -1,4 +1,4 @@
- # <u>Feasibility Study</u> - **Project Recommend**</center>
+# __Feasibility Study - **Project Recommend**__
 
 A system is considered to be a decent one, if it performs up to the expectations. When we carry out a feasibility study for any software, that is under development, we need to make sure that, our final product is feasible, both economically as well as technically.  
 <p>
@@ -12,7 +12,7 @@ A feasibility study report basically covers the following points:-
 </ol>
 </p>
 
-## <u>Analysis of the problem</u>
+## __Analysis of the problem__
 
 <p>India currently is a country where the <i>internet speed</i> is not up to the mark at many places, with only 2g spectrum, covering most of the regions.
 Sometimes, while listening to music, switching to a song of similar taste *manually*, from the user's entire collection of music, does not seem to be a good idea.<br>
