@@ -157,6 +157,42 @@ TODO
 
 # 4 System Features
 
+
+Following is the use case diagram for the application
+![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
+
+----
+
+##### Use case description table
+
+| Use Case Title (ID) | Description | Remarks |
+| --- | --- | --- |
+| Manage Songs (UC1) | generalization of Manage songs |   |
+| Control Music (UC2) | generalization of control songs |   |
+| Manually Get Next recommendation (UC3) | user triggered recommendation |   |
+| Edit Metadata (UC4) | user edits metadata |   |
+| Manually update metadata (UC5) | user manually triggers metadata updation service |   |
+| Control Volume (UC6) |  use controls volume |   |
+| Play (UC7) | user can play music |   |
+| Pause (UC8) | user can pause |   |
+| Seek (UC9) | user can seek into timeline of playing track |   |
+| Stop (UC10) | user can stop the playing track |   |
+| Next Track (UC11) | user can change to next track |   |
+| Previous Track (UC12) | user can go to previous track |   |
+| Add songs (UC13) | user can add songs |   |
+| Remove Songs (UC14) | user can remove songs from list |   |
+| Access Local Storage (UC15) | components can access local storage for persistence  |   |
+| Read from local Storage (UC16) | components can read from local storage |   |
+| Write into local Storage (UC17) | components can write into local storage |   |
+| Update into local Storage (UC18) | components can update data into local storage |   |
+| Delete from local Storage (UC19) | components can delete items from local storage |   |
+| Run Classifier (UC20) | components can run classifier on a track |   |
+| Get data from MusicBrainz (UC21) | components can get metadata of a track from musicbrainz servers |  |
+| Get Recommendation (UC22) | components can get recommendation on a track |   |
+| Update Metadata (UC23) | components can update metadata of tracks |   |
+
+
+
 ## 4.1 System Feature 1
 
 TODO
