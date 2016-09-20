@@ -1,4 +1,4 @@
-#Project Recommend
+# Project Recommend
 
 ## Feasibility Study report
 
@@ -38,30 +38,27 @@ We only fetch metadata so we can work on low bandwidth internet connections.
 ## Limitations and Constraints
 
 
-- Waveform Analysis
-
+- Waveform Analysis  
 This is one of the methods we could have used to classify music. In this method, we analyze and classify
 the music wave into genres such as pop, jazz etc., but there is not enough training data available to
 analyze the waveform. Also there is not enough research done in this field. Hence, this method could not
 be used in practical (For instance, Spotify tried it and got worst results as compared to other techniques ).
 
 
-- Collaborative Filtering
-
+- Collaborative Filtering  
 Here, in this method, we use user data to recommend next set of songs to the user. But, due to lack of
 time and resources we do not have enough user data to make this method feasible to use. If we did have
 the user data, that data would have been used by the training model to recommend new songs based on that data.
 
 
-- Availability of other basic requirements
-
+- Availability of other basic requirements  
 Internet is one of the basic requirements for our software to work, Lack of internet means
 that our software will work like a plain music player. in lack of internet connection we can't provide recommendation but already cached recommendations will available to user with internet connection
 
 
 ## Economic Feasibility
 
-This project is an open-source, we do not have any business goals, we do not have any intentions of making profit. The software will be available to everyone for free, anyone can use our work under mentioned license and improve upon it. we also accepts patches from anyone via GitHub and merge it after review. that way anyone can contribute into development of this software.
+This project is an open-source, we do not have any business goals, we do not have any intentions of making profit. The software will be available to everyone for free, anyone can use our work under mentioned license and improve upon it. We also accepts patches from anyone via GitHub and merge it after review. That way anyone can contribute into development of this software.
 
 
 ## Conclusions From Our Survey
@@ -76,7 +73,7 @@ corresponding responses, represented in the form of pie-charts.
 
 
 #### Inference:
-This pie-chart shows that most of the people prefer to listen music almost all the time(app. 60% in our case).
+This pie-chart shows that most of the people prefer to listen to music almost all the time(app. 60% in our case).
 
 #### 2.
 <center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q2.png" alt = "Question 2 and its response!" height = auto width = "400px"></center>
@@ -93,7 +90,7 @@ storing music offline(over 32% people have music collection between 10-50 GBs an
 
 #### Inference:
 
-Nearly half of the people (45%), whom we surveyed, download music all the time. This result goes hand in
+Nearly half of the people (approx. 45%), whom we surveyed, download music all the time. This result goes hand in
 hand with our idea in a sense that, if upon recommendation their collection does not have a particular
 song, they can download it, at that very instant. A larger part of remaining half(46%), do not download
 music that very often, but still once in a while, they can download.
@@ -104,7 +101,7 @@ music that very often, but still once in a while, they can download.
 
 #### Inference:
 
-This pie-chart shows that a majority of people we surveyed(app. 81%) prefer to discover music based on
+This pie-chart shows that a majority of people we surveyed(approx. 81%) prefer to discover music based on
 their taste(which will be performed by a classifier in our case).
 
 
@@ -114,8 +111,8 @@ their taste(which will be performed by a classifier in our case).
 #### Inference:
 
 
-This pie-chart shows that almost half the people(49% app.), find it difficult to search the songs
-similar to the ones they have in their offline music library. This suggests that they would like to get
+This pie-chart shows that almost half of the people(49% app.), find it difficult to search the songs
+similar to the one they have in their offline music library. This suggests that they would like to get
 recommendations based on their music taste, automatically, and then accordingly download that particular
 kind of music.
 
@@ -125,7 +122,7 @@ kind of music.
 
 #### Inference:
 
-This pie-chart shows that almost half of the people do not have a fully updated metadata(app. 50%),
+This pie-chart shows that almost half of the people do not have a fully updated metadata(approx. 50%),
 which made us to attach an extra component to our software, known as the Metadata Updater.
 
 
@@ -137,4 +134,4 @@ which made us to attach an extra component to our software, known as the Metadat
 
 Finally, here we ask people, if they want to use such a music player that recommends similar songs from
 and outside of their offline music library. Seeing the number of people(76%) who want this to happen,
-we concluded that our product is feasible for a majority, and started working for the same.
+we concluded that our product is feasible for a majority.
