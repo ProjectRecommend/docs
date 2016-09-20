@@ -267,33 +267,20 @@ Following is the use case diagram for the application
 
 ----
 
-##### Use case description table
-
-| Use Case Title (ID) | Description | Remarks |
+| **User Requirements** | **Includes use case(s)/Functional Requirements** | **Description** |
 | --- | --- | --- |
-| Manage Songs (UC1) | generalization of Manage songs |   |
-| Control Music (UC2) | generalization of control songs |   |
-| Manually Get Next recommendation (UC3) | user triggered recommendation |   |
-| Edit Metadata (UC4) | user edits metadata |   |
-| Manually update metadata (UC5) | user manually triggers metadata updation service |   |
-| Control Volume (UC6) |  use controls volume |   |
-| Play (UC7) | user can play music |   |
-| Pause (UC8) | user can pause |   |
-| Seek (UC9) | user can seek into timeline of playing track |   |
-| Stop (UC10) | user can stop the playing track |   |
-| Next Track (UC11) | user can change to next track |   |
-| Previous Track (UC12) | user can go to previous track |   |
-| Add songs (UC13) | user can add songs |   |
-| Remove Songs (UC14) | user can remove songs from list |   |
-| Access Local Storage (UC15) | components can access local storage for persistence  |   |
-| Read from local Storage (UC16) | components can read from local storage |   |
-| Write into local Storage (UC17) | components can write into local storage |   |
-| Update into local Storage (UC18) | components can update data into local storage |   |
-| Delete from local Storage (UC19) | components can delete items from local storage |   |
-| Run Classifier (UC20) | components can run classifier on a track |   |
-| Get data from MusicBrainz (UC21) | components can get metadata of a track from musicbrainz servers |  |
-| Get Recommendation (UC22) | components can get recommendation on a track |   |
-| Update Metadata (UC23) | components can update metadata of tracks |   |
+| Manage songsR\_01 | add music UC\_01 | The user will be able to import music from his external music collection, to the application |
+| remove music UC\_02 | The user will be able to remove any track from the playlist |
+| Control musicR\_02 | play musicUC\_03 | The user will be able to play the track by selecting it or clicking on Play |
+| seek trackUC\_04 | The user will be able to move anywhere in the timeline of the track |
+| pause musicUC\_05 | The user will be able to pause the track being able to play it again from the same timeline |
+| stop musicUC\_06 | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+| go to the next trackUC\_07 | The user will be able to play the next track |
+| go to the previous trackUC\_08 | The user will be able to play the previous track |
+| volume controlUC\_09 | The user will be able to increase or decrease or mute the volume of the playing track |
+| Manually update metadataR\_03 | Manually update metadataUC\_10 | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| Manually recommend musicR\_04 | Manually recommend musicUC\_11 | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+| Edit fields in the song infoR\_05 | Edit fields in the song infoUC\_12 | The user will be able to edit info of any track manually, i.e., simply by right clicking |
 
 
 ----
@@ -375,21 +362,6 @@ The user can get recommendation of a track manually by clicking on it.
 
 A summary of the direct actions that the user can take is as follows:
 
-**Actor: User**
-
-| action  | description |
-| --- | --- | --- |
-| import music from external system | the user will be able to import music from his external music collection, simply a hard drive or a flash drive |  
-| remove tracks from playlist | The user will be able to remove any track from the playlist |
-| play music | Part of the music player |
-| seek track | seek a playing track |
-| pause music | Part of the music player |
-| stop music | Part of the music player |
-| go to the next track | Part of the music player |
-| go to the previous music | Part of the music player |
-| volume control | Part of the music player |
-| manual metadata update | The user can update the metadata of the track simply by right clicking |
-| manual recommendation of track | The user can also get recommendations of the tracks manually |
 
 #### User Interactions
 
@@ -466,6 +438,19 @@ The user can manually trigger updation of metadata of a track such that he/she c
 
 
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
+
+The non-functional requirements of the system are explained below.
+
+| **Non-Functional Requirements** | **Name** | **Description** |
+| --- | --- | --- |
+| **5.1  Performance Requirements**   |
+| NR\_01 | Quickness | System should be fast enough to play music and respond to any of the user action in any way without any shattering or buffering, else it will be not be a good experience. |
+| NR\_02 | Robustness | System should be robust to deal and act accordingly with common error scenarios like no internet connection, unavailable metadata, unsupported file types. |
+| NR\_03 | Failure Handling | In case of failures it should be able to fail or recover quickly. |
+| **5.2  Safety Requirements**   |
+| NR\_04 | Exception Handling | The software should be able to restrict or warn(in the first place) the user from doing things not suitable, like, increasing volume beyond threshold, or exiting the software w/o saving the changed data. |
+| **5.3  Security Requirements**   |
+| NR\_05 | Encrypted Connection | Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS). |
 
 
 ## 5.1 Performance Requirements
