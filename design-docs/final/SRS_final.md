@@ -298,20 +298,22 @@ Following is the use case diagram for the application
 
 ----
 
-| **User Requirements** | **Includes use case(s)/Functional Requirements** | **Description** |
+#### Functional Requirements
+
+| **Identifier for Requirement** | **Functional Requirement Name** | **Description** |
 | --- | --- | --- |
-| Manage songs R_01 | add songs UC_13 | The user will be able to import music from his external music collection, to the application |
-|  | remove songs UC_14 | The user will be able to remove any track from the playlist |
-| Control music R_02 | play music UC_07 | The user will be able to play the track by selecting it or clicking on Play |
-|  | seek track UC_09 | The user will be able to move anywhere in the timeline of the track |
-|  | pause music UC_08 | The user will be able to pause the track being able to play it again from the same timeline |
-|  | stop music UC_10 | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
-|  | go to the next track UC_11 | The user will be able to play the next track |
-|  | go to the previous track UC_12 | The user will be able to play the previous track |
-|  | volume control UC_06 | The user will be able to increase or decrease or mute the volume of the playing track |
-| Manually update metadata R_03 | Manually update metadata UC_05 | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
-| Manually recommend musicR_04 | Manually recommend music UC_03 | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
-| Edit fields in the song info R_05 | Edit fields in the song info UC_04 | The user will be able to edit info of any track manually, i.e., simply by right clicking |
+| UC 13 | Add songs | The user will be able to import music from his external music collection, to the application |
+| UC 14 | Remove songs | The user will be able to remove any track from the playlist |
+| UC 07 | Play music | The user will be able to play the track by selecting it or clicking on Play |
+| UC 09 | Seek track | The user will be able to move anywhere in the timeline of the track |
+| UC 08 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
+| UC 10 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+| UC 11 | Go to the next track | The user will be able to play the next track |
+| UC 12 | Go to the previous track | The user will be able to play the previous track |
+| UC 06 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
+| UC 05 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| UC 03 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+|  UC 04 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
 
 
 ----
@@ -476,46 +478,21 @@ The non-functional requirements of the system are explained below.
 | **Non-Functional Requirements** | **Name** | **Description** |
 | --- | --- | --- |
 | **5.1  Performance Requirements**   |
-| NR\_01 | Quickness | System should be fast enough to play music and respond to any of the user action in any way without any shattering or buffering, else it will be not be a good experience. |
-| NR\_02 | Robustness | System should be robust to deal and act accordingly with common error scenarios like no internet connection, unavailable metadata, unsupported file types. |
-| NR\_03 | Failure Handling | In case of failures it should be able to fail or recover quickly. |
+| NR_01 | Quickness | System should be fast enough to play music and respond to any of the user action in any way without any shattering or buffering, else it will be not be a good experience. |
+| NR_02 | Robustness | System should be robust to deal and act accordingly with common error scenarios like no internet connection, unavailable metadata, unsupported file types. |
+| NR_03 | Failure Handling | In case of failures it should be able to fail or recover quickly. |
 | **5.2  Safety Requirements**   |
-| NR\_04 | Exception Handling | The software should be able to restrict or warn(in the first place) the user from doing things not suitable, like, increasing volume beyond threshold, or exiting the software w/o saving the changed data. |
+| NR_04 | Exception Handling | The software should be able to restrict or warn(in the first place) the user from doing things not suitable, like, increasing volume beyond threshold, or exiting the software w/o saving the changed data. |
 | **5.3  Security Requirements**   |
-| NR\_05 | Encrypted Connection | Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS). |
+| NR_05 | Encrypted Connection | Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS). |
+| **5.4 Software Quality Attributes** |
+| NR_06 | Memory Management | System should not leak memory. |
+| NR_07 | Compatibility  | System should peacefully co-exist with other software |
+| NR_08 | Error Handling  | System should not cause or trigger any events that will leave Operating System in unrecoverable state |
+| **5.5 Business Rules** |
+| NR_09 | Open Source | This software is an Open Source software. |
+| NR_10 | Guidelines | Unless required by applicable law or agreed to in writing, software distributed is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
 
-
-## 5.1 Performance Requirements
-
-- System should be fast enough to play music without any shattering or buffering, otherwise
-that will result in undesirable experience.
-- System should be robust to deal and act accordingly  with common error scenarios like no
-internet connection, unavailable metadata, unsupported file types.
-- In case of failures it should be able to fail or recover gracefully.
-- System should be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
-
-
-## 5.2 Safety Requirements
-
-- In scenario when there is not enough data to automatically tag Metadata we rely [AcoustID](https://acoustid.org/) and [MusicBrainz](https://musicbrainz.org/) for metadata
-based on AcoustID fingerprint, in some but rare scenarios it can result in incorrect metadata of song,
-to prevent that scenarios user can manually edit metadata of songs when it see an incorrect tagged song
-
-## 5.3 Security Requirements
-
-- Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS).
-
-## 5.4 Software Quality Attributes
-
-- System should not leak memory.
-- System should peacefully co-exist with other software
-- System should not cause or trigger any events that will leave Operating System in unrecoverable state
-
-## 5.5 Business Rules
-
-- This software is an Open Source software.
-- Unless required by applicable law or agreed to in writing, software distributed is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 
 # 6. Other Requirements <a name="otherreq"></a>
