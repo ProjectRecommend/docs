@@ -7,32 +7,32 @@
 
 ## Scope of Document
 
-This document covers the economic and technical feasibility of "Project Recommend
+This document covers the economic and technical feasibility of "Project Recommend"
 
 This report covers the following
 
-- Analysis of problem (Why do we need this software)
+- Analysis of problem (Why do we need this software?)
 - Limitations and constraints
 - Economical feasibility of product
 - Public survey to validate our assumptions
 
 
-## Analysis of problem (Why do we need this software)
+## Analysis of problem (Why do we need this software?)
 
-Music recommend is a fairly normal thing nowadays, we see it all over the places like YouTube, SoundCloud
+Music recommendation is a fairly normal thing nowadays, we see it all over the places like YouTube, SoundCloud
 and all there other music provider services.
-then why do we need this software
-Here is few limitations of all those online Music recommendation that we trying to overcome
-- recommendations as based on collaborative filtering which means you have to use that service quite a while for it's recommendation service to give reliable results
+Then why do we need this software?
+Here are few limitations of all those online Music recommendation that we are trying to overcome
+- Recommendations as based on collaborative filtering which means you have to use that service quite often for it's recommendation service to give reliable results.
 - Everything is limited to that service, means you get recommendation on what that service have you to offer.
-- most of there services are paid/subscription based
-- requires high internet bandwidth to stream music.
+- Most of there services are paid/subscription based.
+- They require high internet bandwidth to stream music.
 
-here is what we are doing to overcome those problems
-we are trying to provide recommendations on your offline music collection that you have in your computer.
-music that you bought as a CD or from any online music store. means we are not limited to an particular services
-we use content based filtering that doesn't require any user data to work.
-we only fetch metadata so we can work on low bandwidth internet connections.
+Here is what we are doing is to overcome those problems.
+We are trying to provide recommendations on your offline music collection that you have in your computer.
+Music that you bought as a CD or from any online music store. means we are not limited to an particular services
+We use content based filtering that doesn't require any user data to work.
+We only fetch metadata so we can work on low bandwidth internet connections.
 
 
 ## Limitations and Constraints
