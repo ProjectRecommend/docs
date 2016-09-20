@@ -2,9 +2,6 @@
 
 ## Feasibility Study report
 
-
-
-
 ## Scope of Document
 
 This document covers the economic and technical feasibility of "Project Recommend
@@ -19,13 +16,16 @@ This report covers the following
 
 ## Analysis of problem (Why do we need this software)
 
-Music recommend is a fairly normal thing nowadays, we see it all over the places like YouTube, SoundCloud
-and all there other music provider services.
+Music recommend is a fairly normal thing nowadays, we see it all over the places like YouTube, SoundCloud and all there other music provider services.
 then why do we need this software
-Here is few limitations of all those online Music recommendation that we trying to overcome
-- recommendations as based on collaborative filtering which means you have to use that service quite a while for it's recommendation service to give reliable results
+
+- Here is few limitations of all those online Music recommendation that we trying to overcome
+recommendations as based on collaborative filtering which means you have to use that service quite a while for it's recommendation service to give reliable results
+
 - Everything is limited to that service, means you get recommendation on what that service have you to offer.
+
 - most of there services are paid/subscription based
+
 - requires high internet bandwidth to stream music.
 
 here is what we are doing to overcome those problems
@@ -36,7 +36,6 @@ we only fetch metadata so we can work on low bandwidth internet connections.
 
 
 ## Limitations and Constraints
-
 
 - Waveform Analysis
 
@@ -133,7 +132,6 @@ which made us to attach an extra component to our software, known as the Metadat
 <center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q7.png" alt = "Question 7 and its response!" height = auto width = "400px" ></center>
 
 #### Inference:
-
 
 Finally, here we ask people, if they want to use such a music player that recommends similar songs from
 and outside of their offline music library. Seeing the number of people(76%) who want this to happen,
