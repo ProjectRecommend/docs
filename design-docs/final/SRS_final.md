@@ -316,14 +316,6 @@ Following is the use case diagram for the application
 | UC 14 | Remove songs | The user will be able to remove any track from the playlist |
 
 
-
-
-
-
-
-
-
-
 ----
 
 

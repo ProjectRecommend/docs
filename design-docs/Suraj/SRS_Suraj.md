@@ -2,7 +2,7 @@
 
     Product : Project Recommend
     Description : An offline music recommendation system
-    Status : Approved
+    Status : Under Review
     Development Status  : design phase
     Author : Surajnath Sidh
 
@@ -11,9 +11,9 @@
 # Revisions
 
 ### Latest
-    Current Version : 0.1
-    Current Status : Work in Progress
-    Date : 14-09-2016
+    Current Version : 1.0
+    Current Status : Under Review
+    Date : 20-09-2016
 
 ### Revision History
 - Version 0.0
@@ -47,8 +47,15 @@
 - 3.4 Communications Interfaces
 
 ##### 4
-- 4.1 System Feature 1
-- 4.2 System Feature 2 (and so on)
+- 4.1 Use case diagram
+- 4.2 Use case diagrams description table
+- 4.3 Functional Requirements
+- 4.4 System Features
+    - music player
+    - local storage
+    - classifier
+    - metadata updater
+
 
 ##### 5
 - 5.1 Performance Requirements
@@ -57,11 +64,7 @@
 - 5.4 Software Quality Attributes
 - 5.5 Business Rules
 
-##### Appendix
-- Appendix A: Glossary
-- Appendix B: Analysis Models
-- Appendix C: To Be Determined List
-
+#### Comments
 ----
 
 
@@ -217,6 +220,27 @@ Following is the use case diagram for the application
 
 ----
 
+## Functional Requirements
+
+
+| **Identifier for Requirement** | **Functional Requirement Name** | **Description** |
+| --- | --- | --- |
+| UC 03 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+|  UC 04 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
+| UC 05 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| UC 06 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
+| UC 07 | Play music | The user will be able to play the track by selecting it or clicking on Play |
+| UC 08 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
+| UC 09 | Seek track | The user will be able to move anywhere in the timeline of the track |
+| UC 10 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+| UC 11 | Go to the next track | The user will be able to play the next track |
+| UC 12 | Go to the previous track | The user will be able to play the previous track |
+| UC 13 | Add songs | The user will be able to import music from his external music collection, to the application |
+| UC 14 | Remove songs | The user will be able to remove any track from the playlist |
+
+
+----
+
 ## Music player
 
 Music player is used to handle and play music, this is the primary component that user has his control.
@@ -240,57 +264,28 @@ updating metadata of a track, it's a helper component that works hand in hand wi
 
 # 5. Other Nonfunctional Requirements
 
-## 5.1 Performance Requirements
-
-- System will be fast enough to play music without any shattering or buffering, otherwise
-that will result in undesirable experience.
-- System will be robust to deal and act accordingly  with common error scenarios like no
-internet connection, unavailable metadata, unsupported file types.
-- In case of failures it should be able to fail or recover gracefully.
-- System will be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
-
-
-## 5.2 Safety Requirements
-
-- In scenario when there is not enough data to automatically tag Metadata we rely [AcoustID](https://acoustid.org/) and [MusicBrainz](https://musicbrainz.org/) for metadata
-based on AcoustID fingerprint, in some but rare scenarios it can result in incorrect metadata of song,
-to prevent that scenarios user can manually edit metadata of songs when it see an incorrect tagged song
-
-## 5.3 Security Requirements
-
-- Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS).
-
-## 5.4 Software Quality Attributes
-
-- System will not leak memory.
-- System will peacefully co-exist with other software
-- System will not cause or trigger any events that will leave Operating System in unrecoverable state
-
-## 5.5 Business Rules
-
-- This software is an Open Source software.
-- Unless required by applicable law or agreed to in writing, software distributed is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+### The non-functional requirements of the system are explained below.
 
 ----
 
-# 6. Appendix
+| **Non-Functional Requirements** | **Name** | **Description** |
+| --- | --- | --- |
+| **5.1  Performance Requirements**   |
+| NFR_01 | Quickness | System should be fast enough to play music and respond to any of the user action in any way without any shattering or buffering, else it will be not be a good experience. |
+| NFR_02 | Robustness | System should be robust to deal and act accordingly with common error scenarios like no internet connection, unavailable metadata, unsupported file types. |
+| NFR_03 | Failure Handling | In case of failures it should be able to fail or recover quickly. |
+| **5.2  Safety Requirements**   |
+| NFR_04 | Exception Handling | The software should be able to restrict or warn(in the first place) the user from doing things not suitable, like, increasing volume beyond threshold, or exiting the software w/o saving the changed data. |
+| **5.3  Security Requirements**   |
+| NFR_05 | Encrypted Connection | Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS). |
+| **5.4 Software Quality Attributes** |
+| NFR_06 | Memory Management | System should not leak memory. |
+| NFR_07 | Compatibility  | System should peacefully co-exist with other software |
+| NFR_08 | Error Handling  | System should not cause or trigger any events that will leave Operating System in uNFRecoverable state |
+| **5.5 Business Rules** |
+| NFR_09 | Open Source | This software is an Open Source software. |
+| NFR_10 | Guidelines | Unless required by applicable law or agreed to in writing, software distributed is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
 
-# 6. Other Requirements
-
-TBD
-
-## Appendix A: Glossary
-
-TBD
-
-## Appendix B: Analysis Models
-
-TBD
-
-## Appendix C: To Be Determined List
-
-TBD
 
 ----
 
