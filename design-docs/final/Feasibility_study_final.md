@@ -20,19 +20,19 @@ This report covers the following
 ## Analysis of problem (Why do we need this software?)
 
 Music recommendation is a fairly normal thing nowadays, we see it all over the places like YouTube, SoundCloud
-and all there other music provider services.
+and all the other music provider services.
 Then why do we need this software?
 Here are few limitations of all those online Music recommendation that we are trying to overcome
 - Recommendations as based on collaborative filtering which means you have to use that service quite often for it's recommendation service to give reliable results.
-- Everything is limited to that service, means you get recommendation on what that service have you to offer.
-- Most of there services are paid/subscription based.
+- Everything is limited to that service, means you get recommendations only on what they offer to the users.
+- Most of their services are paid/subscription based.
 - They require high internet bandwidth to stream music.
 
-Here is what we are doing is to overcome those problems.
-We are trying to provide recommendations on your offline music collection that you have in your computer.
-Music that you bought as a CD or from any online music store. means we are not limited to an particular services
-We use content based filtering that doesn't require any user data to work.
-We only fetch metadata so we can work on low bandwidth internet connections.
+Following are the things we will do- to overcome those problems.
+We are trying to provide recommendations on your offline music collection.
+Music that you bought as a CD or from any other online music store, means we are not limited to an particular service.
+We use content based filtering that doesn't require any user data for its working.
+We only fetch metadata so that the software works with the low bandwidth internet connection.
 
 
 ## Limitations and Constraints
@@ -57,15 +57,12 @@ that our software will work like a plain music player. in lack of internet conne
 
 
 ## Economic Feasibility
-
-This project is an open-source, we do not have any business goals, we do not have any intentions of making profit. The software will be available to everyone for free, anyone can use our work under mentioned license and improve upon it. We also accepts patches from anyone via GitHub and merge it after review. That way anyone can contribute into development of this software.
+This project is an open-source, we do not have any business goals, we do not have any intentions of making profit. The software will be available to everyone for free, anyone can use our work under mentioned license and improve on it. We also accept patches from anyone via GitHub and will merge them after reviewing. In this way, anyone can contribute to the development of this software.
 
 
 ## Conclusions From Our Survey
 
-##### We surveyed 110 odd people, belonging to different sectors such as corporate, business etc. and
-belonging to different age groups. Given below is a list of questions we asked in our survey, and their
-corresponding responses, represented in the form of pie-charts.  
+##### We surveyed 110 odd people, belonging to different sectors such as corporate, business etc. and belonging to different age groups. Given below is a list of questions we asked in our survey, and their corresponding responses, represented in the form of pie-charts.   
 
 
 #### 1.
