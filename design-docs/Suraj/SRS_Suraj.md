@@ -100,7 +100,13 @@ it has some extra benefits like
 
 ## 2.1 Product Perspective
 
-- This is self contained product
+- This is self contained product, Project recommend is a music player with built in recommendation system
+that also update metadata of songs if needed.
+built in recommendation system  uses content based filtering as a technique to get recommendation for songs
+
+#### Component Diagram
+![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Component_Dirgram_PR.jpg)
+
 
 ## 2.2 Product Functions
 
@@ -111,6 +117,8 @@ it has some extra benefits like
 
 ## 2.3 User Classes and Characteristics
 
+- there is no special user classes, anyone who case use a computer can use this software without any
+issues.
 
 ## 2.4 Operating Environment
 
@@ -125,7 +133,11 @@ OS
 
 ## 2.5 Design and Implementation Constraints
 
-TODO
+for building recommendation system we looked at few techniques that are used in recommendation systems.
+that involves, Content based filtering, collaborative filtering and waveform analysis.
+at the end we settled with content based filtering.
+we couldn't implement collaborative filtering due to lack of data to train our classifier used in recommendation system, Waveform analysis is a topic of research right now and not matured yet, studies shows that if used with slightly wrong data it can give worse results then any other methods.
+Spotify tried waveform analysis and got worse results then collaborative filtering.
 
 ## 2.6 User Documentation
 
@@ -135,49 +147,96 @@ Software Source code will also be available along with it's Documentation under 
 
 ## 2.7 Assumptions and Dependencies
 
-TODO
+we are not assuming anything other then clear assumptions.
+##### Dependencies
+- PyQT - Python building of Qt, used for GUI
+- Mutagen - python library to manipulate ID3 tags
+- MusicBrainz - for metadata
+
 
 # 3 External Interface Requirements
 
 ## 3.1 User Interfaces
 
-TODO
+GUI is built using PyQt, python bindings of Qt framework
+
+#### UI Mockup
+![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/mockup.png)
+
 
 ## 3.2 Hardware Interfaces
 
-TODO
+- Input device.
+- Display.
+- playback device for sound.
+- Network Interface Card(NIC)
 
 ## 3.3 Software Interfaces
 
-TODO
+TBD
 
 ## 3.4 Communications Interfaces
 
-TODO
+- NIC for Internet Connection
+- HTTPS for interfacing with MusicBrainz Database
 
 # 4 System Features
 
-## 4.1 System Feature 1
-
-TODO
-
-#### 4.1.1 Description and Priority
-
-TODO
-
-#### 4.1.2 Stimulus/Response Sequences
-
-TODO
-
-#### 4.1.3 Functional Requirements
-
-TODO
-
-## 4.2 System Feature 2 (and so on)
-
-TODO
+Following is the use case diagram for the application
+![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
 
 ----
+
+##### Use case description table
+
+| Use Case Title (ID) | Description | Remarks |
+| --- | --- | --- |
+| Manage Songs (UC1) | generalization of Manage songs |   |
+| Control Music (UC2) | generalization of control songs |   |
+| Manually Get Next recommendation (UC3) | user triggered recommendation |   |
+| Edit Metadata (UC4) | user edits metadata |   |
+| Manually update metadata (UC5) | user manually triggers metadata updation service |   |
+| Control Volume (UC6) |  use controls volume |   |
+| Play (UC7) | user can play music |   |
+| Pause (UC8) | user can pause |   |
+| Seek (UC9) | user can seek into timeline of playing track |   |
+| Stop (UC10) | user can stop the playing track |   |
+| Next Track (UC11) | user can change to next track |   |
+| Previous Track (UC12) | user can go to previous track |   |
+| Add songs (UC13) | user can add songs |   |
+| Remove Songs (UC14) | user can remove songs from list |   |
+| Access Local Storage (UC15) | components can access local storage for persistence  |   |
+| Read from local Storage (UC16) | components can read from local storage |   |
+| Write into local Storage (UC17) | components can write into local storage |   |
+| Update into local Storage (UC18) | components can update data into local storage |   |
+| Delete from local Storage (UC19) | components can delete items from local storage |   |
+| Run Classifier (UC20) | components can run classifier on a track |   |
+| Get data from MusicBrainz (UC21) | components can get metadata of a track from musicbrainz servers |  |
+| Get Recommendation (UC22) | components can get recommendation on a track |   |
+| Update Metadata (UC23) | components can update metadata of tracks |   |
+
+----
+
+## Music player
+
+Music player is used to handle and play music, this is the primary component that user has his control.
+Music player is responsible for automatically triggering other component
+
+## Local Storage
+
+Local storage is persistence layer of system, all storage and information that need to be persisted goes to Local Storage,
+it is core and essential for whole application to be functional.
+
+## classifier
+Classifier generates suggestions based on content and metadata of a track,
+it utilizes MusicBrainz database to get similar songs and then orders local storage to cache to results
+for a certain period of time.
+
+
+## Metadata Updater
+In some cases tracks does not have full or correct metadata, so in that scenarios classifier cannot function properly or provide relevant results, so metadata updater is responsible for
+updating metadata of a track, it's a helper component that works hand in hand with other components.
+
 
 # 5. Other Nonfunctional Requirements
 
@@ -219,20 +278,35 @@ to prevent that scenarios user can manually edit metadata of songs when it see a
 
 # 6. Other Requirements
 
-TODO
-
+TBD
 
 ## Appendix A: Glossary
 
-TODO
+TBD
 
 ## Appendix B: Analysis Models
 
-TODO
+TBD
 
 ## Appendix C: To Be Determined List
 
-TODO
+TBD
 
 ----
-# Comments
+
+# Comments from peers
+
+
+#### Raghav
+
+
+#### Saumya
+
+
+#### Rajdeep
+
+
+#### Shakthi
+
+
+#### Pranshu

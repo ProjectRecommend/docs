@@ -247,7 +247,7 @@ User interface is implemented in PyQt that is a python library. There is one fro
 - Input device is needed for user to interact with system.
 - Software needs a display device to interact with user.
 - Music player needs playback device for sound output.
-- Working NIC for internet connectivity
+- Working Network Interface Card(NIC) for internet connectivity
 
 ## 3.3 Software Interfaces <a name="eir-si"></a>
 
