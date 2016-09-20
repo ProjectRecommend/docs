@@ -265,25 +265,57 @@ TBD
 Following is the use case diagram for the application
 ![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
 
+-----
+
+##### Use case description table
+
+| Use Case Title (ID) | Description | Remarks |
+| --- | --- | --- |
+| Manage Songs (UC1) | generalization of Manage songs |   |
+| Control Music (UC2) | generalization of control songs |   |
+| Manually Get Next recommendation (UC3) | user triggered recommendation |   |
+| Edit Metadata (UC4) | user edits metadata |   |
+| Manually update metadata (UC5) | user manually triggers metadata updation service |   |
+| Control Volume (UC6) |  use controls volume |   |
+| Play (UC7) | user can play music |   |
+| Pause (UC8) | user can pause |   |
+| Seek (UC9) | user can seek into timeline of playing track |   |
+| Stop (UC10) | user can stop the playing track |   |
+| Next Track (UC11) | user can change to next track |   |
+| Previous Track (UC12) | user can go to previous track |   |
+| Add songs (UC13) | user can add songs |   |
+| Remove Songs (UC14) | user can remove songs from list |   |
+| Access Local Storage (UC15) | components can access local storage for persistence  |   |
+| Read from local Storage (UC16) | components can read from local storage |   |
+| Write into local Storage (UC17) | components can write into local storage |   |
+| Update into local Storage (UC18) | components can update data into local storage |   |
+| Delete from local Storage (UC19) | components can delete items from local storage |   |
+| Run Classifier (UC20) | components can run classifier on a track |   |
+| Get data from MusicBrainz (UC21) | components can get metadata of a track from musicbrainz servers |  |
+| Get Recommendation (UC22) | components can get recommendation on a track |   |
+| Update Metadata (UC23) | components can update metadata of tracks |   |
+
+
 ----
 
 | **User Requirements** | **Includes use case(s)/Functional Requirements** | **Description** |
 | --- | --- | --- |
-| Manage songsR\_01 | add music UC\_01 | The user will be able to import music from his external music collection, to the application |
-| remove music UC\_02 | The user will be able to remove any track from the playlist |
-| Control musicR\_02 | play musicUC\_03 | The user will be able to play the track by selecting it or clicking on Play |
-| seek trackUC\_04 | The user will be able to move anywhere in the timeline of the track |
-| pause musicUC\_05 | The user will be able to pause the track being able to play it again from the same timeline |
-| stop musicUC\_06 | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
-| go to the next trackUC\_07 | The user will be able to play the next track |
-| go to the previous trackUC\_08 | The user will be able to play the previous track |
-| volume controlUC\_09 | The user will be able to increase or decrease or mute the volume of the playing track |
-| Manually update metadataR\_03 | Manually update metadataUC\_10 | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
-| Manually recommend musicR\_04 | Manually recommend musicUC\_11 | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
-| Edit fields in the song infoR\_05 | Edit fields in the song infoUC\_12 | The user will be able to edit info of any track manually, i.e., simply by right clicking |
+| Manage songs R_01 | add songs UC_13 | The user will be able to import music from his external music collection, to the application |
+|  | remove songs UC_14 | The user will be able to remove any track from the playlist |
+| Control music R_02 | play music UC_07 | The user will be able to play the track by selecting it or clicking on Play |
+|  | seek track UC_09 | The user will be able to move anywhere in the timeline of the track |
+|  | pause music UC_08 | The user will be able to pause the track being able to play it again from the same timeline |
+|  | stop music UC_10 | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+|  | go to the next track UC_11 | The user will be able to play the next track |
+|  | go to the previous track UC_12 | The user will be able to play the previous track |
+|  | volume control UC_06 | The user will be able to increase or decrease or mute the volume of the playing track |
+| Manually update metadata R_03 | Manually update metadata UC_05 | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| Manually recommend musicR_04 | Manually recommend music UC_03 | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+| Edit fields in the song info R_05 | Edit fields in the song info UC_04 | The user will be able to edit info of any track manually, i.e., simply by right clicking |
 
 
 ----
+
 
 **Project Recommend** comes with the following set of system features
 
