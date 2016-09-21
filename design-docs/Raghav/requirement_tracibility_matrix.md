@@ -1,5 +1,5 @@
-# Requirement Traceability Matrix
-
+<H1 align="center">Requirement Traceability Matrix </H1>
+<H2 align="center">For Project Recommend</H2>
 <h5> Prepared by<br/>
 Raghav Mittal<br/>
 U101114FCS111</h5>
@@ -17,6 +17,7 @@ U101114FCS111</h5>
 | RQ7  | add song to playlist |
 | RQ8  | remove songs from playlist |
 | RQ9  | update metadata manually |
+| RQ10 | trigger manual update of metadata |
 |  RQ11  | get recommendations |
 |  RQ12  | get manual recommendations |
 
@@ -35,3 +36,6 @@ U101114FCS111</h5>
 | **RQ10** | | | | | | | D | D | R | D | | |
 | **RQ11** | | | | | | | D | D | D | D | D | |
 | **RQ12** | | | | | | | D | D | D | D | D | D |
+
+D: Dependent  
+R: Related
