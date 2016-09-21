@@ -1,8 +1,26 @@
 # Project Recommend
 
-### Requirement Traceability
+### UCuirement Traceability
 
 D : Dependent, R : Related
+
+---
+
+| **ID** | **UCuirement Name** |
+| --- | --- |
+| UC 03 | Manually recommend music |
+|  UC 04 | Edit fields in the song info |
+| UC 05 | Manually update metadata |
+| UC 06 | Volume control |
+| UC 07 | Play music |
+| UC 08 | Pause music |
+| UC 09 | Seek track |
+| UC 10 | Stop music |
+| UC 11 | Go to the next track |
+| UC 12 | Go to the previous track |
+| UC 13 | Add songs |
+| UC 14 | Remove songs |
+
 
 ---
 

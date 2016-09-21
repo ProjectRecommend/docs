@@ -289,17 +289,20 @@ updating metadata of a track, it's a helper component that works hand in hand wi
 
 ----
 
-# Comments from peers
+# Comments
 
 
 #### Raghav
 
+Looks ok, Mockup can improved with good enough, Component diagram made understanding this document a lot easier
 
 #### Saumya
 
+I agree with raghav and rajdeep, Use case description table also helped to understand the use case diagram
 
 #### Rajdeep
 
+i agree with raghav, 
 
 #### Shakthi
 
