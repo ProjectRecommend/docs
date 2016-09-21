@@ -25,10 +25,10 @@
 | 5. | R_05 | Manually Recommend Music | This Function recommends music from Local Library and from Database of MUSICBRAINZ. | User can manually ask for recommendations of similar songs. |
 | 6. | R_06 | Editing Song Details | This Function will help in editing the Detail fields of the Song. | Editing the song details might help in updating the metadata manually. |
 
----
+---  
 
 | | R_01 | R_02.1 | R_02.2 | R_02.3 | R_03.1 | R_03.2 | R_03.3 | R_03.4 | R_03.5 | R_03.6 | R_03.7 | R_03.8 | R_04 | R_05 | R_06 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | R_01 | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D |
 | R_02.1 |  | D |  |  | D | D | D | D | D |  |  |  | D | D | D |
 | R_02.2 |  | D | D |  |  |  |  | R | R |  |  |  |  |  |  |
