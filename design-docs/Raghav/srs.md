@@ -107,17 +107,10 @@ User can perform following actions:
 * get recommendation
 
 ## 2.3 User Classes and Characteristics <a name="od-ucc"></a>
-| Actor  | Roles  | Description|
-| --- | --- | --- |
-|  User | Play music |Fetches track path from database, get data from user system and plays it.|
-| | Seek | Seek to different locations inside the song track through a timeline.|
-||Next track|Play track next to the presently playing track in the list.|
-||Previous track|Play track previous to the presently playing track in the list. |
-| |Stop music|Stops the track.|
-|| Remove track|Removes the track from playlist and hence from database.|
-||Add new track|Adds new track to playlist and hence to database.|
-|| Volume  Up| Increase sound volume relative to system volume.|
-|| Volume Down| Decrease sound volume relative to system volume.|
+All types users can use this software. This software is focused to interest the users who like to explore songs from similar mood or genre while listening to their playlist.
+It will cater the needs of those users who have low internet speeds and limits but are interested in exploring similar yet diverse music that is similar in terms of genre and mood but may be of different languages and from different countries.
+
+Also this software don't leak private data to any external server. Neither it spies on users' content like other applications, nor it tracks users' beheaviour like it is done in [collaborative filtering][collaborative_filtering_wikipedia]
 
 ## 2.4 Operating System <a name="od-os"></a>
 Linux(Ubuntu, Fedora, Mint etc.), Windows 7 and up.
@@ -140,9 +133,13 @@ There are no assumptions and dependencies.
 
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
-User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.
+User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.  
+
+Below are the wireframes for proposed UI. The final UI may vary from the one below.
+
 ![user-interface](images/player.png)
-![user-interface](images/playerWithDD.png)
+
+![user-interface](images/palyerWithDD.png)
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
 * Input device is needed for user to interact with system.
@@ -158,6 +155,23 @@ The Internet connection is used for communication between [_Metadata updater_](#
 All network communication follows HTTPS/TLS protocol.
 
 # 4. System Features <a name="sf"></a>
+Below is the **Actor-Role table** to give a glimpse of all the possible use-cases.
+
+| Actor  | Roles  | Description|
+| --- | --- | --- |
+|  User | Play music |Fetches track path from database, get data from user system and plays it.|
+| | Seek | Seek to different locations inside the song track through a timeline.|
+||Next track|Play track next to the presently playing track in the list.|
+||Previous track|Play track previous to the presently playing track in the list. |
+| |Stop music|Stops the track.|
+|| Remove track|Removes the track from playlist and hence from database.|
+||Add new track|Adds new track to playlist and hence to database.|
+|| Volume  Up| Increase sound volume relative to system volume.|
+|| Volume Down| Decrease sound volume relative to system volume.|
+|| Update Metadata | Manually update metadata for selected track. |
+|| Get suggestions | Manually get suggestions for a selected track. |
+
+
 ## Music Player
 Using this feature user can
 * Play music
@@ -177,10 +191,10 @@ This feature is similar to [Picards][picards-website].
 * Updates metadata tag information of a song.
 * Synchs information with [Musicbrainz Database][musicbrainz-database-website].
 
+
+
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
-* The software must be robust.
-* Able to handle collection as large as 50GB.
-*
+
 
 # 6. Other Requirements <a name="otherreq"></a>
 
