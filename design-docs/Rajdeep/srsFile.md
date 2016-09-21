@@ -198,7 +198,7 @@ Suraj: Good job done, expect that few things are a bit too irrelevant. Mind you 
 Offline music recommender comes with the following set of system features:
 
 The following is the use case diagram for the application:
-![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
+![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/Rajdeep/images/useCase.PNG)
 
 > #### Music player
 Built into the offline music recommender system is a music player that can play music with a number of controls including **play, pause, stop, play next song and volume**.
