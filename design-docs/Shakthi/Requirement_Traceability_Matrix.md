@@ -1,12 +1,8 @@
-# **Requirement Table For Project Recommend**
+# **Requirement Table and Traceability Matrix For Project Recommend**
 ### Version 1.0 approved
 ### **_Prepared By_**
-#### Surajnath Siddh  
-#### Raghav Mittal  
-#### Rajdeep Mukherjee
 #### S.Shakthi
-#### Pranshu Sahijwani
-#### Saumya Gupta  
+
 <br>
 
 |No | ID | Title | Requirement Specification | Rationale |
@@ -28,3 +24,25 @@
 | 4. | R_04 | Manually Update Metadata | This Function updates the metadata for songs in the Playlist. | Updating the metadata will help the in improvement of recommendations. |
 | 5. | R_05 | Manually Recommend Music | This Function recommends music from Local Library and from Database of MUSICBRAINZ. | User can manually ask for recommendations of similar songs. |
 | 6. | R_06 | Editing Song Details | This Function will help in editing the Detail fields of the Song. | Editing the song details might help in updating the metadata manually. |
+
+---
+
+| | R_01 | R_02.1 | R_02.2 | R_02.3 | R_03.1 | R_03.2 | R_03.3 | R_03.4 | R_03.5 | R_03.6 | R_03.7 | R_03.8 | R_04 | R_05 | R_06 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R_01 | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D |
+| R_02.1 |  | D |  |  | D | D | D | D | D |  |  |  | D | D | D |
+| R_02.2 |  | D | D |  |  |  |  | R | R |  |  |  |  |  |  |
+| R_02.3 |  |  |  | D |  |  |  |  |  |  |  |  |  | R |  |
+| R_03.1 |  |  |  |  | D | D | D |  |  |  |  |  |  |  |  |
+| R_03.2 |  |  |  |  | D | D |  |  |  |  |  |  |  |  |  |
+| R_03.3 |  |  |  |  |  |  | D | R | R |  |  |  |  |  |  |
+| R_03.4 |  | R | R |  |  |  | D | D |  |  |  |  |  |  |  |
+| R_03.5 |  | R | R |  |  |  | D |  | D |  | D | R |  |  |  |
+| R_03.6 |  |  |  |  |  |  |  |  |  | D | D | D |  |  |  |
+| R_03.7 |  |  |  |  |  |  |  |  |  | D | D | R |  |  |  |
+| R_03.8 |  |  |  |  |  |  |  |  |  | R | R | D |  |  |  |
+| R_04 |  |  |  | D |  |  |  |  |  |  |  |  | D |  |  |
+| R_05 |  |  |  | D |  |  |  |  |  |  |  |  |  | D |  |
+| R_06 |  |  |  | D |  |  |  |  |  |  |  |  | D |  | D |  
+
+---
