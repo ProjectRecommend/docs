@@ -2,7 +2,7 @@
 
 ### Development Traceability Matrix
 
-The requirement ids are same as the functional requirements.
+The requirement ids go hand in hand with functional requirements.
 
 ---
 
