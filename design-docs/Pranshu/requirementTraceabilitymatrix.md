@@ -2,9 +2,14 @@
 
 ### Requirement Traceability Matrix
 
-D : Dependent, R : Related
+#### Prepared by : Pranshu Sahijwani (U101114FCS104)
 
 ---
+
+*D : Dependent, R : Related*
+
+### Requirement Traceability Table
+
 
 | **ID** | **Requirement Name** |
 | --- | --- |
@@ -19,10 +24,12 @@ D : Dependent, R : Related
 | useCase 09 | Next track |
 | useCase 10 | Previous track |
 | useCase 11 | Append music |
-| useCase 12 | Remove Musics |
+| useCase 12 | Remove music |
 
 
 ---
+
+### Requirement Traceability Matrix
 
 | | useCase 01 | useCase 02 | useCase 03 | useCase 04 | useCase 05 | useCase 06 | useCase 07 | useCase 08 | useCase 09 | useCase 10 | useCase 11 | useCase 12 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

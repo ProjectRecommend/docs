@@ -2,9 +2,12 @@
 
 ### Development Traceability Matrix
 
-The requirement ids go hand in hand with functional requirements.
+#### Prepared by : Pranshu Sahijwani (U101114FCS104)
 
 ---
+
+The requirement ids go hand in hand with functional requirements.
+
 
 | Requirement id | Use case addressing the requirement | Classes addressing the requirement | Methods addressing the requirement | Unit Test cases addressing the requirement |
 | --- | --- | --- | --- | --- |
