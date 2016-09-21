@@ -239,7 +239,7 @@ The following lists the various open source material we had referred to:
 
 ## 3.1 User Interfaces <a name="eir-ui"></a>
 
-User interface is implemented in PyQt that is a python library. There is one front page which interacts with user. It is divided into frames for different functions. There may be
+User interface is implemented in PyQt that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.
 
 #### UI Mockup
 ![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/mockup.png)
