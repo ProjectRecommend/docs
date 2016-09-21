@@ -141,7 +141,8 @@ There are no assumptions and dependencies.
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
 User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.
-
+![user-interface](images/player.png)
+![user-interface](images/playerWithDD.png)
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
 * Input device is needed for user to interact with system.
