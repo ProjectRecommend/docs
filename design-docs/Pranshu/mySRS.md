@@ -16,19 +16,19 @@
 
 # Table of contents
 1. Introduction
-1.1 Purpose 
+1.1 Purpose
 1.2 Document Conventions  
 1.3 Intended Audience and Reading Suggestions   
 1.4 Product Scope  
-1.5 References 
+1.5 References
 1.6 Terminology
 2. Overall Description  
-2.1 Product Perspective 
+2.1 Product Perspective
 2.2 Product Functions  
 2.3 User Classes and Characteristics  
 2.4 Operating System
 2.5 Design and Implementation Constraints  
-3. External Interface Requirements 
+3. External Interface Requirements
 3.1 User Interfaces
 3.2 Hardware Interfaces  
 3.3 Software Interfaces  
@@ -36,7 +36,8 @@
 4. System Features  
 5. Other Nonfunctional Requirements
 6. Other Requirements
-  
+   Comments
+
 <hr />  
 
 
@@ -334,6 +335,25 @@ The software is an Open Source software. If anyone wants to contribute, he can p
 TBD
 
 
+### Comments:
+
+**Raghav**
+
+Good work! Make it more descriptive, if possible. Use case diagram explains the relationships in a perfect way.
+
+**Shakthi**
+
+Provides enough descriptive details regarding the software. Appears to be a good SRS.
 
 
+**Saumya**
 
+Product perspective explained well.
+
+**Suraj Nath**
+
+Description given in a very understanding and precise manner. Keep it up!
+
+**Rajdeep**
+
+Non-functional requirements could have been presented better, but, all in all, decent work.
