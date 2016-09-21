@@ -2,6 +2,10 @@
 
 ### Requirement Traceability
 
+    Author : Surajnath Sidh
+    Enroll. No. : U101114FCS146
+
+
 D : Dependent, R : Related
 
 ---
@@ -20,28 +24,6 @@ D : Dependent, R : Related
 | REQ 10 | Go to the previous track |
 | REQ 11 | Add songs |
 | REQ 12 | Remove songs |
-
-
----
-
-
-ID's are from Functional requirement table
-
-| **ID** | **Requirement Name** |
-| --- | --- |
-| REQ 01 | Manually recommend music |
-| REQ 02 | Edit fields in the song info |
-| REQ 03 | Manually update metadata |
-| REQ 04 | Volume control |
-| REQ 05 | Play music |
-| REQ 06 | Pause music |
-| REQ 07 | Seek track |
-| REQ 08 | Stop music |
-| REQ 09 | Go to the next track |
-| REQ 10 | Go to the previous track |
-| REQ 11 | Add songs |
-| REQ 12 | Remove songs |
-
 
 ---
 
