@@ -58,8 +58,7 @@ This was the context of our software. This will replace those systems that are s
 
 </ul>
 
-------
-
+----
 comments:
 
 Rajdeep:
@@ -91,7 +90,7 @@ Talking about broader categories, our software will be compatible with  Windows 
 <tr><td>Hard Disk</td><td>16 GB available hard disk space (32-bit) or 20 GB (64-bit)<td></tr>
 </table>
 
---------------
+----
 comments:
 
 Rajdeep: Operating Environment looks okay.
@@ -118,8 +117,8 @@ Since, internet is one of the basic requirements for our software to work, avail
 Some amount of memory space will always be required to store offline music. This software will give a choice to download those songs after recommending, if those are not already in his offline library, but, since user has little to no space to store the songs offline, he won't be able to download those new songs. Therefore, this software is not suitable for such a user.  
 </p>
 </ol>
-------
 
+----
 comments:
 
 Rajdeep: Design and Implementation constraints is alright.
