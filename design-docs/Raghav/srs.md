@@ -32,8 +32,8 @@ NIIT University
 3.4 [Communications Interfaces](#eir-ci)  
 4. [System Features](#sf)  
 5. [Other Nonfunctional Requirements](#onr)
-6. [Other Requirements](#otherreq)  
-[_Appendix_](#appendix)  
+<!--6. [Other Requirements](#otherreq)-->
+<!--[_Appendix_](#appendix)-->
 <hr />  
 
 
@@ -209,22 +209,29 @@ This feature is similar to [Picards][picards-website].
 
 
 ----
-comments:
+> **comments**:  
 Rajdeep: System features should have been augmented with a use case diagram to enhance its usefulness and show how the user is interacting with the system. It is also not clear how the user will interact with the system in order to get his job done and what are the direct and indirect user interactions that the user does.
 
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
+* System must be robust enough to handle huge music collection.
+* UI must be very elegent and simple.
+* UI must be adaptable to different size of screens.
+* There should be diferent warnings to avoid uncomfortable conditions for the user. These may be
+  * warning message if user listens to very high volumes.
+  * warning should be generated if user tries to play a song with wrong or unsupported format.
+* Software Documentation should be very well organized. It must contain each and every detail but should be written precisely in less words.
 
 
 
 
-# 6. Other Requirements <a name="otherreq"></a>
+<!--# 6. Other Requirements <a name="otherreq"></a>-->
 
-# Appendix <a name="appendix"></a>
+<!--# Appendix <a name="appendix"></a>-->
 
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
 ----
-comments:
+> **comments**:  
 Rajdeep: Overall good job done.
 
 [musicbrainz-website]: https://musicbrainz.org
