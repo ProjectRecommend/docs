@@ -1,8 +1,8 @@
- <div align=center>
-   <h1>Software Requirements Specification</h1>
-   <h2>Project Recommend</h2>
-   <b> Music Recommendation System </b><br />
-   <b> Version <i>alpha</i></b>
+<div align=center>
+  <h1>Software Requirements Specification</h1>
+  <h2>Project Recommend</h2>
+  <b> Music Recommendation System </b><br />
+  <b> Version <i>alpha</i></b>
 </div><br /><br />
 
 Prepared by Raghav Mittal  
@@ -53,16 +53,16 @@ The purpose of this document is to provide a debriefed view of requirements and 
 * Name of the project is "Music Recommendation System". It is a Desktop App.
 * Plays music and provides suggestions based on song which user is listening to from both offline library which is available in user's machine as well as on internet.
 * Advantages:
-  * it provides suggestions from local music library.
-  * Works with slower internet connection because it needs less bandwidth for providing recommendations.
+ * it provides suggestions from local music library.
+ * Works with slower internet connection because it needs less bandwidth for providing recommendations.
 * It uses [MusicBrainz][musicbrainz-website] database for getting metadata of all the music present in user's local library and recommend songs.
 * Most of the recommendations systems are either paid or require to process lots of user data in order to give suggestions which are only available while internet is working.
 * Music recommendation system can also work offline because it utilizes tag information to give suggestions.
 * There are no specific audience for this software. Anyone can install it and use it.
 
 ## 1.5 References <a name="introduction-references"></a>
- * This document is written in Markdown.
- * IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications. IEEE Computer Society, 1998.
+* This document is written in Markdown.
+* IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications. IEEE Computer Society, 1998.
 
 ## 1.6 Terminology <a name="introduction-terminology"></a>
 | Term | Description |
@@ -140,19 +140,21 @@ There are no assumptions and dependencies.
 
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
-User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions. There may be
+User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.
 
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
 * Input device is needed for user to interact with system.
 * Software needs a display device to interact with user.
 * Music player needs playback device for sound output.
+* Working Network Interface Card(NIC) for internet connectivity
 
 ## 3.3 Software Interfaces <a name="eir-si"></a>
-TODO
+TBD
 
 ## 3.4 Communications Interfaces <a name="eir-ci"></a>
-The Internet connection is used for communication between [_Metadata updater_](#od-pp) and [_MusicBrainz Database_][musicbrainz-database-website].
+The Internet connection is used for communication between [_Metadata updater_](#od-pp) and [_MusicBrainz Database_][musicbrainz-database-website].  
+All network communication follows HTTPS/TLS protocol.
 
 # 4. System Features <a name="sf"></a>
 ## Music Player
@@ -170,10 +172,15 @@ Using this feature user can
 It suggests songs similar to the song presently playing in the player. Suggested songs can be from user library or MusicBrainz Database
 
 ## Library tag updater
-
-
+This feature is similar to [Picards][picards-website].
+* Updates metadata tag information of a song.
+* Synchs information with [Musicbrainz Database][musicbrainz-database-website].
 
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
+* The software must be robust.
+* Able to handle collection as large as 50GB.
+*
+
 # 6. Other Requirements <a name="otherreq"></a>
 
 # Appendix <a name="appendix"></a>
