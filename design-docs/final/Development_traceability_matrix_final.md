@@ -1,6 +1,6 @@
 # Project Recommend
 
-### Requirement Traceability Matrix
+### Development Traceability Matrix
 
 The requirement ids are same as the functional requirements.
 

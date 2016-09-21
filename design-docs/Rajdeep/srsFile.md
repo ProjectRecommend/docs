@@ -78,6 +78,9 @@ IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Spec
 
 This Software Requirement specification has been entirely written with markdown([check it out](https://guides.github.com/features/mastering-markdown/) or [learn](http://www.markdowntutorial.com/)).
 
+----
+comments:
+Raghav : First of all we should include Terminology as a section as is seen in most professional SRS documents. Also make sure to add 
 
 # Overall description<a name="od"></a>
 ### Product Perspective<a name="od-pp"></a>
