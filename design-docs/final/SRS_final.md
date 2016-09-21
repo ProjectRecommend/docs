@@ -302,18 +302,18 @@ Following is the use case diagram for the application
 
 | **Identifier for Requirement** | **Functional Requirement Name** | **Description** |
 | --- | --- | --- |
-| RQ 03 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
-|  RQ 04 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
-| RQ 05 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
-| RQ 06 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
-| RQ 07 | Play music | The user will be able to play the track by selecting it or clicking on Play |
-| RQ 08 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
-| RQ 09 | Seek track | The user will be able to move anywhere in the timeline of the track |
-| RQ 10 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
-| RQ 11 | Go to the next track | The user will be able to play the next track |
-| RQ 12 | Go to the previous track | The user will be able to play the previous track |
-| RQ 13 | Add songs | The user will be able to import music from his external music collection, to the application |
-| RQ 14 | Remove songs | The user will be able to remove any track from the playlist |
+| RQ 01 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+| RQ 02 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
+| RQ 03 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| RQ 04 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
+| RQ 05 | Play music | The user will be able to play the track by selecting it or clicking on Play |
+| RQ 06 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
+| RQ 07 | Seek track | The user will be able to move anywhere in the timeline of the track |
+| RQ 08 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+| RQ 09 | Go to the next track | The user will be able to play the next track |
+| RQ 10 | Go to the previous track | The user will be able to play the previous track |
+| RQ 11 | Add songs | The user will be able to import music from his external music collection, to the application |
+| RQ 12 | Remove songs | The user will be able to remove any track from the playlist |
 
 
 ----

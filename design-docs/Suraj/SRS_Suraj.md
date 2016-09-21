@@ -225,18 +225,18 @@ Following is the use case diagram for the application
 
 | **Identifier for Requirement** | **Functional Requirement Name** | **Description** |
 | --- | --- | --- |
-| UC 03 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
-|  UC 04 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
-| UC 05 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
-| UC 06 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
-| UC 07 | Play music | The user will be able to play the track by selecting it or clicking on Play |
-| UC 08 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
-| UC 09 | Seek track | The user will be able to move anywhere in the timeline of the track |
-| UC 10 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
-| UC 11 | Go to the next track | The user will be able to play the next track |
-| UC 12 | Go to the previous track | The user will be able to play the previous track |
-| UC 13 | Add songs | The user will be able to import music from his external music collection, to the application |
-| UC 14 | Remove songs | The user will be able to remove any track from the playlist |
+| UC 01 | Manually recommend music | The user will be able to get recommendations of any track manually, i.e., simply by right clicking |
+|  UC 02 | Edit fields in the song info | The user will be able to edit info of any track manually, i.e., simply by right clicking |
+| UC 03 | Manually update metadata | The user will be able to update the metadata of any track manually, i.e., simply by right clicking |
+| UC 04 | Volume control | The user will be able to increase or decrease or mute the volume of the playing track |
+| UC 05 | Play music | The user will be able to play the track by selecting it or clicking on Play |
+| UC 06 | Pause music | The user will be able to pause the track being able to play it again from the same timeline |
+| UC 07 | Seek track | The user will be able to move anywhere in the timeline of the track |
+| UC 08 | Stop music | The user will be able to stop the track which will close the track, in order for the user to play another track or exit software |
+| UC 09 | Go to the next track | The user will be able to play the next track |
+| UC 10 | Go to the previous track | The user will be able to play the previous track |
+| UC 11 | Add songs | The user will be able to import music from his external music collection, to the application |
+| UC 12 | Remove songs | The user will be able to remove any track from the playlist |
 
 
 ----
@@ -264,47 +264,59 @@ updating metadata of a track, it's a helper component that works hand in hand wi
 
 # 5. Other Nonfunctional Requirements
 
-### The non-functional requirements of the system are explained below.
+## 5.1 Performance Requirements
+
+- System will be fast enough to play music without any shattering or buffering, otherwise
+that will result in undesirable experience.
+- System will be robust to deal and act accordingly  with common error scenarios like no
+internet connection, unavailable metadata, unsupported file types.
+- In case of failures it should be able to fail or recover gracefully.
+- System will be usable and fast enough to response to user action or give feedback to action, ideally under 1/60 second hence achieving 60 Frames Per Second.
+
+
+## 5.2 Safety Requirements
+
+- In scenario when there is not enough data to automatically tag Metadata we rely [AcoustID](https://acoustid.org/) and [MusicBrainz](https://musicbrainz.org/) for metadata
+based on AcoustID fingerprint, in some but rare scenarios it can result in incorrect metadata of song,
+to prevent that scenarios user can manually edit metadata of songs when it see an incorrect tagged song
+
+## 5.3 Security Requirements
+
+- Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS).
+
+## 5.4 Software Quality Attributes
+
+- System will not leak memory.
+- System will peacefully co-exist with other software
+- System will not cause or trigger any events that will leave Operating System in unrecoverable state
+
+## 5.5 Business Rules
+
+- This software is an Open Source software.
+- Unless required by applicable law or agreed to in writing, software distributed is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 ----
 
-| **Non-Functional Requirements** | **Name** | **Description** |
-| --- | --- | --- |
-| **5.1  Performance Requirements**   |
-| NFR_01 | Quickness | System should be fast enough to play music and respond to any of the user action in any way without any shattering or buffering, else it will be not be a good experience. |
-| NFR_02 | Robustness | System should be robust to deal and act accordingly with common error scenarios like no internet connection, unavailable metadata, unsupported file types. |
-| NFR_03 | Failure Handling | In case of failures it should be able to fail or recover quickly. |
-| **5.2  Safety Requirements**   |
-| NFR_04 | Exception Handling | The software should be able to restrict or warn(in the first place) the user from doing things not suitable, like, increasing volume beyond threshold, or exiting the software w/o saving the changed data. |
-| **5.3  Security Requirements**   |
-| NFR_05 | Encrypted Connection | Connection between user and [MusicBrainz](https://musicbrainz.org/) servers should be Encrypted (HTTPS/TLS). |
-| **5.4 Software Quality Attributes** |
-| NFR_06 | Memory Management | System should not leak memory. |
-| NFR_07 | Compatibility  | System should peacefully co-exist with other software |
-| NFR_08 | Error Handling  | System should not cause or trigger any events that will leave Operating System in uNFRecoverable state |
-| **5.5 Business Rules** |
-| NFR_09 | Open Source | This software is an Open Source software. |
-| NFR_10 | Guidelines | Unless required by applicable law or agreed to in writing, software distributed is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
-
-
-----
-
-# Comments
+# Comments form Team members
 
 
 #### Raghav
 
-Looks ok, Mockup can improved with good enough, Component diagram made understanding this document a lot easier
+Looks ok, Mockup can improved but good enough, during development we will explore that. Component diagram made understanding this document a lot easier. Overall nice document. I liked that you used markdown, as everyone says markdown is now becoming that standard for documentation in industry
 
 #### Saumya
 
-I agree with raghav and rajdeep, Use case description table also helped to understand the use case diagram
+I agree with raghav, Use case description table also helped to understand the use case diagram. Nonfunctional requirements are also covered extensively.
 
 #### Rajdeep
 
-i agree with raghav, 
+I agree with raghav, as saumya said use case description and Component diagrams helped, use of markdown is nice, documentation covered what it should. one can understand what is product and how it works easily
+
+#### Pranshu
+
+use case diagram is neat, organized and beautifully tagged, Functional requirements are untestable but can be improved but not required to improve. I agree with raghav about markdown as I have people using markdown all the time on GitHub, GitHub Wiki supports markdown.
 
 #### Shakthi
 
-
-#### Pranshu
+I agree with my rest of team members, I would like to add neat formatting, formatted tables and overall good document. System features can be improved.

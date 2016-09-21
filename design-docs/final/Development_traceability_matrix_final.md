@@ -8,17 +8,17 @@ The requirement ids are same as the functional requirements.
 
 | Requirement id | Use case addressing the requirement | Classes addressing the requirement | Methods addressing the requirement | Unit Test cases addressing the requirement |
 | --- | --- | --- | --- | --- |
-| RQ 03 | Manually recommend music |  |  |  |
-| RQ 04 | Edit metadata |  |  |  |
-| RQ 05 | Manually update metadata | | | |
-| RQ 06 | control volume | | | |
-| RQ 07 | Play music | | | |
-| RQ 08 | pause music | | | |
-| RQ 09 | seek music | | | |
-| RQ 10 | Stop music | | | |
-| RQ 11 | Go to the next track | | | |
-| RQ 12 | Go to the previous track | | | |
-| RQ 13 | Add songs | | | |
-| RQ 14 | Remove songs | | | | |
+| RQ 01 | Manually recommend music |  |  |  |
+| RQ 02 | Edit metadata |  |  |  |
+| RQ 03 | Manually update metadata | | | |
+| RQ 04 | control volume | | | |
+| RQ 05 | Play music | | | |
+| RQ 06 | pause music | | | |
+| RQ 07 | seek music | | | |
+| RQ 08 | Stop music | | | |
+| RQ 09 | Go to the next track | | | |
+| RQ 10 | Go to the previous track | | | |
+| RQ 11 | Add songs | | | |
+| RQ 12 | Remove songs | | | | |
 
 ---
