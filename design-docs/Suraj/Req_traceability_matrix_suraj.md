@@ -4,6 +4,27 @@
 
 D : Dependent, R : Related
 
+---
+
+| **ID** | **Requirement Name** |
+| --- | --- |
+| REQ 03 | Manually recommend music |
+| REQ 04 | Edit fields in the song info |
+| REQ 05 | Manually update metadata |
+| REQ 06 | Volume control |
+| REQ 07 | Play music |
+| REQ 08 | Pause music |
+| REQ 09 | Seek track |
+| REQ 10 | Stop music |
+| REQ 11 | Go to the next track |
+| REQ 12 | Go to the previous track |
+| REQ 13 | Add songs |
+| REQ 14 | Remove songs |
+
+
+---
+
+
 ID's are from Functional requirement table
 
 | **ID** | **Requirement Name** |
