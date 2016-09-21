@@ -35,6 +35,11 @@
 
 <p> The scope of this software basically covers every user, who doesn't want to update the metadata of the songs in his offline music library, who doesn't want to decide manually which track to play next, who believes in listening to some random music similar to his taste. </p>
 
+----
+comments:
+
+Rajdeep :product scope does not cover the user base of the product. product scope the extent this product is going to deliver and why would users prefer to use this product in its field
+
 #### 1.5. <i>References</i>
 <p> to be added later. </p>
 
@@ -52,6 +57,13 @@ This was the context of our software. This will replace those systems that are s
 <li> Recommending songs based on the music taste of the user.</li>
 
 </ul>
+
+----
+comments:
+
+Rajdeep:
+This product has nothing to do with bandwidth of the internet since we are not providing any download service for songs that we are suggesting. So essentially grounds of efficient bandwidth utilization has cannot be covered in the product perspective. product functions seems okay.
+
 
 #### 2.4 <i>Operating Environment</i>
 Talking about broader categories, our software will be compatible with  Windows and Linux based OSs.
@@ -78,6 +90,11 @@ Talking about broader categories, our software will be compatible with  Windows 
 <tr><td>Hard Disk</td><td>16 GB available hard disk space (32-bit) or 20 GB (64-bit)<td></tr>
 </table>
 
+----
+comments:
+
+Rajdeep: Operating Environment looks okay.
+
 
 #### 2.5. <i>Design and Implementation Constraints</i>
 
@@ -100,3 +117,9 @@ Since, internet is one of the basic requirements for our software to work, avail
 Some amount of memory space will always be required to store offline music. This software will give a choice to download those songs after recommending, if those are not already in his offline library, but, since user has little to no space to store the songs offline, he won't be able to download those new songs. Therefore, this software is not suitable for such a user.  
 </p>
 </ol>
+
+----
+comments:
+
+Rajdeep: Design and Implementation constraints is alright.
+good job there.

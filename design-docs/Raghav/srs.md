@@ -77,6 +77,9 @@ The purpose of this document is to provide a debriefed view of requirements and 
 | Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
 | Tags | A label attached to song which gives extra information about it. |
 
+----
+comments:
+Rajdeep: Complete with Terminology, this is a ne feature i just came to notice and liked it. Terminology it seems is there as an integral part of most of the professional srs documents.
 
 # 2. Overall Description <a name="od"></a>
 
@@ -97,6 +100,10 @@ _Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] s
 
 _Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps system to keep all the tracks updated and minimizes the need of updating whole user library at once which can slow down the system.
 
+----
+comments:
+Rajdeep: The product perspective should also contain a component diagram to further elaborate the components used in the project.
+
 ## 2.2 Product Functions <a name="od-pf"></a>
 Using this app, user can play songs available in offline library. While playing music user can get a list of suggested songs which are most closely related with the present song in terms of their metadata tags like singer, genre, release year, rating etc. These songs may be present in offline library or online sources.
 
@@ -105,6 +112,7 @@ User can perform following actions:
 * add songs/ remove songs
 * update metadata
 * get recommendation
+
 
 ## 2.3 User Classes and Characteristics <a name="od-ucc"></a>
 All types users can use this software. This software is focused to interest the users who like to explore songs from similar mood or genre while listening to their playlist.
@@ -131,6 +139,10 @@ The other way is [_waveform analysis_](http://www.academia.edu/4631247/Waveform-
 ## 2.7 Assumptions and Dependencies <a name="od-ad"></a>
 There are no assumptions and dependencies.
 
+----
+comments:
+Rajdeep: if not assumptions there are definitely dependencies in the project. Especially with regard to the various open source resources we will be using, their libraries and in some cases their codes.
+
 # 3. External Interface Requirements <a name="eir"></a>
 ## 3.1 User Interfaces <a name="eir-ui"></a>
 User interface is implemented in QtPy that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.  
@@ -153,6 +165,10 @@ TBD
 ## 3.4 Communications Interfaces <a name="eir-ci"></a>
 The Internet connection is used for communication between [_Metadata updater_](#od-pp) and [_MusicBrainz Database_][musicbrainz-database-website].  
 All network communication follows HTTPS/TLS protocol.
+
+----
+comments:
+Rajdeep: the software interfaces will be decided later, so a good call in leaving it blank for the time being.
 
 # 4. System Features <a name="sf"></a>
 Below is the **Actor-Role table** to give a glimpse of all the possible use-cases.
@@ -192,8 +208,13 @@ This feature is similar to [Picards][picards-website].
 * Synchs information with [Musicbrainz Database][musicbrainz-database-website].
 
 
+----
+> comments:  
+Rajdeep: System features should have been augmented with a use case diagram to enhance its usefulness and show how the user is interacting with the system. It is also not clear how the user will interact with the system in order to get his job done and what are the direct and indirect user interactions that the user does.
 
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
+
+
 
 
 # 6. Other Requirements <a name="otherreq"></a>
@@ -202,7 +223,9 @@ This feature is similar to [Picards][picards-website].
 
 - Source for outline of this SRS Document : [Wikipedia](https://en.wikipedia.org/wiki/Software_requirements_specification#Structure)
 
-
+----
+comments:
+Rajdeep: Overall good job done.
 
 [musicbrainz-website]: https://musicbrainz.org
 [musicbrainz-database-website]: https://musicbrainz.org/doc/MusicBrainz_Database

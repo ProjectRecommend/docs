@@ -109,3 +109,8 @@ Finally, here we ask people, if they want to use such a music player that recomm
 
 
 Since our project is an open-source one, we do not have any business goals, and are not intended towards earning any profit. The software will be available for all, to download and share.    
+
+----
+comments:
+Rajdeep: Feasibility study seems okay. it has been well elaborated and suits the needs of the reader regarding the feasibility of the project.
+Complete with the survey reports as well 
