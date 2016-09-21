@@ -32,8 +32,6 @@ NIIT University
 3.4 [Communications Interfaces](#eir-ci)  
 4. [System Features](#sf)  
 5. [Other Nonfunctional Requirements](#onr)
-<!-- 6. [Other Requirements](#otherreq) -->
-<!-- [_Appendix_](#appendix) -->
 <hr />  
 
 
