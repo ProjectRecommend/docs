@@ -78,7 +78,7 @@ The purpose of this document is to provide a debriefed view of requirements and 
 | Tags | A label attached to song which gives extra information about it. |
 
 ----
-comments:
+> **comments**:  
 Rajdeep: Complete with Terminology, this is a ne feature i just came to notice and liked it. Terminology it seems is there as an integral part of most of the professional srs documents.
 
 # 2. Overall Description <a name="od"></a>
@@ -101,7 +101,7 @@ _Metadata updater_ is very similar to MusicBrainz's [Picards][picards-website] s
 _Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps system to keep all the tracks updated and minimizes the need of updating whole user library at once which can slow down the system.
 
 ----
-comments:
+> **comments**:  
 Rajdeep: The product perspective should also contain a component diagram to further elaborate the components used in the project.
 
 ## 2.2 Product Functions <a name="od-pf"></a>
@@ -140,7 +140,7 @@ The other way is [_waveform analysis_](http://www.academia.edu/4631247/Waveform-
 There are no assumptions and dependencies.
 
 ----
-comments:
+> **comments**:  
 Rajdeep: if not assumptions there are definitely dependencies in the project. Especially with regard to the various open source resources we will be using, their libraries and in some cases their codes.
 
 # 3. External Interface Requirements <a name="eir"></a>
@@ -167,25 +167,26 @@ The Internet connection is used for communication between [_Metadata updater_](#
 All network communication follows HTTPS/TLS protocol.
 
 ----
-comments:
+> **comments**:  
 Rajdeep: the software interfaces will be decided later, so a good call in leaving it blank for the time being.
 
 # 4. System Features <a name="sf"></a>
 Below is the **Actor-Role table** to give a glimpse of all the possible use-cases.
 
-| Actor  | Roles  | Description|
-| --- | --- | --- |
-|  User | Play music |Fetches track path from database, get data from user system and plays it.|
-| | Seek | Seek to different locations inside the song track through a timeline.|
-||Next track|Play track next to the presently playing track in the list.|
-||Previous track|Play track previous to the presently playing track in the list. |
-| |Stop music|Stops the track.|
-|| Remove track|Removes the track from playlist and hence from database.|
-||Add new track|Adds new track to playlist and hence to database.|
-|| Volume  Up| Increase sound volume relative to system volume.|
-|| Volume Down| Decrease sound volume relative to system volume.|
-|| Update Metadata | Manually update metadata for selected track. |
-|| Get suggestions | Manually get suggestions for a selected track. |
+| ID | Actor  | Roles  | Description|
+| --- | --- | --- | --- |
+| **UC_1** |  User | Play music |Fetches track path from database, get data from user system and plays it.|
+| **UC_2** | | Pause Music | Pause current track. |
+| **UC_3** | | Seek | Seek to different locations inside the song track through a timeline.|
+| **UC_4** ||Next track|Play track next to the presently playing track in the list.|
+| **UC_5** ||Previous track|Play track previous to the presently playing track in the list. |
+| **UC_6** | |Stop music|Stops the track.|
+| **UC_7** || Remove track|Removes the track from playlist and hence from database.|
+| **UC_8** ||Add new track|Adds new track to playlist and hence to database.|
+| **UC_9** || Volume  Up| Increase sound volume relative to system volume.|
+| **UC_10** || Volume Down| Decrease sound volume relative to system volume.|
+| **UC_11** || Update Metadata | Manually update metadata for selected track. |
+| **UC_12** || Get suggestions | Manually get suggestions for a selected track. |
 
 
 ## Music Player
@@ -212,6 +213,8 @@ This feature is similar to [Picards][picards-website].
 > **comments**:  
 Rajdeep: System features should have been augmented with a use case diagram to enhance its usefulness and show how the user is interacting with the system. It is also not clear how the user will interact with the system in order to get his job done and what are the direct and indirect user interactions that the user does.
 
+> Surajnath: Overall study is good but you must have added use case diagrams it. I know you have very less time left. But should add it in upcoming versions.
+
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
 * System must be robust enough to handle huge music collection.
 * UI must be very elegent and simple.
@@ -232,7 +235,11 @@ Rajdeep: System features should have been augmented with a use case diagram to e
 
 ----
 > **comments**:  
-Rajdeep: Overall good job done.
+Rajdeep: Overall good job done.  
+
+> Saumya: The document is nicely written.
+
+> Pranshu: Overall it is good. Add use case and component diagrams in upcoming versions.
 
 [musicbrainz-website]: https://musicbrainz.org
 [musicbrainz-database-website]: https://musicbrainz.org/doc/MusicBrainz_Database
