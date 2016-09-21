@@ -209,7 +209,7 @@ This feature is similar to [Picards][picards-website].
 
 
 ----
-> comments:  
+comments:
 Rajdeep: System features should have been augmented with a use case diagram to enhance its usefulness and show how the user is interacting with the system. It is also not clear how the user will interact with the system in order to get his job done and what are the direct and indirect user interactions that the user does.
 
 # 5. Other Nonfunctional Requirements <a name="onr"></a>
