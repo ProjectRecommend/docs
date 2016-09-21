@@ -80,7 +80,15 @@ This Software Requirement specification has been entirely written with markdown(
 
 ----
 comments:
-Raghav : First of all we should include Terminology as a section as is seen in most professional SRS documents. Also make sure to add 
+
+Raghav : First of all we should include Terminology as a section as is seen in most professional SRS documents. Also make sure to add section numbers to all the sections provided in the doc.
+
+Saumya: Good job done. Make sure to add section numbers as its there in IEEE. Doc conventions should be included as in the conventions that are followed for compactness. The user must see those conventions such that he/she knows what to expect in the doc.
+
+Pranshu: Include doc conventions. section numbers are required. Its good practice to reference all the links at the end in markdown so that if we have to use multiple links we can simply change in one place.
+
+Suraj: Good job with 'learn' link at the end. People should learn about markdown. Github by default adds readme.md file in a repo. Thats how important md is in software development. pdfs are obsolete in terms of easy documentation editing.
+Include doc conventions so that readers can easily understand the terms and abbreviations used.
 
 # Overall description<a name="od"></a>
 ### Product Perspective<a name="od-pp"></a>
@@ -147,6 +155,18 @@ The following lists the various open source material we had referred to:
 * Music player [**_cherrymusic_**](https://github.com/devsnd/cherrymusic)
 * Python cross platform GUI toolkit [**_PyQt_**](https://github.com/pyqt)
 
+----
+comments:
+
+Raghav: It is always important to add component diagram so that the reader has a quick view of all the components used in this project. Classifier is also a component mind you. You have skipped it.
+
+Saumya: In Design and Implementation constraints it is necessary to add the design decision that we have taken in order to easily Implement machine learning without a hassle.
+That would be content based filtering.
+
+Pranshu: Assumptions and dependencies are well done. A stable internet connection is not really an operating Environment.
+
+Suraj: Inline elements in markdown are used for quotes mainly. Try not to use them in case of lists, use an ol or ul for that purpose. Content based filtering is the mechanism that has been used for the purpose of our project. It does not require user data and since we are also not getting use data this is the best case for us.
+
 # External Interface Requirements<a name="eir"></a>
 ### User interfaces<a name="eir-ui"></a>
 For user interface and user experience we used the PyQt toolkit as it had all the specific requirements that will be required for our application development. PyQt brings together the Qt C++ cross-platform application framework and the cross-platform interpreted language Python.
@@ -162,6 +182,17 @@ TODO
 
 ### Communication interfaces<a name="eir-ci"></a>
 TODO
+
+----
+comments:
+
+Raghav: Seems like you have been a little lazy on hardware interfaces and com interfaces. UI does not necessary include the feature of the resources we are using. It should also contain if possible a mock up of the user interface.
+
+Saumya: Need to be a bit more elaborative on hardware and com interfaces. Otherwise okay.
+
+Pranshu: Hardware and communication interfaces must be added. hardware interfaces may include sound card functionalities that the user's system must have.
+
+Suraj: Good job done, expect that few things are a bit too irrelevant. Mind you that UI should possible contain a mock up and it must not contain a description of what pyqt offers, it should rather contain a few important UI considerations that will be required for our project only.
 
 # System Features<a name="sf"></a>
 Offline music recommender comes with the following set of system features:
@@ -303,3 +334,53 @@ The user can manually update metadata of a song such that he/she can simply clic
 * The system connects to the Musicbrainz database.
 * The system fetches the metadata of a song from the database
 * The system then updates the metadata into the local store.
+
+----
+
+comments:
+
+Raghav : Good job done with the system features. It gives a very good overview of the all the components as well as the use cases.
+
+Saumya: Good job done. system features seems okay.
+
+Pranshu: well done. It would be better if you do your use case diagram in visual paradigm as it is a better software representation wise.
+
+Suraj: Well done with the system features. Seems we can actually use this to a great extent.
+
+# Other Nonfunctional Requirements
+
+## Performance Requirements
+
+ Internet connection is a must and so care must be taken to get it stable.
+ Music must be played without any shattering.
+
+## Safety Requirements
+
+In case there is not enough metadata already available we rely on accoust id of music in musicbrainz. This helps us to get the correct metadata.
+
+## Security Requirements
+TBD
+
+## Software Quality Attributes
+
+System should not leak memory
+
+## Business Rules
+
+This is an open source software and we are therefore not looking for earning money from this software. Not as of now anyway.
+
+# Other Requirements
+TBD
+
+# Appendix
+
+----
+comments:
+
+Raghav : Overall good job done with the srs. License info if any should be added.
+
+Saumya: Good job.
+
+Pranshu: Good job.
+
+Suraj: There are also other Software Quality Requirements. For checking out refer my srs.
