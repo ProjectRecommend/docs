@@ -4,8 +4,11 @@
 - Requirements for project
 - Rough draft of project
 - Logo files
+ 
 
- Copyright 2016 Project Recommend
+# License
+
+Copyright 2016 Project Recommend
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
