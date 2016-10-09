@@ -29,3 +29,8 @@ just keep in mind that commit message should be sort and on the point.
 
 - `Removed` - when you remove something. for example
     1. `removed outdated config. files`
+    
+- `Chore` - when you do a routine or repeted task
+    1. `Chore - updated build config`
+    2. `Chore - bumped version number`
+
