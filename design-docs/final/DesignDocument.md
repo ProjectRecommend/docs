@@ -64,6 +64,69 @@ SDS component template
 <hr />
 
 ---------------------------------
+# 1. Introduction
+## 1.1 Purpose
+The purpose of this document is to describe the implementation of the *Music Recommendation Software* whose requirements have been described in detail in the SRS document submitted before.
+
+The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which obviously, requires internet connection. Also it has been designed to update the metadata of the same.
+
+The sections in this document will provide guidelines related to the structure and the design of the project and will contain the following too.
+
+**Class Diagram** : specific information about the expected input, output, classes, and functions. The interaction between the classes to meet the desired requirements.
+
+**Sequence Diagram** : specific information about how objects operate with one another and in what order.
+
+## 1.2 Development Project Scope
+- Name of the project is "Project Recommend". It is a Desktop App.
+
+- Offline music recommendation is an area of application development that is yet to be fully explored as there has not been enough attempts to develop a software to fulfil this need. Browsing over the internet, one may get enough music recommenders online but that is the real catch here, they are mostly **_online_**. Here, our development team is trying to build an **_offline_** music recommender application to fulfil users need of getting music suggestions based on their already present music collection.
+
+- Offline Music recommendation plays music and involves recommendation of familiar tracks and familiar genres of music available both on the internet and from offline library which is available inn user's machine.
+
+##### Advantages
+- It provides suggestions from local music library.
+- Works with slower internet connection because it needs less bandwidth for providing recommendations.
+- It uses [MusicBrainz][musicbrainz-website] database for getting metadata of all the music present in user's local library and recommend tracks.
+- it is not platform or service specific.
+- it is not bounded with any music provider services so it is suggestions are not limited to particular service.
+- There are no specific audience for this software. Anyone can install it and use it.
+
+
+## 1.3 Definitions, acronyms, and abbreviations
+- TBD means "To be Decided", these are the components that are not yet decided.
+- ** More abbreviations are to be written here, after the doc  completion**.
+- Terminology definitions are given in the following table.
+
+| Term | Description |
+| --- | --- |
+| User | Any living being who is interacting with the software is a _user_.|
+| System | The package of all the components which takes input and gives output to demonstrate the features of the software is called System. |
+| Database | Collection of information on different topics related to each other. |
+| Library| The collection of tracks inside a directory or across multiple directories forms up a _library_.|
+| Store | This is the persistence layer of whole system. |
+| Metadata | The set of data which describes and gives information about the sound track. |
+| Recommender system | A system which takes a track as input and outputs set of tracks closely related to the input. |
+| Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
+| Tags | A label attached to track which gives extra information about it. |
+| NIC | A network interface card (NIC) is a computer circuit board or card that is installed in a computer so that it can be connected to a network |
+
+## 1.4 References
+- This document is written in github flavored Markdown.
+
+- IEEE. IEEE Standard 1016 IEEE Recommended Practice for Software Design Specifications. IEEE Computer Society, 1998.
+
+## 1.5 Overview
+- This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers and software managers but sections have been written in a manner that it can be understood by anyone having little knowledge about software.
+
+This *Software Design Specification* also includes:
+
+- System architecture description.
+- Detailed description of components. ( including the template description for each component)
+- Reuse and relationships to other products.
+- Design decisions and tradeoffs.
+- Pseudocode for components.
+
+The design has been made clear, using the class diagram and sequence diagram.
 
 # 2. System architecture description
 
