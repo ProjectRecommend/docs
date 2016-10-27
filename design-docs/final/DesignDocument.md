@@ -214,6 +214,9 @@ Our components are:
 | +ReadMetaData(SongID:int):Dict                    | SongID: an integer that defines the unique ID of the song  in the LocalStorage  | Dict: a dictionary containing the key value pairs of metadata that is returned from the song | Fetches path of the song from LocalStorage based on the ID and fetches the song metadata from the file |
 | +WriteMetaData(SongID:int):boolean                | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         | Fetches path of the song from the LocalStorage based on the songID and writes metadata into that song  |
 | +FetchMetaDataFromMusicBrainz(SongID:int):boolean | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         |                                                                                                        |
+| +EditMetaData(SongID:int):boolean                        | SongID: the unique id of the song in the LocalStorage | returns true for success and false for failure | updates song metadata.                  |
+| +getIsUpdated():[TODO: add return type of this function] | void                                                  | returns the value of IsUpdated variable        | getter function for IsUpdated function  |
+| +setIsUpdated(isUpdated)                                  | isUpdated variable                                    | void                                           | sets the global variable IsUpdated      |
 
 ## 2.2 Structure and relationships
 
