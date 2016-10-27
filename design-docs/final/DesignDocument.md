@@ -218,6 +218,17 @@ Our components are:
 | +getIsUpdated():[TODO: add return type of this function] | void                                                  | returns the value of IsUpdated variable        | getter function for IsUpdated function  |
 | +setIsUpdated(isUpdated)                                  | isUpdated variable                                    | void                                           | sets the global variable IsUpdated      |
 
+### Component: Classifier
+
+##### Class: GetRecommendation
+
+| function                                            | input                                                                                                                                               | output                                                                                           | description                                                                                                                                                                                                                                                                                                                                                            |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| FetchRelevantSong(SongID:int):Dict                  | SongID: id of the corresponding music file from Local Storage                                                                                       | Dict: Dictionary containing key value pairs of data of relevant Songs of the Song.               | Reads data of given songID and Triggers MetaData Updation if MetaData of Given Song is not Updated. if Metadata is already updated, it reads that metadata otherwise waits for MetaData Updation to complete and then Reads it.After reading of metadata it Fetches relevant songs from that metadata from MusicBrainz Database and returns them in Custom Dictionary  |
+| Predict(SongID: int, RelevantSongDict: Dict) : Dict | SongID: id of the corresponding music file from Local Storage.RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs                                                                                                                                                                                                                         |
+
+
+
 ## 2.2 Structure and relationships
 
 ## 2.3 User interface issues
