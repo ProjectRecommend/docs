@@ -193,6 +193,20 @@ Our components are:
 | +seek(minute:int, second:int): boolean                        | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second.                |
 | +Stop():boolean [TODO:update class diagram on this function]  | void                                                          | Status:Success or failure | Stops the currently playing song if it is playing                          |
 
+
+### Component: LocalStorage
+
+##### Class: AcessLocalStorage
+
+| function                        | input                                                         | output                                                                                      | description                                                                         |
+|---------------------------------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| Read(SongID: int):Dict          | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of song data of given SongID from Local Storage | Reads entry of given SongID from Local Storage and returns it in custom dictionary. |
+| Write(SongPath: String):boolean | SongPath:absolute path to the music file                      | Status:Success or failure                                                                   | Creates a new entry for music file in LocalStorage if it's  not in LocalStorage     |
+| Update(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Updates entry of given SongID in Local Storage                                      |
+| Delete(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Deletes entry of given SongID from Local Storage                                    |
+
+
+
 ## 2.2 Structure and relationships
 
 ## 2.3 User interface issues
