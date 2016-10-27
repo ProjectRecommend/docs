@@ -205,7 +205,15 @@ Our components are:
 | Update(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Updates entry of given SongID in Local Storage                                      |
 | Delete(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Deletes entry of given SongID from Local Storage                                    |
 
+### Component: Meta Data
 
+##### Class: ManageMetaData
+
+| function                                          | input                                                                           | output                                                                                       | description                                                                                            |
+|---------------------------------------------------|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| +ReadMetaData(SongID:int):Dict                    | SongID: an integer that defines the unique ID of the song  in the LocalStorage  | Dict: a dictionary containing the key value pairs of metadata that is returned from the song | Fetches path of the song from LocalStorage based on the ID and fetches the song metadata from the file |
+| +WriteMetaData(SongID:int):boolean                | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         | Fetches path of the song from the LocalStorage based on the songID and writes metadata into that song  |
+| +FetchMetaDataFromMusicBrainz(SongID:int):boolean | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         |                                                                                                        |
 
 ## 2.2 Structure and relationships
 
