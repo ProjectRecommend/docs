@@ -66,11 +66,14 @@ SDS component template
 ---------------------------------
 # 1. Introduction
 ## 1.1 Purpose
-The purpose of this document is to describe the implementation of the *Music Recommendation Software* whose requirements have been described in detail in the SRS document submitted before.
+The purpose of this document is to describe the implementation of the *Project Recommend ( Music Recommendation Software )* whose requirements have been described in detail in the SRS document submitted before.
 
-The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which obviously, requires internet connection. Also it has been designed to update the metadata of the same.
+The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which requires internet connection.
+During recommendation if required it will update metadata of the song.
 
 The sections in this document will provide guidelines related to the structure and the design of the project and will contain the following too.
+
+**Component Diagram** : information about the external and internal components of the system.
 
 **Class Diagram** : specific information about the expected input, output, classes, and functions. The interaction between the classes to meet the desired requirements.
 
@@ -86,10 +89,11 @@ The sections in this document will provide guidelines related to the structure a
 ##### Advantages
 - It provides suggestions from local music library.
 - Works with slower internet connection because it needs less bandwidth for providing recommendations.
-- It uses [MusicBrainz][musicbrainz-website] database for getting metadata of all the music present in user's local library and recommend tracks.
+- It uses [MusicBrainz](https://musicbrainz.org/) database for getting metadata of all the music present in user's local library and recommend tracks.
 - it is not platform or service specific.
 - it is not bounded with any music provider services so it is suggestions are not limited to particular service.
 - There are no specific audience for this software. Anyone can install it and use it.
+- This software is open source which means anyone can contribute and suggest changes and features to the project.
 
 
 ## 1.3 Definitions, acronyms, and abbreviations
@@ -101,14 +105,12 @@ The sections in this document will provide guidelines related to the structure a
 | --- | --- |
 | User | Any living being who is interacting with the software is a _user_.|
 | System | The package of all the components which takes input and gives output to demonstrate the features of the software is called System. |
-| Database | Collection of information on different topics related to each other. |
-| Library| The collection of tracks inside a directory or across multiple directories forms up a _library_.|
-| Store | This is the persistence layer of whole system. |
+| LocalStorage | This is the persistence layer of whole system. |
 | Metadata | The set of data which describes and gives information about the sound track. |
 | Recommender system | A system which takes a track as input and outputs set of tracks closely related to the input. |
 | Classifier| An algorithm that implements classification, especially in a concrete implementation. It is the part of _recommender system_. |
-| Tags | A label attached to track which gives extra information about it. |
-| NIC | A network interface card (NIC) is a computer circuit board or card that is installed in a computer so that it can be connected to a network |
+| Cache | A software component in the system that preserves data for a defined life. |
+
 
 ## 1.4 References
 - This document is written in github flavored Markdown.
@@ -129,15 +131,14 @@ This *Software Design Specification* also includes:
 - Detailed description of components. ( including the template description for each component)
 - Reuse and relationships to other products.
 - Design decisions and tradeoffs.
-- Pseudocode for components.
 
 The design has been made clear, using the class diagram and sequence diagram.
 
 # 2. System architecture description
 
-Recommend (Our Software/System) is strictly based on modular architecture, there is four modules
-in system that are functionally connected to each other as per Cohesion rules and these components
-are Coupled as per Data coupling
+Project Recommend (Our Software/System) is strictly based on modular architecture, there are four modules
+in system that are functionally connected to each other as per Functional Cohesion paradigm and these components
+are Coupled as per Data coupling.
 
 ## Coupling and Cohesion of System
 
@@ -155,33 +156,75 @@ As per definition one system is in Functional Cohesion  *when parts of a module 
 
 as we can see that in our system each module contains classes that all contribute in a single Task.
 
-- Music Player
+- **Music Player**
 
     Music Player module handles functionality related to playing and handling music
 
-- Local Storage
+- **Local Storage**
 
     Local Storage module functions as a Persistence Layer (Storage) of system.
 
-- Meta Data
+- **Meta Data**
 
     Meta Data module handles all functionality related to Meta Data (ID3 Tags)
 
-- Classifier
+- **Classifier**
 
     Classifier handles all functionality related to Recommendation of songs for a songs
-
 
 
 ## 2.1 Overview of modules / components
 
 The structure of our project is highly modularised. We have tried introducing as much functional cohesion as possible. For coupling we have tried to achieve data coupling.
 
-Our components are:
+## 2.2 Structure and relationships
 
-### Component: Music Player
+## 2.3 User interface issues
+
+-------------------------------------------------------
+
+## 3. Detailed description of components
+
+#### 3.1 Component template description
+
+we are discussing components in below mentioned manner
+
+## Component : Name of Component
+
+Description of Component
+
+### Class : Class X
+
+Description of Class X
+
+Description of class X functions in tabular form
+
+| Function | input | output | Description |
+| --- | --- | --- | --- |
+| prototype | input parameters | return values and their types | description of function | 
+
+
+### Class : Class Y
+
+Description of Class Y
+
+Description of class Y functions in tabular form
+
+| Function | input | output | Description |
+| --- | --- | --- | --- |
+| prototype | input parameters | return values and their types | description of function |
+
+-------------
+
+Our components are: 
+
+### 3.2 Component: MusicPlayer
+
+Description: This component as a whole handles functionality related to playing music and controlling music. Music Player functions are well defined by the methods that we have used in the corresponding classes. 
 
 ##### Class: ManageSongs
+
+Description: Adds, Removes and queries songs from LocalStorage.
 
 | function                      | input                                                         | output                                                                      | description                                                                 |
 |-------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -190,6 +233,8 @@ Our components are:
 | +query():Dict                 | void                                                          | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
 
 ##### Class: ControlMusic
+
+Description: Controlling of Music.
 
 | function                                                      | input                                                         | output                    | description                                                                |
 |---------------------------------------------------------------|---------------------------------------------------------------|---------------------------|----------------------------------------------------------------------------|
@@ -202,9 +247,13 @@ Our components are:
 | +volControl(TargetVol: int):boolean                           | TargetVol: the target volume that must be chnaged is entered  | Status:Success or failure | Controls the volume                                                        |
 
 
-### Component: LocalStorage
+### 3.3 Component: LocalStorage
+
+Description: This is the persistence layer of the system. It holds data related to songs. 
 
 ##### Class: AcessLocalStorage
+
+Description: Helper functions to access LocalStorage.
 
 | function                        | input                                                         | output                                                                                      | description                                                                         |
 |---------------------------------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -216,6 +265,8 @@ Our components are:
 
 ##### Class: ManageLocalStorage
 
+Description: Functions related to overall maintainence of the LocalStorage.
+
 | function                                       | input                       | output                                                                                 | description                                                                                                                                                        |
 |------------------------------------------------|-----------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | +Build():boolean                               | void                        | returns true if the LocalStorage is successfully built.                                | This function builds the database on first start up that is when the software is launched for the first time after installation                                    |
@@ -225,9 +276,13 @@ Our components are:
 | +getIsConnected():boolean      | void          | returns the value of global variable isConnected.   | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
 | +setIsConnected(isConnected):void              | isConnected variable is set | void                                                                                   | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
 
-### Component: Meta Data
+### 3.4 Component: MetaData
+
+Description: This module handles metadata Manipulation and updation in the system, It is also responsible for fetching metadata from external sources like MusicBrainz.
 
 ##### Class: ManageMetaData
+
+Description: Helper functions related to metadata handling.
 
 | function                                          | input                                                                           | output                                                                                       | description                                                                                            |
 |---------------------------------------------------|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -238,9 +293,13 @@ Our components are:
 | +getIsUpdated():int | void                                                  | returns the value of IsUpdated variable        | getter function for IsUpdated function  |
 | +setIsUpdated(isUpdated)                                  | isUpdated variable                                    | void                                           | sets the global variable IsUpdated      |
 
-### Component: Classifier
+### 3.5 Component: Classifier
+
+Description: This component is the core of the system. It handles the part of recommendation of new songs based on a given song.
 
 ##### Class: GetRecommendation
+
+Description: This class contains functions for fetching relevant songs of a song and predicting(recommending) new songs that user might like. 
 
 | function                                            | input                                                                                                                                               | output                                                                                           | description                                                                                                                                                                                                                                                                                                                                                            |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -250,6 +309,8 @@ Our components are:
 
 ##### Class: ManageCache
 
+Description: This class manages Cache of songs that are suggested by the GetRecommendation class.  
+
 | function                                       | input                                                                                                   | output                                                                   | description                                                                                                                                                                                                                                                                                |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | +ReadCache(SongID:int): Dict                   | SongID: id of the corresponding music file from Local Storage                                           | Dict : Custom dictionary of recommended songs of given SongID from cache | Reads cache for Recommended songs of a given song and if these is a cache miss it will trigger the *GetRecommendation* to get recommendation, if it triggered *GetRecommendation* then when *GetRecommendation* will write result to cache it will tries again and gets result from Cache. |
@@ -257,11 +318,6 @@ Our components are:
 | +invalidateCache():boolean                     | Void                                                                                                    | Status:Success or failure                                                | It gets triggered on each startup and goes through Cache and Removes the entries of songs that are removed from LocalStorage, it also Checks  and removes entries that are older then our pre-defined cache lifetime                                                                       |
 | +dumpCache():boolean                           | Void                                                                                                    | Status:Success or failure                                                | It removes all entries from cache.                                                                                                                                                                                                                                                         |
 | +DeleteCache(SongID:int):boolean               | SongID: integer that uniquely identifies the song in the LocalStorage                                   | Status:Success or failure                                 | Deletes specific songs from the cache.                             |
-
-## 2.2 Structure and relationships
-
-## 2.3 User interface issues
-
 
 
 ---------------------------------
