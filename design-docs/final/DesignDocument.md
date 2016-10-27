@@ -170,7 +170,28 @@ as we can see that in our system each module contains classes that all contribut
 
 ## 2.1 Overview of modules / components
 
+The structure of our project is highly modularised. We have tried introducing as much functional cohesion as possible. For coupling we have tried to achieve data coupling.
 
+Our components are: 
+    
+### Component: Music Player
+
+##### Class: ManageSongs
+
+| function                      | input                                                         | output                                                                      | description                                                                 |
+|-------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| +add(SongPath:string):boolean | SongPath:absolute path to the music file                      | Status:Success or failure                                                   | adds song to Local Storage                                                  |
+| +remove(SongId:int):boolean   | SongId: id of the corresponding music file from Local Storage | Status:Success or failure                                                   | Removes song from Local Storage                                             |
+| +query():Dict                 | void                                                          | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
+
+##### Class: ControlMusic
+
+| function                                                      | input                                                         | output                    | description                                                                |
+|---------------------------------------------------------------|---------------------------------------------------------------|---------------------------|----------------------------------------------------------------------------|
+| +Play(SongID:int):boolean                                     | SongId: id of the corresponding music file from Local Storage | Status:Success or failure | fetches absolute path to song file from Local Storage and plays music file |
+| +Pause():boolean [TODO:update class diagram on this function] | void                                                          | Status:Success or failure | Pause the currently playing music if its playing                           |
+| +seek(minute:int, second:int): boolean                        | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second.                |
+| +Stop():boolean [TODO:update class diagram on this function]  | void                                                          | Status:Success or failure | Stops the currently playing song if it is playing                          |
 
 ## 2.2 Structure and relationships
 
@@ -187,3 +208,5 @@ as we can see that in our system each module contains classes that all contribut
 - [Cohesion](https://en.wikipedia.org/wiki/Cohesion_(computer_science)#Types_of_cohesion)
 
 - [Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)#Types_of_coupling)
+
+- [Why not to use Global Variables](http://wiki.c2.com/?GlobalVariablesAreBad)
