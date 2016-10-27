@@ -193,10 +193,13 @@ Our components are:
 
 | function                                                      | input                                                         | output                    | description                                                                |
 |---------------------------------------------------------------|---------------------------------------------------------------|---------------------------|----------------------------------------------------------------------------|
-| +Play(SongID:int):boolean                                     | SongId: id of the corresponding music file from Local Storage | Status:Success or failure | fetches absolute path to song file from Local Storage and plays music file |
+| +Play(SongID:int):boolean                                     | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | fetches absolute path to song file from Local Storage and plays music file |
 | +Pause():boolean [TODO:update class diagram on this function] | void                                                          | Status:Success or failure | Pause the currently playing music if its playing                           |
+| +next(SongID:int):boolean                                     | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the next song.                                                        |
+| +prev(SongID:int):boolean                                     | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the previous song.                                                    |
 | +seek(minute:int, second:int): boolean                        | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second.                |
 | +Stop():boolean [TODO:update class diagram on this function]  | void                                                          | Status:Success or failure | Stops the currently playing song if it is playing                          |
+| +volControl(TargetVol: int):boolean                           | TargetVol: the target volume that must be chnaged is entered  | Status:Success or failure | Controls the volume                                                        |
 
 
 ### Component: LocalStorage
@@ -210,6 +213,18 @@ Our components are:
 | +Update(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Updates entry of given SongID in Local Storage                                      |
 | +Delete(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Deletes entry of given SongID from Local Storage                                    |
 
+
+##### Class: ManageLocalStorage
+
+| function                                       | input                       | output                                                                                 | description                                                                                                                                                        |
+|------------------------------------------------|-----------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| +Build():boolean                               | void                        | returns true if the LocalStorage is successfully built.                                | This function builds the database on first start up that is when the software is launched for the first time after installation                                    |
+| +Dump():boolean                                | void                        | returns true if successful in dumping the instance of LocalStorage and false otherwise | This function dumps the instance of the LocalStorage in case of un-installation of the software                                                                    |
+| +Connect():boolean                             | void                        | returns true if successful in connecting to the LocalStorage                           | Connects to the instance of the LocalStorage. This is done for each subsequent startup or launch of the application.                                               |
+| +Disconnect():boolean                          | void                        | returns true if successful in disconnecting from the LocalStorage                      | Disconnects from the LocalStorage. This is done for each closing of the application                                                                                |
+| +getIsConnected():boolean      | void          | returns the value of global variable isConnected.   | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
+| +setIsConnected(isConnected):void              | isConnected variable is set | void                                                                                   | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
+
 ### Component: Meta Data
 
 ##### Class: ManageMetaData
@@ -220,7 +235,7 @@ Our components are:
 | +WriteMetaData(SongID:int):boolean                | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         | Fetches path of the song from the LocalStorage based on the songID and writes metadata into that song  |
 | +FetchMetaDataFromMusicBrainz(SongID:int):boolean | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise         |                                                                                                        |
 | +EditMetaData(SongID:int):boolean                        | SongID: the unique id of the song in the LocalStorage | returns true for success and false for failure | updates song metadata.                  |
-| +getIsUpdated():[TODO: add return type of this function] | void                                                  | returns the value of IsUpdated variable        | getter function for IsUpdated function  |
+| +getIsUpdated():int | void                                                  | returns the value of IsUpdated variable        | getter function for IsUpdated function  |
 | +setIsUpdated(isUpdated)                                  | isUpdated variable                                    | void                                           | sets the global variable IsUpdated      |
 
 ### Component: Classifier
@@ -233,6 +248,15 @@ Our components are:
 | +Predict(SongID: int, RelevantSongDict: Dict) : Dict | SongID: id of the corresponding music file from Local Storage.RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs                                                                                                                                                                                                                         |
 
 
+##### Class: ManageCache
+
+| function                                       | input                                                                                                   | output                                                                   | description                                                                                                                                                                                                                                                                                |
+|------------------------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| +ReadCache(SongID:int): Dict                   | SongID: id of the corresponding music file from Local Storage                                           | Dict : Custom dictionary of recommended songs of given SongID from cache | Reads cache for Recommended songs of a given song and if these is a cache miss it will trigger the *GetRecommendation* to get recommendation, if it triggered *GetRecommendation* then when *GetRecommendation* will write result to cache it will tries again and gets result from Cache. |
+| +WriteCache(PredictedSongDict:Dict) : boolean  | PredictedSongDict : Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function. | Status:Success or failure                                                | It Takes Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function and Writes that into Cache.                                                                                                                                                                    |
+| +invalidateCache():boolean                     | Void                                                                                                    | Status:Success or failure                                                | It gets triggered on each startup and goes through Cache and Removes the entries of songs that are removed from LocalStorage, it also Checks  and removes entries that are older then our pre-defined cache lifetime                                                                       |
+| +dumpCache():boolean                           | Void                                                                                                    | Status:Success or failure                                                | It removes all entries from cache.                                                                                                                                                                                                                                                         |
+| +DeleteCache(SongID:int):boolean               | SongID: integer that uniquely identifies the song in the LocalStorage                                   | Status:Success or failure                                 | Deletes specific songs from the cache.                             |
 
 ## 2.2 Structure and relationships
 
@@ -241,6 +265,7 @@ Our components are:
 
 
 ---------------------------------
+
 # 4.0 Reuse and relationships to their products
 -------- TODO - Not Applicable Section--------
 
@@ -268,6 +293,7 @@ The source code is written in python language.
 
 # 6.0 Pseudocode for components
 # 7.0 Appendices
+
 
 
 # Extras
