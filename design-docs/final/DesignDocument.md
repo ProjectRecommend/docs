@@ -115,6 +115,11 @@ The sections in this document will provide guidelines related to the structure a
 
 - IEEE. IEEE Standard 1016 IEEE Recommended Practice for Software Design Specifications. IEEE Computer Society, 1998.
 
+- Sample Software Design document for TheraWii, a software at [www.cs.drexel.edu](https://www.cs.drexel.edu/~dpn52/Therawii/design.pdf "Sample1").
+
+- Sample Software Design document for a one runway airport, an air traffic controller simulation at [www.rivier.edu](https://www.rivier.edu/faculty/vriabov/CS552_SW_Design_Specification_Example.pdf "Sample2").
+
+
 ## 1.5 Overview
 - This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers and software managers but sections have been written in a manner that it can be understood by anyone having little knowledge about software.
 
@@ -172,8 +177,8 @@ as we can see that in our system each module contains classes that all contribut
 
 The structure of our project is highly modularised. We have tried introducing as much functional cohesion as possible. For coupling we have tried to achieve data coupling.
 
-Our components are: 
-    
+Our components are:
+
 ### Component: Music Player
 
 ##### Class: ManageSongs
