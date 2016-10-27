@@ -210,6 +210,18 @@ Our components are:
 | +Update(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Updates entry of given SongID in Local Storage                                      |
 | +Delete(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Deletes entry of given SongID from Local Storage                                    |
 
+
+##### Class: ManageLocalStorage
+
+| function                                       | input                       | output                                                                                 | description                                                                                                                                                        |
+|------------------------------------------------|-----------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| +Build():boolean                               | void                        | returns true if the LocalStorage is successfully built.                                | This function builds the database on first start up that is when the software is launched for the first time after installation                                    |
+| +Dump():boolean                                | void                        | returns true if successful in dumping the instance of LocalStorage and false otherwise | This function dumps the instance of the LocalStorage in case of un-installation of the software                                                                    |
+| +Connect():boolean                             | void                        | returns true if successful in connecting to the LocalStorage                           | Connects to the instance of the LocalStorage. This is done for each subsequent startup or launch of the application.                                               |
+| +Disconnect():boolean                          | void                        | returns true if successful in disconnecting from the LocalStorage                      | Disconnects from the LocalStorage. This is done for each closing of the application                                                                                |
+| +getIsConnected():[TODO: requires return type] | void                        | returns the value of global variable isConnected.                                      | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
+| +setIsConnected(isConnected):void              | isConnected variable is set | void                                                                                   | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
+
 ### Component: Meta Data
 
 ##### Class: ManageMetaData
