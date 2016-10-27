@@ -210,18 +210,6 @@ Our components are:
 | +Update(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Updates entry of given SongID in Local Storage                                      |
 | +Delete(SongID:int):boolean      | SongID: id of the corresponding music file from Local Storage | Status:Success or failure                                                                   | Deletes entry of given SongID from Local Storage                                    |
 
-
-##### Class: ManageLocalStorage
-
-| function                                       | input                       | output                                                                                 | description                                                                                                                                                        |
-|------------------------------------------------|-----------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| +Build():boolean                               | void                        | returns true if the LocalStorage is successfully built.                                | This function builds the database on first start up that is when the software is launched for the first time after installation                                    |
-| +Dump():boolean                                | void                        | returns true if successful in dumping the instance of LocalStorage and false otherwise | This function dumps the instance of the LocalStorage in case of un-installation of the software                                                                    |
-| +Connect():boolean                             | void                        | returns true if successful in connecting to the LocalStorage                           | Connects to the instance of the LocalStorage. This is done for each subsequent startup or launch of the application.                                               |
-| +Disconnect():boolean                          | void                        | returns true if successful in disconnecting from the LocalStorage                      | Disconnects from the LocalStorage. This is done for each closing of the application                                                                                |
-| +getIsConnected():[TODO: requires return type] | void                        | returns the value of global variable isConnected.                                      | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
-| +setIsConnected(isConnected):void              | isConnected variable is set | void                                                                                   | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
-
 ### Component: Meta Data
 
 ##### Class: ManageMetaData
@@ -245,14 +233,6 @@ Our components are:
 | +Predict(SongID: int, RelevantSongDict: Dict) : Dict | SongID: id of the corresponding music file from Local Storage.RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs                                                                                                                                                                                                                         |
 
 
-##### Class: ManageCache
-
-| function                                       | input                                                                                                   | output                                                                   | description                                                                                                                                                                                                                                                                                |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| +ReadCache(SongID:int): Dict                   | SongID: id of the corresponding music file from Local Storage                                           | Dict : Custom dictionary of recommended songs of given SongID from cache | Reads cache for Recommended songs of a given song and if these is a cache miss it will trigger the *GetRecommendation* to get recommendation, if it triggered *GetRecommendation* then when *GetRecommendation* will write result to cache it will tries again and gets result from Cache. |
-| +WriteCache(PredictedSongDict:Dict) : boolean  | PredictedSongDict : Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function. | Status:Success or failure                                                | It Takes Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function and Writes that into Cache.                                                                                                                                                                    |
-| +invalidateCache():boolean                     | Void                                                                                                    | Status:Success or failure                                                | It gets triggered on each startup and goes through Cache and Removes the entries of songs that are removed from LocalStorage, it also Checks  and removes entries that are older then our pre-defined cache lifetime                                                                       |
-| +dumpCache():boolean                           | Void                                                                                                    | Status:Success or failure                                                | It removes all entries from cache.                                                                                                                                                                                                                                                         |
 
 ## 2.2 Structure and relationships
 
@@ -261,6 +241,34 @@ Our components are:
 
 
 ---------------------------------
+# 4.0 Reuse and relationships to their products
+-------- TODO - Not Applicable Section--------
+
+If a project is doing some enhancement work, it requires to look into reuse issues. This project is using the existing concept of a basic music player, which plays music, with the usual user requirements of playing previous, next songs, adding and removing songs, and volume control. In addition to that, the software will recommend music too, based on what the user is listening. We already have many tools doing that, such as Pandora, Spotify, SoundCloud etc. But these applications suggest music from their existing online libraries, demand an account to be created and also an internet connection.
+
+So, the enhancement this project offers to the user is recommendation from the user's offline collection. This obviously, requires internet connection, if the recommendations are not cached. But once cached, it recommends music even when the user is offline.
+
+
+# 5.0 Design decisions and tradeoffs
+The source code is written in python language.
+- **PyQT** - is a Python interface for QT, a cross-platform GUI library.
+ - for the GUI framework of the music player. The project uses the multimedia helper classes.
+ - networking module wherever networking connections are made.
+ - multimedia module for multimedia access.
+ - database connector module for local storage and cache.
+- **mutagen**: is a python module used as a Python multimedia tagging library.
+  - for accessing and handling audio metadata.
+  - It has no dependencies outside the Python standard library.
+- **Nose** - is a python unit test framework
+  - for unit testing.
+  - It is a good candidate for go-to test framework.
+- **The MusicBrainz Client library** (libmusicbrainz) - also known as mb_client, is a development library.
+  - for adding MusicBrainz's lookup capabilities to the software.
+  - It supports Windows, Linux amd Mac OS X.
+
+# 6.0 Pseudocode for components
+# 7.0 Appendices
+
 
 # Extras
 
