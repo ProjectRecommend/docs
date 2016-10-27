@@ -271,3 +271,5 @@ Our components are:
 - [Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)#Types_of_coupling)
 
 - [Why not to use Global Variables](http://wiki.c2.com/?GlobalVariablesAreBad)
+
+- [Control flow with in UML sequence Diagrams](https://msdn.microsoft.com/en-us/library/dd465153.aspx)
