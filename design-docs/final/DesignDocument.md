@@ -19,6 +19,15 @@
 
 <hr/><br />
 
+----------------------
+
+## Change Log
+ 
+| Version  | Date | Description |
+|----------|------|-------------|
+| 1.0 | 28-Oct-2016 | initial version of document, Based on IEEE 1016-Software Design Document guidelines   |
+ 
+---------------------------------
 
 # Table of contents
 1. Introduction
@@ -136,6 +145,7 @@ library and recommend tracks.
 
 - Sample Software Design document for a one runway airport, an air traffic controller simulation at [www.rivier.edu](https://www.rivier.edu/faculty/vriabov/CS552_SW_Design_Specification_Example.pdf "Sample2").
 
+- - Sample Software Design document for [*ProjectTracker* - cs.utah.edu](https://www.cs.utah.edu/~jamesj/ayb2005/docs/SDS_v2.htm#Table_of_Contents)
 
 ## 1.5 Overview
 
@@ -364,7 +374,9 @@ Description: Adds, Removes and queries songs from LocalStorage.
 | +add(SongPath:string):boolean | SongPath:absolute path to the music file | Status:Success or failure | adds song to Local Storage |
 | +remove(SongId:int):boolean   | SongId: id of the corresponding music file from Local Storage | Status:Success or failure | Removes song from Local Storage |
 | +query():Dict | void | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
-
+| +ResetAll():boolean | void | Status:Success or failure | Dumps and rebuilds LocalStorage, Dumps Cache |
+| +ManuallyGetRecommendation(SongID:Int):Dict | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song.| Checks Cache for results if not present triggers ifCacheIsEmpty alt Condition |
+ 
 #### Class: ControlMusic
 
 Description: Controlling of Music.
@@ -384,7 +396,7 @@ Description: Controlling of Music.
 
 Description: This is the persistence layer of the system. It holds data related to songs.
 
-#### Class: AcessLocalStorage
+#### Class: AccessLocalStorage
 
 Description: Helper functions to access LocalStorage.
 
@@ -398,7 +410,7 @@ Description: Helper functions to access LocalStorage.
 
 #### Class: ManageLocalStorage
 
-Description: Functions related to overall maintainence of the LocalStorage.
+Description: Functions related to overall maintenance of the LocalStorage.
 
 | function | input | output | description |
 |----------|-------|--------|-------------|
@@ -465,7 +477,10 @@ So, the enhancement this project offers to the user is recommendation from the u
 
 
 # 5.0 Design decisions and tradeoffs
-The source code is written in python language.
+
+Our Team is proicient with Python, other then that Python have all required components (frameworks and libraries) for our project.
+that's why we are going with Python to implement this project.
+
 - **PyQT** - is a Python interface for QT, a cross-platform GUI library.
  - for the GUI framework of the music player. The project uses the multimedia helper classes.
  - networking module wherever networking connections are made.
@@ -513,7 +528,235 @@ Since these features are among the major requirements for our project, and a few
 
     - scikit-learn scales to most information issues
 
+
 # 6.0 Pseudocode for components
+
+## MusicPlayer
+ 
+#### ManageSongs
+ 
+**add - Add new Songs** 
+    - user clicks button
+    - it opens a file selection Window
+    - User selects file that he wants to add.
+    - selection Window provides us the path of file
+    - we use that path and call *add* from *ManageSongs* class.
+    - it invokes *Write* function from *AccessLocalStorage* class with given path
+    - *write* function make a new entry in LocalStorage for that song.
+    - *write* assigns a new SongID and sets it's corresponding *isUpdated* flag in *LocalStorage*
+    - if *Write* did his work successfully it return *true* otherwise it returns false
+    - *addSong* returns *true* or *false* based on returned value of *Write*.
+    - Display *Success* or *failure* message in UI based on response from *add*
+ 
+- **remove - Remove Song**
+    - use clicks remove button of a song
+    - we get SongID of song from clicked button
+    - we call *remove* function of *ManageSongs* class with that SongID
+    - that invokes *Delete* function from *AccessLocalStorage* class and passes SongID.
+    - *Delete* removes corresponding  entry from LocalStorage and invokes *DeleteCache* from *ManageCache* class.
+    - *DeleteCache* removes corresponding Cache entries and returns *true* on Success
+    - *Delete* returns *true* if it received true and also generated *true* from it's operations.
+    - remove returns *true* if it received *true* from  *Delete*
+    - Display *Success* or *failure* message in UI based on response from *remove*
+ 
+- **query - queries all the entries from LocalStorage**
+    - *onEachStartup* triggers query function
+    - *query* iterates over LocalStorage and gets data of each song with the help of *read* from *AccessLocalStorage* class
+    - *query* returns that data in a custom python dictionary
+    - we populate UI with data from returned Dictionary
+ 
+- **ResetAll**
+    - when user clicks it asks for conformation for ResetAll.
+    - if user conforms, it Calls *Dump* from *ManageLocalStorage* class to Delete LocalStorage
+    - when *Dump* returns successfully it Calls *Build* from *ManageLocalStorage*, it build an empty LocalStorage
+    - it Calls *dumpCache* from *ManageCache* Class
+    - when all the function returns successfully, it shows corresponding message to user.
+ 
+- **ManuallyGetRecommendation**
+    - when user clicks it we call *ReadCache* to get suggestions from Cache for that song using it's SongID
+    - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
+    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+    relevant songs from MusicBrainz and Local Music library
+    - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
+    - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
+    - we use *WriteCache* cache from *ManageCache* class and write those predicted songs in Cache with a pre defined life.
+    - WriteCache Cache response is used to trigger ReadCache again and populate UI with predicted songs
+    - if we have a Cache hit then we just take that that and populate UI with those results
+ 
+#### Control Music
+ 
+- **play**
+    - user clicks on a song in UI to play it
+    - we get *SongID* from UI and call *play*
+    - *play* goes and reads path for that *SongID* from *LocalStorage* using *read* from *AccessLocalStorage* class 
+    - we play music file using that path
+    - we fetches MetaData from that music file using *ReadMetaData* from *ManageMetaData* class
+    - if Metadata is not updated we trigger metadata updation using *FetchMetaDataFromMusicBrainz* and 
+    write that metadata in Music file using *WriteMetaData*
+    - we Display metadata in music player
+    - we use *ReadCache* to get suggestions from Cache for that song using it's SongID
+    - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
+    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+    relevant songs from MusicBrainz and Local Music library
+    - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
+    - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
+    - we use *WriteCache* cache from *ManageCache* class and write those predicted songs in Cache with a pre defined life.
+    - WriteCache Cache response is used to trigger ReadCache again and populate UI with predicted songs
+    - if we have a Cache hit then we just take that that and populate UI with those results
+ 
+- **pause**
+    - user clicks pause button
+    - we pause song and change state of button in UI to play
+ 
+- **stop**
+    - user clicks stop button
+    - we stop the music play and set the progress bar to 0 sec using *seek* function of *ControlMusic* class
+ 
+- **seek**
+    - user clicks the progress bar to seek on a certain position
+    - we get position from UI and seek song to that time
+ 
+- **nextSong**
+    - user clicks next button in UI
+    - we pass *SongID* of currently playing song and get songID of the song that is next in UI to currently playing song
+    - we call play with passing *SongID* of next song 
+ 
+- **prevSong**
+    - user clicks previous button in UI
+    - we pass *SongID* of currently playing song and get songID of the song that is previous in UI to currently playing song
+    - we call play with passing *SongID* of next song.
+ 
+- **volControl**
+    - user clicks on volume bar
+    - we get value of Target Volume from UI and call *volControl* with it
+ 
+ 
+ 
+## LocalStorage
+ 
+#### AccessLocalStorage
+ 
+- **Read**
+    - calling functions passes *SongID*
+    - we use that *SongID* and perform a Read operation on underlying SQLite Database
+    - on Success we return data for that *SongID*
+ 
+- **Write**
+    - calling functions passes *SongPath*
+    - we use that *SongPath* and perform a Write operation on underlying SQLite Database
+    - on Success we return true
+ 
+- **Delete**
+    - calling functions passes *SongID*
+    - we use that *SongID* and perform a Delete operation on underlying SQLite Database
+    - on Success we return true
+ 
+#### ManageLocalStorage
+ 
+- **Build**
+    - when Called builds the underlying SQLite database
+    - on Success returns true
+ 
+- **Dump**
+    - when Called Disconnects if connected then drops the underlying SQLite database
+    - on Success returns true
+ 
+- **Connect**
+    -when called initiates a connection to underlying SQLite Database
+    - calls *setIsConnected* to set *isConnected* true
+    - on Success returns true
+ 
+- **Disconnect**
+    - if isConnected is true then Disconnect from underlying SQLite
+    - call *setIsConnected* to set *isConnected* false
+    - if isConnected is false the does nothing.
+    - on Success returns true
+ 
+- **getIsConnected**
+    - getter function for *isConnected* member variable
+ 
+- **setIsConnected**
+    - setter function for *isConnected* member variable
+ 
+ 
+## MetaData
+ 
+#### ManageMetaData
+ 
+- **ReadMetaData**
+    - calling function passes *SongID*, it goes and fetches path to that song
+    - using that path of file it reads the MetaData of music file and returns it in Custom python dictionary to calling function.
+ 
+- **WriteMetaData**
+    - calling function passes *SongID* and *SongMetadata*
+    - it goes and fetches path to that music file using SongID
+    - using that path of file it writes *SongMetaData* that it received to that music file
+ 
+- **FetchMetaDataFromMusicBrainz**
+    - calling function passes *SongID*, it goes and fetches path to that song
+    - using that *SongID* we call *ReadMetaData*
+    - using that existing metadata that is returned by *ReadMetaData* it Fetches the missing metadata for music file.
+    - it merges the received data with existing and calls *WriteMetaData* with new *SongMetadata* and *songID* 
+    - returns true on success
+ 
+- **EditMetaData**
+    - user clicks EditMetaData from UI
+    - it calls *ReadMetaData* with the help of *SongID* that we got from UI
+    - we Display all of Metadata in UI Text boxes.
+    - when user hits save, we that new Metadata from UI Text boxes and call *WriteMetaData* with *SongID* and new *SongMetaData*
+    - when Write returns we Display respective message to return value. 
+ 
+- **getIsUpdated**
+    - getter function for *isUpdated* member variable
+ 
+- **setIsUpdated**
+    - setter function for *isUpdated* member variable
+ 
+## Classifier
+ 
+#### ManageCache
+ 
+- **ReadCache**
+    - calling function passes *SongID*
+    - it uses that *songID* and does a lookup on underlying cache
+    - if it have a Cache Hit, it returns Data in Custom dictionary
+    - if it have a Cache miss, it returns Empty Dictionary
+ 
+- **WriteCache**
+    - calling function passes *SongID* and *PredictedSongDict*
+    - it write that data to Cache
+    - returns true in success
+ 
+- **invalidateCache**
+    - it gets triggered on Each started
+    - it goes though Cache
+    - if it finds any entry that is older then predefined life of Cache it remove them from Cache.
+    - returns true on Success
+ 
+- **dumpCache**
+    - it Removes all the entries from Cache
+    - returns True on Success 
+ 
+- **DeleteCache**
+    - calling function passes *SongID*
+    - it takes that *SongID* and removes all the entries from Cache
+    - returns true on Success 
+ 
+#### GetRecommendation
+ 
+- **FetchRelevantSong**
+    - It Gets called with * SongID*.
+    - it goes and reads the Metadata song using *ReadMetaData* from *ManageMetaData* Class
+    - it takes metadata returned from *ReadMetaData* and fetches songs with similar *genres*,*Singer*, *Language* and *Country*
+    - Calls *Predict* function from *GetRecommendation* Class with *SongID* and *RelevantSongDict*
+ 
+- **Predict**
+    - gets *SongID* and *RelevantSongDict* from Calling function
+    - *Predict* Predicts songs based on pre Trained model
+    - *Predict* returns a Custom Dictionary of Songs That it predicted
+    - we take that Dictionary and Write it to Cache using *WriteCache* function from *ManageCache* Class
+ 
+
 # 7.0 Appendices
 
 
