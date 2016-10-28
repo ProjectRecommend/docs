@@ -22,11 +22,11 @@
 ----------------------
 
 ## Change Log
- 
+
 | Version  | Date | Description |
 |----------|------|-------------|
 | 1.0 | 28-Oct-2016 | initial version of document, Based on IEEE 1016-Software Design Document guidelines   |
- 
+
 ---------------------------------
 
 # Table of contents
@@ -83,7 +83,7 @@ requirements have been described in detail in the SRS document submitted before.
 
 The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also
 suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which
-requires internet connection. During recommendation if required it will update metadata of the song.
+requires Internet connection. During recommendation if required it will update metadata of the song.
 
 The sections in this document will provide guidelines related to the structure and the design of the project and will contain the following too.
 
@@ -99,17 +99,17 @@ classes to meet the desired requirements.
 - Name of the project is "Project Recommend". It is a Desktop App.
 
 - Offline music recommendation is an area of application development that is yet to be fully explored as there has not been
-enough attempts to develop a software to fulfil this need. Browsing over the internet, one may get enough music recommenders
+enough attempts to develop a software to fulfill this need. Browsing over the Internet, one may get enough music recommenders
 online but that is the real catch here, they are mostly **_online_**. Here, our development team is trying to build an **_offline_** music
-recommender application to fulfil users need of getting music suggestions based on their already present music collection.
+recommender application to fulfill users need of getting music suggestions based on their already present music collection.
 
 - Offline Music recommendation plays music and involves recommendation of familiar tracks and familiar genres of music available both on
-the internet and from offline library which is available inn user's machine.
+the Internet and from offline library which is available inn user's machine.
 
 ##### Advantages
 
 - It provides suggestions from local music library.
-- Works with slower internet connection because it needs less bandwidth for providing recommendations.
+- Works with slower Internet connection because it needs less bandwidth for providing recommendations.
 - It uses [MusicBrainz](https://musicbrainz.org/) database for getting metadata of all the music present in user's local
 library and recommend tracks.
 - it is not platform or service specific.
@@ -175,11 +175,11 @@ are Coupled as per Data coupling.
 As per Definition one System have Data Coupling when *modules share data through, for example, parameters. Each datum is
 an elementary piece, and these are the only data shared (e.g., passing an integer to a function that computes a square root)*
 
-From Sequence Diagram[todo - add link] we can see that System passes Data around hence system have Data Coupling.
+From Sequence Diagram[TODO - add link] we can see that System passes Data around hence system have Data Coupling.
 
 #### Functional Cohesion
 
-todo - add links to components diagram
+TODO - add links to components diagram
 
 As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute
 to a single well-defined task of the module* as we can see that in our system each module contains classes that all
@@ -291,7 +291,7 @@ that is previous song of playing song in UI
 
 - **Edit Metadata** - This will call the *editMetadata* method of *manage metadata* class, and passed the song ID as an argument. This will internally call the method *setIsUpdated*, and will return true on successful operation. If, every thing goes right, *editMetadata* returns *true* as a response to the user.   
 
-- **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire sql database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
+- **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire SQL database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
 ## 2.3 User interface issues
 
@@ -300,9 +300,9 @@ The UI is devided into 4 parts. These are
 - **Songs Queue Pane**
 - **Music Player Controls Pane**
 - **Suggestions Display Pane**
- 
+
  ![User interface mockup](images/mockup.png)
- 
+
 **Top Menu Pane** contains the following options  
 - *File*
   - Open Music Directory: On click it presents a *directory selection window* to user for selecting directory from local machine to load tracks into Songs Queue Pane.
@@ -313,16 +313,16 @@ The UI is devided into 4 parts. These are
   - Update Metadata for Directory: On click it triggers the functions for updation of metadata of all the tracks present in Songs queue.
 - *Help*
   - Documentation: On click browser is called and the Github page of Project Recommend is loaded. The aim of this link is to help developers to understand the software in detail.
-  - About: On click it presents a new windows giving a breif overview about the project and name list of contributors.
- 		
+  - About: On click it presents a new windows giving a brief overview about the project and name list of contributors.
+
 Inside **Songs Queue Pane** a list of song tracks which are loaded from user defined directory is displayed.  
 
 **Suggestions Display Pane**: A list of all suggested songs based on the presently playing track is shown here. It includes songs available on local machine as well as those which are unavailable in local machine.  
 
 - *Available songs*: Can be loaded directly on music player from suggestions section.  
 - *Unavailable songs*: Can't be played directly but clicking of each such track will lead to opening of Internet browser and Google search results will be displayed corresponding to that track.  
-	
-**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*. 
+
+**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*.
 -------------------------------------------------------
 
 ## 3. Detailed description of components
@@ -376,7 +376,7 @@ Description: Adds, Removes and queries songs from LocalStorage.
 | +query():Dict | void | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
 | +ResetAll():boolean | void | Status:Success or failure | Dumps and rebuilds LocalStorage, Dumps Cache |
 | +ManuallyGetRecommendation(SongID:Int):Dict | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song.| Checks Cache for results if not present triggers ifCacheIsEmpty alt Condition |
- 
+
 #### Class: ControlMusic
 
 Description: Controlling of Music.
@@ -389,7 +389,7 @@ Description: Controlling of Music.
 | +prev(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the previous song. |
 | +seek(minute:int, second:int): boolean | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second. |
 | +Stop():boolean  | void | Status:Success or failure | Stops the currently playing song if it is playing |
-| +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be chnaged is entered  | Status:Success or failure | Controls the volume |
+| +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be changed is entered  | Status:Success or failure | Controls the volume |
 
 
 ### 3.3 Component: LocalStorage
@@ -471,14 +471,14 @@ Description: This class manages Cache of songs that are suggested by the GetReco
 # 4.0 Reuse and relationships to their products
 -------- TODO - Not Applicable Section--------
 
-If a project is doing some enhancement work, it requires to look into reuse issues. This project is using the existing concept of a basic music player, which plays music, with the usual user requirements of playing previous, next songs, adding and removing songs, and volume control. In addition to that, the software will recommend music too, based on what the user is listening. We already have many tools doing that, such as Pandora, Spotify, SoundCloud etc. But these applications suggest music from their existing online libraries, demand an account to be created and also an internet connection.
+If a project is doing some enhancement work, it requires to look into reuse issues. This project is using the existing concept of a basic music player, which plays music, with the usual user requirements of playing previous, next songs, adding and removing songs, and volume control. In addition to that, the software will recommend music too, based on what the user is listening. We already have many tools doing that, such as Pandora, Spotify, SoundCloud etc. But these applications suggest music from their existing online libraries, demand an account to be created and also an Internet connection.
 
-So, the enhancement this project offers to the user is recommendation from the user's offline collection. This obviously, requires internet connection, if the recommendations are not cached. But once cached, it recommends music even when the user is offline.
+So, the enhancement this project offers to the user is recommendation from the user's offline collection. This obviously, requires Internet connection, if the recommendations are not cached. But once cached, it recommends music even when the user is offline.
 
 
 # 5.0 Design decisions and tradeoffs
 
-Our Team is proicient with Python, other then that Python have all required components (frameworks and libraries) for our project.
+Our Team is proficient with Python, other then that Python have all required components (frameworks and libraries) for our project.
 that's why we are going with Python to implement this project.
 
 - **PyQT** - is a Python interface for QT, a cross-platform GUI library.
@@ -495,7 +495,7 @@ that's why we are going with Python to implement this project.
   - It is a good candidate for go-to test framework.
 - **The MusicBrainz Client library** (libmusicbrainz) - also known as mb_client, is a development library.
   - for adding MusicBrainz's lookup capabilities to the software.
-  - It supports Windows, Linux amd Mac OS X.
+  - It supports Windows, Linux and Mac OS X.
 - **PyQt vs Kivy**
 Given below are the key components of PyQt:
 
@@ -532,10 +532,10 @@ Since these features are among the major requirements for our project, and a few
 # 6.0 Pseudocode for components
 
 ## MusicPlayer
- 
+
 #### ManageSongs
- 
-**add - Add new Songs** 
+
+**add - Add new Songs**
     - user clicks button
     - it opens a file selection Window
     - User selects file that he wants to add.
@@ -547,7 +547,7 @@ Since these features are among the major requirements for our project, and a few
     - if *Write* did his work successfully it return *true* otherwise it returns false
     - *addSong* returns *true* or *false* based on returned value of *Write*.
     - Display *Success* or *failure* message in UI based on response from *add*
- 
+
 - **remove - Remove Song**
     - use clicks remove button of a song
     - we get SongID of song from clicked button
@@ -558,204 +558,204 @@ Since these features are among the major requirements for our project, and a few
     - *Delete* returns *true* if it received true and also generated *true* from it's operations.
     - remove returns *true* if it received *true* from  *Delete*
     - Display *Success* or *failure* message in UI based on response from *remove*
- 
+
 - **query - queries all the entries from LocalStorage**
     - *onEachStartup* triggers query function
     - *query* iterates over LocalStorage and gets data of each song with the help of *read* from *AccessLocalStorage* class
     - *query* returns that data in a custom python dictionary
     - we populate UI with data from returned Dictionary
- 
+
 - **ResetAll**
     - when user clicks it asks for conformation for ResetAll.
     - if user conforms, it Calls *Dump* from *ManageLocalStorage* class to Delete LocalStorage
     - when *Dump* returns successfully it Calls *Build* from *ManageLocalStorage*, it build an empty LocalStorage
     - it Calls *dumpCache* from *ManageCache* Class
     - when all the function returns successfully, it shows corresponding message to user.
- 
+
 - **ManuallyGetRecommendation**
     - when user clicks it we call *ReadCache* to get suggestions from Cache for that song using it's SongID
     - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
-    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch
     relevant songs from MusicBrainz and Local Music library
     - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
     - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
     - we use *WriteCache* cache from *ManageCache* class and write those predicted songs in Cache with a pre defined life.
     - WriteCache Cache response is used to trigger ReadCache again and populate UI with predicted songs
     - if we have a Cache hit then we just take that that and populate UI with those results
- 
+
 #### Control Music
- 
+
 - **play**
     - user clicks on a song in UI to play it
     - we get *SongID* from UI and call *play*
-    - *play* goes and reads path for that *SongID* from *LocalStorage* using *read* from *AccessLocalStorage* class 
+    - *play* goes and reads path for that *SongID* from *LocalStorage* using *read* from *AccessLocalStorage* class
     - we play music file using that path
     - we fetches MetaData from that music file using *ReadMetaData* from *ManageMetaData* class
-    - if Metadata is not updated we trigger metadata updation using *FetchMetaDataFromMusicBrainz* and 
+    - if Metadata is not updated we trigger metadata updation using *FetchMetaDataFromMusicBrainz* and
     write that metadata in Music file using *WriteMetaData*
     - we Display metadata in music player
     - we use *ReadCache* to get suggestions from Cache for that song using it's SongID
     - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
-    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+    - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch
     relevant songs from MusicBrainz and Local Music library
     - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
     - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
     - we use *WriteCache* cache from *ManageCache* class and write those predicted songs in Cache with a pre defined life.
     - WriteCache Cache response is used to trigger ReadCache again and populate UI with predicted songs
     - if we have a Cache hit then we just take that that and populate UI with those results
- 
+
 - **pause**
     - user clicks pause button
     - we pause song and change state of button in UI to play
- 
+
 - **stop**
     - user clicks stop button
     - we stop the music play and set the progress bar to 0 sec using *seek* function of *ControlMusic* class
- 
+
 - **seek**
     - user clicks the progress bar to seek on a certain position
     - we get position from UI and seek song to that time
- 
+
 - **nextSong**
     - user clicks next button in UI
     - we pass *SongID* of currently playing song and get songID of the song that is next in UI to currently playing song
-    - we call play with passing *SongID* of next song 
- 
+    - we call play with passing *SongID* of next song
+
 - **prevSong**
     - user clicks previous button in UI
     - we pass *SongID* of currently playing song and get songID of the song that is previous in UI to currently playing song
     - we call play with passing *SongID* of next song.
- 
+
 - **volControl**
     - user clicks on volume bar
     - we get value of Target Volume from UI and call *volControl* with it
- 
- 
- 
+
+
+
 ## LocalStorage
- 
+
 #### AccessLocalStorage
- 
+
 - **Read**
     - calling functions passes *SongID*
     - we use that *SongID* and perform a Read operation on underlying SQLite Database
     - on Success we return data for that *SongID*
- 
+
 - **Write**
     - calling functions passes *SongPath*
     - we use that *SongPath* and perform a Write operation on underlying SQLite Database
     - on Success we return true
- 
+
 - **Delete**
     - calling functions passes *SongID*
     - we use that *SongID* and perform a Delete operation on underlying SQLite Database
     - on Success we return true
- 
+
 #### ManageLocalStorage
- 
+
 - **Build**
     - when Called builds the underlying SQLite database
     - on Success returns true
- 
+
 - **Dump**
     - when Called Disconnects if connected then drops the underlying SQLite database
     - on Success returns true
- 
+
 - **Connect**
     -when called initiates a connection to underlying SQLite Database
     - calls *setIsConnected* to set *isConnected* true
     - on Success returns true
- 
+
 - **Disconnect**
     - if isConnected is true then Disconnect from underlying SQLite
     - call *setIsConnected* to set *isConnected* false
     - if isConnected is false the does nothing.
     - on Success returns true
- 
+
 - **getIsConnected**
     - getter function for *isConnected* member variable
- 
+
 - **setIsConnected**
     - setter function for *isConnected* member variable
- 
- 
+
+
 ## MetaData
- 
+
 #### ManageMetaData
- 
+
 - **ReadMetaData**
     - calling function passes *SongID*, it goes and fetches path to that song
     - using that path of file it reads the MetaData of music file and returns it in Custom python dictionary to calling function.
- 
+
 - **WriteMetaData**
     - calling function passes *SongID* and *SongMetadata*
     - it goes and fetches path to that music file using SongID
     - using that path of file it writes *SongMetaData* that it received to that music file
- 
+
 - **FetchMetaDataFromMusicBrainz**
     - calling function passes *SongID*, it goes and fetches path to that song
     - using that *SongID* we call *ReadMetaData*
     - using that existing metadata that is returned by *ReadMetaData* it Fetches the missing metadata for music file.
-    - it merges the received data with existing and calls *WriteMetaData* with new *SongMetadata* and *songID* 
+    - it merges the received data with existing and calls *WriteMetaData* with new *SongMetadata* and *songID*
     - returns true on success
- 
+
 - **EditMetaData**
     - user clicks EditMetaData from UI
     - it calls *ReadMetaData* with the help of *SongID* that we got from UI
     - we Display all of Metadata in UI Text boxes.
     - when user hits save, we that new Metadata from UI Text boxes and call *WriteMetaData* with *SongID* and new *SongMetaData*
-    - when Write returns we Display respective message to return value. 
- 
+    - when Write returns we Display respective message to return value.
+
 - **getIsUpdated**
     - getter function for *isUpdated* member variable
- 
+
 - **setIsUpdated**
     - setter function for *isUpdated* member variable
- 
+
 ## Classifier
- 
+
 #### ManageCache
- 
+
 - **ReadCache**
     - calling function passes *SongID*
     - it uses that *songID* and does a lookup on underlying cache
     - if it have a Cache Hit, it returns Data in Custom dictionary
     - if it have a Cache miss, it returns Empty Dictionary
- 
+
 - **WriteCache**
     - calling function passes *SongID* and *PredictedSongDict*
     - it write that data to Cache
     - returns true in success
- 
+
 - **invalidateCache**
     - it gets triggered on Each started
     - it goes though Cache
     - if it finds any entry that is older then predefined life of Cache it remove them from Cache.
     - returns true on Success
- 
+
 - **dumpCache**
     - it Removes all the entries from Cache
-    - returns True on Success 
- 
+    - returns True on Success
+
 - **DeleteCache**
     - calling function passes *SongID*
     - it takes that *SongID* and removes all the entries from Cache
-    - returns true on Success 
- 
+    - returns true on Success
+
 #### GetRecommendation
- 
+
 - **FetchRelevantSong**
     - It Gets called with * SongID*.
     - it goes and reads the Metadata song using *ReadMetaData* from *ManageMetaData* Class
     - it takes metadata returned from *ReadMetaData* and fetches songs with similar *genres*,*Singer*, *Language* and *Country*
     - Calls *Predict* function from *GetRecommendation* Class with *SongID* and *RelevantSongDict*
- 
+
 - **Predict**
     - gets *SongID* and *RelevantSongDict* from Calling function
     - *Predict* Predicts songs based on pre Trained model
     - *Predict* returns a Custom Dictionary of Songs That it predicted
     - we take that Dictionary and Write it to Cache using *WriteCache* function from *ManageCache* Class
- 
+
 
 # 7.0 Appendices
 
