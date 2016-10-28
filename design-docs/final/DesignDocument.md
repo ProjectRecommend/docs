@@ -283,7 +283,34 @@ that is previous song of playing song in UI
 
 - **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire sql database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
-## 2.3 User interface issues
+## 2.3 User Interface Issues
+
+The UI is devided into 4 parts. These are
+- **Top Menu Pane**
+- **Songs Queue Pane**
+- **Music Player Controls Pane**
+- **Suggestions Display Pane**
+ 
+**Top Menu Pane** contains the following options  
+- *File*
+  - Open Music Directory: On click it presents a *directory selection window* to user for selecting directory from local machine to load tracks into Songs Queue Pane.
+  - Add Song: On click it present a *file selection window* to user for selecting a song track from local machine.
+  - Reset All: On click it triggers the functions to clean the local storage of application by removing all the entries from local database.
+  - Exit: On click the application is closed.
+- *Metadata*
+  - Update Metadata for Directory: On click it triggers the functions for updation of metadata of all the tracks present in Songs queue.
+- *Help*
+  - Documentation: On click browser is called and the Github page of Project Recommend is loaded. The aim of this link is to help developers to understand the software in detail.
+  - About: On click it presents a new windows giving a breif overview about the project and name list of contributors.
+ 		
+Inside **Songs Queue Pane** a list of song tracks which are loaded from user defined directory is displayed.  
+
+**Suggestions Display Pane**: A list of all suggested songs based on the presently playing track is shown here. It includes songs available on local machine as well as those which are unavailable in local machine.  
+
+- *Available songs*: Can be loaded directly on music player from suggestions section.  
+- *Unavailable songs*: Can't be played directly but clicking of each such track will lead to opening of Internet browser and Google search results will be displayed corresponding to that track.  
+	
+**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*. 
 
 -------------------------------------------------------
 
