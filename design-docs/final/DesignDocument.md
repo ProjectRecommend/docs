@@ -30,27 +30,33 @@
 ---------------------------------
 
 # Table of contents
+
 [1. Introduction](#introduction)  
-   [1.1 Purpose of this document](#potd)
+   [1.1 Purpose of this document](#potd)  
    [1.2 Scope of the development project](#sotdp)  
    [1.3 Definitions, acronyms, and abbreviations](#daaa)  
    [1.4 References](#ref)  
    [1.5 Overview of document](#ood)  
+   
 [2. System architecture description](#sad)  
    [2.1 Overview of modules / components](#oomc)  
    [2.2 Structure and relationships](#sar)  
    [2.3 User interface issues](#uii)  
+   
 [3. Detailed description of components](#ddoc)  
    [3.1 Component template description](#com_td)  
    [3.2 Component: MusicPlayer](#com_mp)  
-   [3.3 Component: LocalStorage](#com_ls)   
+   [3.3 Component: LocalStorage](#com_ls)  
    [3.4 Component: MetaData](#com_md)  
-   [3.5 Component: Classifier](#com_c) 
+   [3.5 Component: Classifier](#com_c)  
+   
 [4.0 Reuse and relationships to other products](#rartop)  
+
 [5.0 Design decisions and tradeoffs](#ddat)  
+
 [6.0 Pseudocode for components](#pfc)  
+
 [7.0 Appendices (if any)](#appendices)  
-SDS component template  
 <hr />
 
 ---------------------------------
