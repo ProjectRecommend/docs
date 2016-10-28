@@ -72,7 +72,7 @@ SDS component template
 The purpose of this document is to describe the implementation of the *Project Recommend ( Music Recommendation Software )* whose
 requirements have been described in detail in the SRS document submitted before.
 
-The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also 
+The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also
 suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which
 requires internet connection. During recommendation if required it will update metadata of the song.
 
@@ -80,7 +80,7 @@ The sections in this document will provide guidelines related to the structure a
 
 **Component Diagram** : information about the external and internal components of the system.
 
-**Class Diagram** : specific information about the expected input, output, classes, and functions. The interaction between the 
+**Class Diagram** : specific information about the expected input, output, classes, and functions. The interaction between the
 classes to meet the desired requirements.
 
 **Sequence Diagram** : specific information about how objects operate with one another and in what order.
@@ -89,19 +89,19 @@ classes to meet the desired requirements.
 
 - Name of the project is "Project Recommend". It is a Desktop App.
 
-- Offline music recommendation is an area of application development that is yet to be fully explored as there has not been 
-enough attempts to develop a software to fulfil this need. Browsing over the internet, one may get enough music recommenders 
-online but that is the real catch here, they are mostly **_online_**. Here, our development team is trying to build an **_offline_** music 
+- Offline music recommendation is an area of application development that is yet to be fully explored as there has not been
+enough attempts to develop a software to fulfil this need. Browsing over the internet, one may get enough music recommenders
+online but that is the real catch here, they are mostly **_online_**. Here, our development team is trying to build an **_offline_** music
 recommender application to fulfil users need of getting music suggestions based on their already present music collection.
 
-- Offline Music recommendation plays music and involves recommendation of familiar tracks and familiar genres of music available both on 
+- Offline Music recommendation plays music and involves recommendation of familiar tracks and familiar genres of music available both on
 the internet and from offline library which is available inn user's machine.
 
 ##### Advantages
 
 - It provides suggestions from local music library.
 - Works with slower internet connection because it needs less bandwidth for providing recommendations.
-- It uses [MusicBrainz](https://musicbrainz.org/) database for getting metadata of all the music present in user's local 
+- It uses [MusicBrainz](https://musicbrainz.org/) database for getting metadata of all the music present in user's local
 library and recommend tracks.
 - it is not platform or service specific.
 - it is not bounded with any music provider services so it is suggestions are not limited to particular service.
@@ -139,8 +139,8 @@ library and recommend tracks.
 
 ## 1.5 Overview
 
-- This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers 
-and software managers but sections have been written in a manner that it can be understood by anyone having 
+- This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers
+and software managers but sections have been written in a manner that it can be understood by anyone having
 little knowledge about software.
 
 This *Software Design Specification* also includes:
@@ -162,7 +162,7 @@ are Coupled as per Data coupling.
 
 #### Data Coupling
 
-As per Definition one System have Data Coupling when *modules share data through, for example, parameters. Each datum is 
+As per Definition one System have Data Coupling when *modules share data through, for example, parameters. Each datum is
 an elementary piece, and these are the only data shared (e.g., passing an integer to a function that computes a square root)*
 
 From Sequence Diagram[todo - add link] we can see that System passes Data around hence system have Data Coupling.
@@ -171,13 +171,13 @@ From Sequence Diagram[todo - add link] we can see that System passes Data around
 
 todo - add links to components diagram
 
-As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute 
-to a single well-defined task of the module* as we can see that in our system each module contains classes that all 
+As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute
+to a single well-defined task of the module* as we can see that in our system each module contains classes that all
 contribute in a single Task.
 
 ## 2.1 Overview of modules / components
 
-The structure of our project is highly modularized. We have tried introducing as much functional cohesion as possible. 
+The structure of our project is highly modularized. We have tried introducing as much functional cohesion as possible.
 For coupling we have tried to achieve data coupling.
 
 System contains four modules that are mentioned below
@@ -196,7 +196,7 @@ System contains four modules that are mentioned below
 
 ## 2.2 Structure and relationships
 
-System is following modular Structure, see Component Diagram of system. 
+System is following modular Structure, see Component Diagram of system.
 This Section also includes Class Diagram and Sequence Diagram of System, That shows Structure and relationships in between
 components in our System.
 
@@ -220,17 +220,17 @@ components in our System.
 
 #### startup(Initialization) process
 
-- On first start when application is first started it Triggers spacial Initialization process *OnFirstStartup* 
-which involves building LocalStorage. We store songs data on LocalStorage, after that process finises 
+- On first start when application is first started it Triggers spacial Initialization process *OnFirstStartup*
+which involves building LocalStorage. We store songs data on LocalStorage, after that process finises
 it Triggers *onEachStartup* that does rest of startup work for application.
 
-- if it's not a first time startup on that Computer then it triggers onStartupProcess that does the basic application 
+- if it's not a first time startup on that Computer then it triggers onStartupProcess that does the basic application
 startup work, like connecting to LocalStorage then query data from LocalStorage so we can Show the list of songs that user
-added in application, after application finises startup and we populate songs data on MusicPlayer 
+added in application, after application finises startup and we populate songs data on MusicPlayer
 it triggers invalidateCache that removes all the entries of Recommended songs that are invalid (older then defined life of cache)
 
- Now we have a list of songs populated in MusicPlayer, now user can Take any actions like *add a new song*, 
-*remove song*, *play*, *Pause*, *stop*, *next song*, *previous song*, *change volume*, *seek*, 
+ Now we have a list of songs populated in MusicPlayer, now user can Take any actions like *add a new song*,
+*remove song*, *play*, *Pause*, *stop*, *next song*, *previous song*, *change volume*, *seek*,
 *Edit MetaData*, *Manually get recommendation*, *Reset all*.
 below we describes these actions and how they functionality and internally works, with the help of Class Diagram and Sequence Diagram.
 
@@ -240,27 +240,48 @@ below we describes these actions and how they functionality and internally works
 absolute path to Music file. it also goes to *ReadMetaData* and Reads the MetaData for that Same SongID, after both returns
 we play the song.
 
-    - For recommendation we *ReadCache* for that song, if we have a Cache hit, we will populate the 
-Recommend song list. 
+    - For recommendation we *ReadCache* for that song, if we have a Cache hit, we will populate the
+Recommend song list.
     - If there is a Cache miss we *FetchRelevantSong* based on metadata of given song.
-    - if we find that MetaData of song is not updated then we *FetchMetaDataFromMusicBrainz* and 
-    Update the metadata and Continue with process. 
-    - After MetaData Check/Update and after fetching *RelevantSongs*, we will run our pre-trained Classifier (*Predict* function) 
-    to recommend songs. 
-    - we will take that result and Write it to Cache with *WriteCache* and return that data back to 
+    - if we find that MetaData of song is not updated then we *FetchMetaDataFromMusicBrainz* and
+    Update the metadata and Continue with process.
+    - After MetaData Check/Update and after fetching *RelevantSongs*, we will run our pre-trained Classifier (*Predict* function)
+    to recommend songs.
+    - we will take that result and Write it to Cache with *WriteCache* and return that data back to
     Play call to populate Recommend song list.
 
 - **Pause** - if a song is currently playing it pauses that song on that position.
+    - It waits for the response from the **controlMusic** function of the **music palyer** module. Its return type is *boolean* and will return *true* if *pause* action is successful.
 
-- **Stop** - if a song is currently playing then it will stop it and set the position to start.
+- **Stop** - If a song is currently playing then it will stop it and set the position to start.
 if a song is already paused then it will set it's position in start.
+    - Similar to the *pause* action. Waits for an asynchronous response from the *controlMusic* function. Return type is also *boolean*, that is, returns *true* if a track is stopped successfully.
 
-- **next song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song 
+- **next song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song
 that is next song of playing song in UI
 
-- **previous song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song 
+    - As soon as the user requests the *next song*, *nextSong* will be invoked at first, and the *play* method will be called internally, which will take the *song ID* of the current song as its argument, and will pick up the song that is next to the current one(**Note** - If *shuffle* is enabled, it will randomly pick up any song from the entire playlist.). *play* method will also return a boolean, but that will be used for internal decisions, **only**. Final response will contain only the output of *nextSong* method.
+    - Since the *play* method is getting invoked here, all the actions associated with it will get executed too, as described in the *play* section.
+    - Finally, if the next song is played successfully, the *nextSong* function will return *true*, as its return type is also *boolean*.
+
+- **previous song** - It will take the Song ID of currently playing Song and Calls the *Play* with Song ID of song
 that is previous song of playing song in UI
 
+    - Same as the **nextSong**, the only difference being that, depending on the current song id, it will fetch the previous song in the playlist.
+
+- **Seek** - This will use a horizontal *slider* to change the position of current track, where the unit is a *second*. The method will return *true*, on success, and *false* otherwise.
+
+- **Volume Control** - This will use a vertical slider, to change the volume to desired *integer* value. Also, will return *true* on a successful volume change.
+
+- **Add Song** - This will pass the song *path* as an argument to the *add* method. This method in turn invokes *write* method of *AccessLocalStorage* class, and passes the same path as an argument, and after successfully writing that very song to the local storage, returns *true* to *add* method, which also returns *true* as a status, to the user.
+
+- **Remove Song** -  This will pass the song *path* as an argument to the *remove* method. This method in turn invokes *delete* method of *AccessLocalStorage* class, and passes the same path as an argument. Here, another method called *manageCache* of *Classifier* module gets invoked, to clear the cache of that particular song, which, if successful returns *true* to the *delete* method which returns *true* to *remove* method, which also returns *true* as a status, to the user, if every small target is achieved.
+
+- **Get Manual Recommendation** - This will call the *readCache* method of *manage cache* class, and will pass the *Song ID* as the argument. If the cache is empty, it will call the *fetchRelevantSong* method of *GetRecommendation* class, which returns a *dictionary*, another method called as *predict* gets invoked which takes in the song id and dictionary returned as its arguments, and returns a set of predicted songs as another dictionary, which is passed as an argument to the *writeCache* method, and this fills the cache which was empty earlier, and returns a response *true* on success. The Predicted songs are used to populate the recommended songs view. After all this is done, a response of *true* is sent to the user.
+
+- **Edit Metadata** - This will call the *editMetadata* method of *manage metadata* class, and passed the song ID as an argument. This will internally call the method *setIsUpdated*, and will return true on successful operation. If, every thing goes right, *editMetadata* returns *true* as a response to the user.   
+
+- **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire sql database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
 ## 2.3 User interface issues
 
@@ -284,7 +305,7 @@ Description of class X functions in tabular form
 
 | Function | input | output | Description |
 | --- | --- | --- | --- |
-| prototype | input parameters | return values and their types | description of function | 
+| prototype | input parameters | return values and their types | description of function |
 
 
 #### Class : Class Y
@@ -299,12 +320,12 @@ Description of class Y functions in tabular form
 
 -------------
 
-Our components are: 
+Our components are:
 
 ### 3.2 Component: MusicPlayer
 
 Description: This component as a whole handles functionality related to playing music and controlling music.
-Music Player functions are well defined by the methods that we have used in the corresponding classes. 
+Music Player functions are well defined by the methods that we have used in the corresponding classes.
 
 #### Class: ManageSongs
 
@@ -333,7 +354,7 @@ Description: Controlling of Music.
 
 ### 3.3 Component: LocalStorage
 
-Description: This is the persistence layer of the system. It holds data related to songs. 
+Description: This is the persistence layer of the system. It holds data related to songs.
 
 #### Class: AcessLocalStorage
 
@@ -362,7 +383,7 @@ Description: Functions related to overall maintainence of the LocalStorage.
 
 ### 3.4 Component: MetaData
 
-Description: This module handles metadata Manipulation and updation in the system, It is also responsible for 
+Description: This module handles metadata Manipulation and updation in the system, It is also responsible for
 fetching metadata from external sources like MusicBrainz.
 
 #### Class: ManageMetaData
@@ -384,7 +405,7 @@ Description: This component is the core of the system. It handles the part of re
 
 #### Class: GetRecommendation
 
-Description: This class contains functions for fetching relevant songs of a song and predicting(recommending) new songs that user might like. 
+Description: This class contains functions for fetching relevant songs of a song and predicting(recommending) new songs that user might like.
 
 | function | input | output | description |
 |----------|-------|--------|-------------|
