@@ -162,7 +162,7 @@ _Metadata updater_ is very similar to MusicBrainz's [Picard][picards-website] so
 _Local database_ maintains a list of tracks along their path in system which user wants to listen and mark them as updated and not updated on the bases of their synchronization with MusicBrainz database. This helps the system to keep all the tracks updated and minimizes the need of updating whole user library at once which may slow down the system.
 
 #### Component Diagram
-![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Component_Dirgram_PR.jpg)
+![Component Diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Component_Dirgram_PR.jpg)
 
 
 ## 2.2 Product Functions <a name="od-pf"></a>
@@ -242,7 +242,7 @@ The following lists the various open source material we had referred to:
 User interface is implemented in PyQt that is a python library. There is one front page which interacts with user. It is divided into frames for different functions.
 
 #### UI Mockup
-![](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/mockup.png)
+![UI Mockup](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/mockup.png)
 
 
 ## 3.2 Hardware Interfaces <a name="eir-hi"></a>
@@ -263,7 +263,7 @@ TBD
 # 4. System Features <a name="sf"></a>
 
 Following is the use case diagram for the application
-![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/PR_Use_case.jpg)
+![use case diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/PR_Use_case.jpg)
 
 -----
 

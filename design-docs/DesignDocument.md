@@ -1,23 +1,4 @@
-<div align=center>
-  <h1>Software Design Document</h1>
-  <h2>Project Recommend</h2>
-  <b> Music Recommendation System </b><br />
-  <b> Version <i>1.0</i></b>
-</div><br /><br />
-
-#### Team Project Recommend
-
-- **Surajnath Sidh**  U101114FCS146
-- **Rajdeep Mukherjee**  U101114FCS115
-- **Raghav Mittal**  U101114FCS111
-- **Pranshu Sahijwani**  U101114FCS104
-- **S. Shakthi**  U101114FCS196
-- **Saumya Gupta**  U101114FCS126
-
-#### NIIT University
-##### 28-Oct-2016
-
----------------------------------
+-------
 
 ## Change Log
 
@@ -106,7 +87,6 @@ library and recommend tracks.
 ## 1.3 Definitions, acronyms, and abbreviations <a name="daaa"></a>
 
 - TBD means "To be Decided", these are the components that are not yet decided.
-- ** More abbreviations are to be written here, after the doc  completion**.
 - Terminology definitions are given in the following table.
 
 | Term | Description |
@@ -160,11 +140,9 @@ are Coupled as per Data coupling.
 As per Definition one System have Data Coupling when *modules share data through, for example, parameters. Each datum is
 an elementary piece, and these are the only data shared (e.g., passing an integer to a function that computes a square root)*
 
-From Sequence Diagram[TODO - add link] we can see that System passes Data around hence system have Data Coupling.
+From Sequence Diagram we can see that System passes Data around hence system have Data Coupling.
 
 #### Functional Cohesion
-
-TODO - add links to components diagram
 
 As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute
 to a single well-defined task of the module* as we can see that in our system each module contains classes that all
@@ -197,21 +175,21 @@ components in our System.
 
 ## Component diagram of System
 
-[Open Component Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Component_Dirgram_PR.jpg)
+[Open Component Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Component_Dirgram_PR.jpg)
 
-![Component Diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Component_Dirgram_PR.jpg)
+![Component Diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Component_Dirgram_PR.jpg)
 
 ## Class diagram of System
 
-[Open Class Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Class_diagram_PR.jpg)
+[Open Class Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR.jpg)
 
-![Class Diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Class_diagram_PR.jpg)
+![Class Diagram](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR.jpg)
 
 ## Sequence diagram of System
 
-[Open Sequence Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Sequence_Diagram_PR.jpg)
+[Open Sequence Diagram Image](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Sequence_Diagram_PR.jpg)
 
-![Sequence Diagram of System](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/Sequence_Diagram_PR.jpg)
+![Sequence Diagram of System](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Sequence_Diagram_PR.jpg)
 
 
 ### process / Flow of Control / Flow of data
@@ -351,6 +329,8 @@ Our components are:
 
 ### 3.2 Component: MusicPlayer <a name="com_mp"></a>
 
+![MusicPlayer](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR_music_player.jpg)
+
 Description: This component as a whole handles functionality related to playing music and controlling music.
 Music Player functions are well defined by the methods that we have used in the corresponding classes.
 
@@ -383,6 +363,8 @@ Description: Controlling of Music.
 
 ### 3.3 Component: LocalStorage <a name="com_ls"></a>
 
+![LocalStorage](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR_LocalStorage.jpg)
+
 Description: This is the persistence layer of the system. It holds data related to songs.
 
 #### Class: AccessLocalStorage
@@ -412,6 +394,8 @@ Description: Functions related to overall maintenance of the LocalStorage.
 
 ### 3.4 Component: MetaData <a name="com_md"></a>
 
+![MetaData](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR_metadata.jpg)
+
 Description: This module handles metadata Manipulation and updation in the system, It is also responsible for
 fetching metadata from external sources like MusicBrainz.
 
@@ -429,6 +413,8 @@ Description: Helper functions related to metadata handling.
 | +setIsUpdated(isUpdated) | isUpdated variable | void | sets the global variable IsUpdated |
 
 ### 3.5 Component: Classifier <a name="com_c"></a>
+
+![Classifier](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/Class_diagram_PR_clf.jpg)
 
 Description: This component is the core of the system. It handles the part of recommendation of new songs based on a given song.
 

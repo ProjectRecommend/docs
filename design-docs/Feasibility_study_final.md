@@ -66,14 +66,16 @@ This project is an open-source, we do not have any business goals, we do not hav
 
 
 #### 1.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q1.PNG" alt = "Question 1 and its response!" height = auto width = "400px" ></center>
+
+![Question 1](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q1.png)
 
 
 #### Inference:
 This pie-chart shows that most of the people prefer to listen to music almost all the time(app. 60% in our case).
 
 #### 2.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q2.png" alt = "Question 2 and its response!" height = auto width = "400px"></center>
+
+![Question 2](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q2.png)
 
 #### Inference:
 
@@ -83,7 +85,7 @@ storing music offline(over 32% people have music collection between 10-50 GBs an
 
 #### 3.
 
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q3.png" alt = "Question 3 and its response!" height = auto width = "400px" ></center>
+![Question 3](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q3.png)
 
 #### Inference:
 
@@ -94,7 +96,8 @@ music that very often, but still once in a while, they can download.
 
 
 #### 4.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q4.png" alt = "Question 4 and its response!" height = auto width = "400px" ></center>
+
+![Question 4](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q4.png)
 
 #### Inference:
 
@@ -103,10 +106,10 @@ their taste(which will be performed by a classifier in our case).
 
 
 #### 5.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q5.png" alt = "Question 5 and its response!" height = auto width = "400px"></center>
+
+![Question 5](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q5.png)
 
 #### Inference:
-
 
 This pie-chart shows that almost half of the people(49% app.), find it difficult to search the songs
 similar to the one they have in their offline music library. This suggests that they would like to get
@@ -115,7 +118,8 @@ kind of music.
 
 
 #### 6.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q6.png" alt = "Question 6 and its response!" height = auto width = "400px" ></center>
+
+![Question 6](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q6.png)
 
 #### Inference:
 
@@ -124,7 +128,8 @@ which made us to attach an extra component to our software, known as the Metadat
 
 
 #### 7.
-<center><img src="https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/final/images/q7.png" alt = "Question 7 and its response!" height = auto width = "400px" ></center>
+
+![Question 7](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q7.png)
 
 #### Inference:
 
