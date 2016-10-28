@@ -283,34 +283,7 @@ that is previous song of playing song in UI
 
 - **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire sql database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
-## 2.3 User Interface Issues
-
-The UI is devided into 4 parts. These are
-- **Top Menu Pane**
-- **Songs Queue Pane**
-- **Music Player Controls Pane**
-- **Suggestions Display Pane**
- 
-**Top Menu Pane** contains the following options  
-- *File*
-  - Open Music Directory: On click it presents a *directory selection window* to user for selecting directory from local machine to load tracks into Songs Queue Pane.
-  - Add Song: On click it present a *file selection window* to user for selecting a song track from local machine.
-  - Reset All: On click it triggers the functions to clean the local storage of application by removing all the entries from local database.
-  - Exit: On click the application is closed.
-- *Metadata*
-  - Update Metadata for Directory: On click it triggers the functions for updation of metadata of all the tracks present in Songs queue.
-- *Help*
-  - Documentation: On click browser is called and the Github page of Project Recommend is loaded. The aim of this link is to help developers to understand the software in detail.
-  - About: On click it presents a new windows giving a breif overview about the project and name list of contributors.
- 		
-Inside **Songs Queue Pane** a list of song tracks which are loaded from user defined directory is displayed.  
-
-**Suggestions Display Pane**: A list of all suggested songs based on the presently playing track is shown here. It includes songs available on local machine as well as those which are unavailable in local machine.  
-
-- *Available songs*: Can be loaded directly on music player from suggestions section.  
-- *Unavailable songs*: Can't be played directly but clicking of each such track will lead to opening of Internet browser and Google search results will be displayed corresponding to that track.  
-	
-**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*. 
+## 2.3 User interface issues
 
 -------------------------------------------------------
 
@@ -470,6 +443,7 @@ The source code is written in python language.
  - networking module wherever networking connections are made.
  - multimedia module for multimedia access.
  - database connector module for local storage and cache.
+
 - **mutagen**: is a python module used as a Python multimedia tagging library.
   - for accessing and handling audio metadata.
   - It has no dependencies outside the Python standard library.
@@ -479,6 +453,37 @@ The source code is written in python language.
 - **The MusicBrainz Client library** (libmusicbrainz) - also known as mb_client, is a development library.
   - for adding MusicBrainz's lookup capabilities to the software.
   - It supports Windows, Linux amd Mac OS X.
+- **PyQt vs Kivy**
+Given below are the key components of PyQt:
+
+The QtCore module contains the center non-GUI classes, including the occasion circle and Qt's flag and opening component. It likewise incorporates stage autonomous reflections for Unicode, strings, mapped records, shared memory, standard expressions, and client and application settings.
+
+The QtGui module contains most of the GUI classes. These incorporate various table, tree and rundown classes in view of the model–view–controller outline design. Likewise gave is a refined 2D canvas gadget fit for putting away a large number of things including normal gadgets.
+
+The QtNetwork module contains classes for composing UDP and TCP customers and servers. It incorporates classes that execute FTP and HTTP customers and bolster DNS queries. Arrange occasions are incorporated with the occasion circle making it simple to create organized applications.
+
+The QtOpenGL module contains classes that empower the utilization of OpenGL in rendering 3D design in PyQt applications.
+
+The QtSql module contains classes that coordinate with open-source and restrictive SQL databases. It incorporates editable information models for database tables that can be utilized with GUI classes. It additionally incorporates an execution of SQLite.
+
+Since these features are among the major requirements for our project, and a few of these are not available with kivy, we chose PyQt over kivy.
+
+- **Key features of MusicBrainz**
+    - MusicBrainz catches data about specialists, their recorded works, and the connections between them. Recorded works sections catch at any rate the collection title, track titles, and the length of every track. These sections are kept up by volunteer editors who take after group composed style rules.
+    - Recorded works can likewise store data about the discharge date and nation, the CD ID, cover craftsmanship, acoustic unique mark, freestyle comment content and other metadata.
+    - Other than gathering metadata about music, MusicBrainz likewise permits looking into recordings by their acoustic unique mark(finger print). A different application, for example, MusicBrainz Picard, must be utilized for this.
+
+- **scikit-learn-Implementation**
+    Scikit-learn is to a great extent written in Python, with some center calculations written in Cython to accomplish execution. Bolster vector machines are actualized by a Cython wrapper around LIBSVM; calculated relapse and straight bolster vector machines by a comparative wrapper around LIBLINEAR.
+
+- **Scikit-learn-Advantages**
+    - Responsibility to documentation and convenience
+
+    - Models are picked and executed by a committed group of specialists
+
+    - Covers most machine-learning errands
+
+    - scikit-learn scales to most information issues
 
 # 6.0 Pseudocode for components
 # 7.0 Appendices
