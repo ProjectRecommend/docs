@@ -1,10 +1,6 @@
 # Docs For Project Recommend
-### Contains
-- Survey for feasibility of project
-- Requirements for project
-- Rough draft of project
-- Logo files
- 
+
+##[Design Docs](https://github.com/ProjectRecommend/docs/tree/master/design-docs)
 
 # License
 
