@@ -20,7 +20,7 @@
 ---------------------------------
 
 ## Change Log
- 
+
 | Version  | Date | Description |
 |----------|------|-------------|
 | 1.0 | 27-Oct-2016 | initial version of document, Based on IEEE 1016-Software Design Document guidelines   |
@@ -91,7 +91,7 @@ requirements have been described in detail in the SRS document submitted before.
 
 The *Music Recommendation Software* as specified earlier, is a music player software that not only plays music but also
 suggests music based on what the user is listening to, from the user's offline collection as well as online collection, which
-requires internet connection. During recommendation if required it will update metadata of the song.
+requires Internet connection. During recommendation if required it will update metadata of the song.
 
 The sections in this document will provide guidelines related to the structure and the design of the project and will contain the following too.
 
@@ -107,17 +107,17 @@ classes to meet the desired requirements.
 - Name of the project is "Project Recommend". It is a Desktop App.
 
 - Offline music recommendation is an area of application development that is yet to be fully explored as there has not been
-enough attempts to develop a software to fulfil this need. Browsing over the internet, one may get enough music recommenders
+enough attempts to develop a software to fulfill this need. Browsing over the Internet, one may get enough music recommenders
 online but that is the real catch here, they are mostly **_online_**. Here, our development team is trying to build an **_offline_** music
-recommender application to fulfil users need of getting music suggestions based on their already present music collection.
+recommender application to fulfill users need of getting music suggestions based on their already present music collection.
 
 - Offline Music recommendation plays music and involves recommendation of familiar tracks and familiar genres of music available both on
-the internet and from offline library which is available inn user's machine.
+the Internet and from offline library which is available inn user's machine.
 
 ##### Advantages
 
 - It provides suggestions from local music library.
-- Works with slower internet connection because it needs less bandwidth for providing recommendations.
+- Works with slower Internet connection because it needs less bandwidth for providing recommendations.
 - It uses [MusicBrainz](https://musicbrainz.org/) database for getting metadata of all the music present in user's local
 library and recommend tracks.
 - it is not platform or service specific.
@@ -185,11 +185,11 @@ are Coupled as per Data coupling.
 As per Definition one System have Data Coupling when *modules share data through, for example, parameters. Each datum is
 an elementary piece, and these are the only data shared (e.g., passing an integer to a function that computes a square root)*
 
-From Sequence Diagram[todo - add link] we can see that System passes Data around hence system have Data Coupling.
+From Sequence Diagram[TODO - add link] we can see that System passes Data around hence system have Data Coupling.
 
 #### Functional Cohesion
 
-todo - add links to components diagram
+TODO - add links to components diagram
 
 As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute
 to a single well-defined task of the module* as we can see that in our system each module contains classes that all
@@ -202,16 +202,16 @@ For coupling we have tried to achieve data coupling.
 
 System contains four modules that are mentioned below
 
-- **Music Player**
-    - Music Player module handles functionality related to playing and handling music
+**Music Player**
+  - Music Player module handles functionality related to playing and handling music
 
-- **Local Storage**
-    - Local Storage module functions as a Persistence Layer (Storage) of system.
+**Local Storage**
+  - Local Storage module functions as a Persistence Layer (Storage) of system.
 
-- **Meta Data**
-    - Meta Data module handles all functionality related to Meta Data (ID3 Tags)
+**Meta Data**
+  - Meta Data module handles all functionality related to Meta Data (ID3 Tags)
 
-- **Classifier**
+**Classifier**
     - Classifier handles all functionality related to Recommendation of songs for a songs
 
 ## 2.2 Structure and relationships
@@ -304,7 +304,7 @@ that is previous song of playing song in UI
 
 - **Edit Metadata** - This will call the *editMetadata* method of *manage metadata* class, and passed the song ID as an argument. This will internally call the method *setIsUpdated*, and will return true on successful operation. If, every thing goes right, *editMetadata* returns *true* as a response to the user.   
 
-- **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire sql database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
+- **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire SQL database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
 ## 2.3 User interface issues
 
@@ -313,9 +313,9 @@ The UI is devised into 4 parts. These are
 - **Songs Queue Pane**
 - **Music Player Controls Pane**
 - **Suggestions Display Pane**
- 
+
  ![User interface mockup](images/mockup.png)
- 
+
 **Top Menu Pane** contains the following options  
 - *File*
   - Open Music Directory: On click it presents a *directory selection window* to user for selecting directory from local machine to load tracks into Songs Queue Pane.
@@ -326,8 +326,8 @@ The UI is devised into 4 parts. These are
   - Update Metadata for Directory: On click it triggers the functions for updation of metadata of all the tracks present in Songs queue.
 - *Help*
   - Documentation: On click browser is called and the Github page of Project Recommend is loaded. The aim of this link is to help developers to understand the software in detail.
-  - About: On click it presents a new windows giving a breif overview about the project and name list of contributors.
- 		
+  - About: On click it presents a new windows giving a brief overview about the project and name list of contributors.
+
 Inside **Songs Queue Pane** a list of song tracks which are loaded from user defined directory is displayed.  
 
 **Suggestions Display Pane**: A list of all suggested songs based on the presently playing track is shown here. It includes songs available on local machine as well as those which are unavailable in local machine.  
@@ -390,7 +390,7 @@ Description: Adds, Removes and queries songs from LocalStorage.
 | +query():Dict | void | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
 | +ResetAll():boolean | void | Status:Success or failure | Dumps and rebuilds LocalStorage, Dumps Cache |
 | +ManuallyGetRecommendation(SongID:Int):Dict | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song.| Checks Cache for results if not present triggers ifCacheIsEmpty alt Condition |
- 
+
 #### Class: ControlMusic
 
 Description: Controlling of Music.
@@ -403,7 +403,7 @@ Description: Controlling of Music.
 | +prev(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the previous song. |
 | +seek(minute:int, second:int): boolean | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second. |
 | +Stop():boolean  | void | Status:Success or failure | Stops the currently playing song if it is playing |
-| +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be chnaged is entered  | Status:Success or failure | Controls the volume |
+| +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be changed is entered  | Status:Success or failure | Controls the volume |
 
 
 ### 3.3 Component: LocalStorage
@@ -500,7 +500,7 @@ if the recommendations are not cached. But once cached, it recommends music even
 
 # 5.0 Design Decisions and tradeoffs
 
-Our Team is proicient with Python, other then that Python have all required components (frameworks and libraries) for our project.
+Our Team is proficient with Python, other then that Python have all required components (frameworks and libraries) for our project.
 that's why we are going with Python to implement this project.
 
 These are the existing Open Source frameworks/libraries/DataSources we are using
@@ -519,7 +519,6 @@ These are the existing Open Source frameworks/libraries/DataSources we are using
   - It is a good candidate for go-to test framework.
 - **python-musicbrainzngs** this library provides a wrapper around MusicBrainz NGS service.
   - for adding MusicBrainz's lookup capabilities to the software.
-
 
 ## Design Decisions
 
@@ -583,7 +582,7 @@ provide Pseudocode, hence we are writing Pseudocode
 in the form of steps.
 
 ## MusicPlayer
- 
+
 #### ManageSongs
  
 **add - Add new Songs** 
@@ -731,7 +730,7 @@ in the form of steps.
 
 
 ## MetaData
- 
+
 #### ManageMetaData
  
 **ReadMetaData**
@@ -764,7 +763,7 @@ in the form of steps.
   - setter function for *isUpdated* member variable
  
 ## Classifier
- 
+
 #### ManageCache
  
 **ReadCache**
@@ -806,7 +805,7 @@ in the form of steps.
   - *Predict* Predicts songs based on pre Trained model
   - *Predict* returns a Custom Dictionary of Songs That it predicted
   - we take that Dictionary and Write it to Cache using *WriteCache* function from *ManageCache* Class
- 
+
 
 ------------------------
 
