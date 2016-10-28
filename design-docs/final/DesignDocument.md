@@ -64,6 +64,7 @@ SDS component template
 <hr />
 
 ---------------------------------
+
 # 1. Introduction
 
 ## 1.1 Purpose
@@ -168,36 +169,98 @@ From Sequence Diagram[todo - add link] we can see that System passes Data around
 
 #### Functional Cohesion
 
-todo - add links to components
+todo - add links to components diagram
 
 As per definition one system is in Functional Cohesion  *when parts of a module are grouped because they all contribute 
-to a single well-defined task of the module*
-
-as we can see that in our system each module contains classes that all contribute in a single Task.
-
-- **Music Player**
-
-    Music Player module handles functionality related to playing and handling music
-
-- **Local Storage**
-
-    Local Storage module functions as a Persistence Layer (Storage) of system.
-
-- **Meta Data**
-
-    Meta Data module handles all functionality related to Meta Data (ID3 Tags)
-
-- **Classifier**
-
-    Classifier handles all functionality related to Recommendation of songs for a songs
-
+to a single well-defined task of the module* as we can see that in our system each module contains classes that all 
+contribute in a single Task.
 
 ## 2.1 Overview of modules / components
 
-The structure of our project is highly modularised. We have tried introducing as much functional cohesion as possible. 
+The structure of our project is highly modularized. We have tried introducing as much functional cohesion as possible. 
 For coupling we have tried to achieve data coupling.
 
+System contains four modules that are mentioned below
+
+- **Music Player**
+  Music Player module handles functionality related to playing and handling music
+
+- **Local Storage**
+  Local Storage module functions as a Persistence Layer (Storage) of system.
+
+- **Meta Data**
+  Meta Data module handles all functionality related to Meta Data (ID3 Tags)
+
+- **Classifier**
+  Classifier handles all functionality related to Recommendation of songs for a songs
+
 ## 2.2 Structure and relationships
+
+System is following modular Structure, see Component Diagram of system. 
+This Section also includes Class Diagram and Sequence Diagram of System, That shows Structure and relationships in between
+components in our System.
+
+## Component diagram of System
+
+[add Component diagrams here ]
+
+## Class diagram of System
+
+[add Class diagram]
+
+## Sequence diagram of System
+
+** you are advised to see Sequence Diagram here in full resolution**
+
+[add link to Sequence diagram in full resolutions]
+
+[add Sequence diagram]
+
+### process / flow of Control / fow of data
+
+#### startup(Initialization) process
+
+- On first start when application is first started it Triggers spacial Initialization process *OnFirstStartup* 
+which involves building LocalStorage. We store songs data on LocalStorage, after that process finises 
+it Triggers *onEachStartup* that does rest of startup work for application.
+
+- if it's not a first time startup on that Computer then it triggers onStartupProcess that does the basic application 
+startup work, like connecting to LocalStorage then query data from LocalStorage so we can Show the list of songs that user
+added in application, after application finises startup and we populate songs data on MusicPlayer 
+it triggers invalidateCache that removes all the entries of Recommended songs that are invalid (older then defined life of cache)
+
+ Now we have a list of songs populated in MusicPlayer, now user can Take any actions like *add a new song*, 
+*remove song*, *play*, *Pause*, *stop*, *next song*, *previous song*, *change volume*, *seek*, 
+*Edit MetaData*, *Manually get recommendation*, *Reset all*.
+below we describes these actions and how they functionality and internally works, with the help of Class Diagram and Sequence Diagram.
+
+#### based  on user actions
+
+- **Play** - Play takes *SongID* from selected song in UI and Goes to *LocalStorage*, fetches data including
+absolute path to Music file. it also goes to *ReadMetaData* and Reads the MetaData for that Same SongID, after both returns
+we play the song.
+
+    - For recommendation we *ReadCache* for that song, if we have a Cache hit, we will populate the 
+Recommend song list. 
+    - If there is a Cache miss we *FetchRelevantSong* based on metadata of given song.
+    - if we find that MetaData of song is not updated then we *FetchMetaDataFromMusicBrainz* and 
+    Update the metadata and Continue with process. 
+    - After MetaData Check/Update and after fetching *RelevantSongs*, we will run our pre-trained Classifier (*Predict* function) 
+    to recommend songs. 
+    - we will take that result and Write it to Cache with *WriteCache* and return that data back to 
+    Play call to populate Recommend song list.
+
+- **Pause** - if a song is currently playing it pauses that song on that position.
+
+- **Stop** - if a song is currently playing then it will stop it and set the position to start.
+if a song is already paused then it will set it's position in start.
+
+- **next song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song 
+that is next song of playing song in UI
+
+- **previous song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song 
+that is previous song of playing song in UI
+
 
 ## 2.3 User interface issues
 
@@ -205,15 +268,15 @@ For coupling we have tried to achieve data coupling.
 
 ## 3. Detailed description of components
 
-#### 3.1 Component template description
+## 3.1 Component template description
 
 we are discussing components in below mentioned manner
 
-## Component : Name of Component
+### Component : Name of Component
 
 Description of Component
 
-### Class : Class X
+#### Class : Class X
 
 Description of Class X
 
@@ -224,7 +287,7 @@ Description of class X functions in tabular form
 | prototype | input parameters | return values and their types | description of function | 
 
 
-### Class : Class Y
+#### Class : Class Y
 
 Description of Class Y
 
@@ -243,7 +306,7 @@ Our components are:
 Description: This component as a whole handles functionality related to playing music and controlling music.
 Music Player functions are well defined by the methods that we have used in the corresponding classes. 
 
-##### Class: ManageSongs
+#### Class: ManageSongs
 
 Description: Adds, Removes and queries songs from LocalStorage.
 
@@ -253,7 +316,7 @@ Description: Adds, Removes and queries songs from LocalStorage.
 | +remove(SongId:int):boolean   | SongId: id of the corresponding music file from Local Storage | Status:Success or failure | Removes song from Local Storage |
 | +query():Dict | void | Dict: Dictionary containing key value pairs of all songs from Local Storage | Reads all entries from Local Storage and returns them in custom dictionary. |
 
-##### Class: ControlMusic
+#### Class: ControlMusic
 
 Description: Controlling of Music.
 
@@ -272,7 +335,7 @@ Description: Controlling of Music.
 
 Description: This is the persistence layer of the system. It holds data related to songs. 
 
-##### Class: AcessLocalStorage
+#### Class: AcessLocalStorage
 
 Description: Helper functions to access LocalStorage.
 
@@ -284,7 +347,7 @@ Description: Helper functions to access LocalStorage.
 | +Delete(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | Deletes entry of given SongID from Local Storage |
 
 
-##### Class: ManageLocalStorage
+#### Class: ManageLocalStorage
 
 Description: Functions related to overall maintainence of the LocalStorage.
 
@@ -302,7 +365,7 @@ Description: Functions related to overall maintainence of the LocalStorage.
 Description: This module handles metadata Manipulation and updation in the system, It is also responsible for 
 fetching metadata from external sources like MusicBrainz.
 
-##### Class: ManageMetaData
+#### Class: ManageMetaData
 
 Description: Helper functions related to metadata handling.
 
@@ -319,7 +382,7 @@ Description: Helper functions related to metadata handling.
 
 Description: This component is the core of the system. It handles the part of recommendation of new songs based on a given song.
 
-##### Class: GetRecommendation
+#### Class: GetRecommendation
 
 Description: This class contains functions for fetching relevant songs of a song and predicting(recommending) new songs that user might like. 
 
@@ -329,7 +392,7 @@ Description: This class contains functions for fetching relevant songs of a song
 | +Predict(SongID: int, RelevantSongDict: Dict) : Dict | SongID: id of the corresponding music file from Local Storage.RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs |
 
 
-##### Class: ManageCache
+#### Class: ManageCache
 
 Description: This class manages Cache of songs that are suggested by the GetRecommendation class.  
 
