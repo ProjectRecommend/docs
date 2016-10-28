@@ -30,39 +30,39 @@
 
 # Table of contents
 
-[1. Introduction](#introduction)  
-   [1.1 Purpose of this document](#potd)  
-   [1.2 Scope of the development project](#sotdp)  
-   [1.3 Definitions, acronyms, and abbreviations](#daaa)  
-   [1.4 References](#ref)  
-   [1.5 Overview of document](#ood)  
-   
-[2. System architecture description](#sad)  
-   [2.1 Overview of modules / components](#oomc)  
-   [2.2 Structure and relationships](#sar)  
-   [2.3 User interface issues](#uii)  
-   
-[3. Detailed description of components](#ddoc)  
-   [3.1 Component template description](#com_td)  
-   [3.2 Component: MusicPlayer](#com_mp)  
-   [3.3 Component: LocalStorage](#com_ls)  
-   [3.4 Component: MetaData](#com_md)  
-   [3.5 Component: Classifier](#com_c)  
-   
-[4.0 Reuse and relationships to other products](#rartop)  
+1. [Introduction](#introduction)  
+1.1 [Purpose of this document](#potd)  
+1.2 [Scope of the development project](#sotdp)  
+1.3 [Definitions, acronyms, and abbreviations](#daaa)  
+1.4 [References](#ref)  
+1.5 [Overview of document](#ood)  
 
-[5.0 Design decisions and tradeoffs](#ddat)  
+2. [System architecture description](#sad)  
+2.1 [Overview of modules / components](#oomc)  
+2.2 [Structure and relationships](#sar)  
+2.3 [User interface issues](#uii)  
 
-[6.0 Pseudocode for components](#pfc)  
+3. [Detailed description of components](#ddoc)  
+3.1 [Component template description](#com_td)  
+3.2 [Component: MusicPlayer](#com_mp)  
+3.3 [Component: LocalStorage](#com_ls)  
+3.4 [Component: MetaData](#com_md)  
+3.5 [Component: Classifier](#com_c)  
 
-[7.0 Appendices (if any)](#appendices)  
+4.0[ Reuse and relationships to other products](#rartop)  
+
+5.0[ Design decisions and tradeoffs](#ddat)  
+
+6.0[ Pseudocode for components](#pfc)  
+
+7.0[ Appendices (if any)](#appendices)  
 <hr />
 
 ---------------------------------
 
-# 1. Introduction <a href="#introduction"></a>
+# 1. Introduction <a name="introduction"></a>
 
-## 1.1 Purpose <a href="#potd"></a>
+## 1.1 Purpose <a name="potd"></a>
 The purpose of this document is to describe the implementation of the *Project Recommend ( Music Recommendation Software )* whose
 requirements have been described in detail in the SRS document submitted before.
 
@@ -79,7 +79,7 @@ classes to meet the desired requirements.
 
 **Sequence Diagram** : specific information about how objects operate with one another and in what order.
 
-## 1.2 Development Project Scope <a href="#sotdp"></a>
+## 1.2 Development Project Scope <a name="sotdp"></a>
 
 - Name of the project is "Project Recommend". It is a Desktop App.
 
@@ -103,7 +103,7 @@ library and recommend tracks.
 - This software is open source which means anyone can contribute and suggest changes and features to the project.
 
 
-## 1.3 Definitions, acronyms, and abbreviations <a href="#daaa"></a>
+## 1.3 Definitions, acronyms, and abbreviations <a name="daaa"></a>
 
 - TBD means "To be Decided", these are the components that are not yet decided.
 - ** More abbreviations are to be written here, after the doc  completion**.
@@ -120,7 +120,7 @@ library and recommend tracks.
 | Cache | A software component in the system that preserves data for a defined life. |
 
 
-## 1.4 References <a href="#ref"></a>
+## 1.4 References <a name="ref"></a>
 
 - This document is written in github flavored Markdown.
 
@@ -132,7 +132,7 @@ library and recommend tracks.
 
 - - Sample Software Design document for [*ProjectTracker* - cs.utah.edu](https://www.cs.utah.edu/~jamesj/ayb2005/docs/SDS_v2.htm#Table_of_Contents)
 
-## 1.5 Overview <a href="#ood"></a>
+## 1.5 Overview <a name="ood"></a>
 
 - This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers
 and software managers but sections have been written in a manner that it can be understood by anyone having
@@ -147,7 +147,7 @@ This *Software Design Specification* also includes:
 
 The design has been made clear, using the class diagram and sequence diagram.
 
-# 2. System architecture description <a href="#sad"></a>
+# 2. System architecture description <a name="sad"></a>
 
 Project Recommend (Our Software/System) is strictly based on modular architecture, there are four modules
 in system that are functionally connected to each other as per Functional Cohesion paradigm and these components
@@ -170,7 +170,7 @@ As per definition one system is in Functional Cohesion  *when parts of a module 
 to a single well-defined task of the module* as we can see that in our system each module contains classes that all
 contribute in a single Task.
 
-## 2.1 Overview of modules / components <a href="#oomc"></a>
+## 2.1 Overview of modules / components <a name="oomc"></a>
 
 The structure of our project is highly modularized. We have tried introducing as much functional cohesion as possible.
 For coupling we have tried to achieve data coupling.
@@ -189,7 +189,7 @@ System contains four modules that are mentioned below
 **Classifier**
     - Classifier handles all functionality related to Recommendation of songs for a songs
 
-## 2.2 Structure and relationships <a href="#sar"></a>
+## 2.2 Structure and relationships <a name="sar"></a>
 
 System is following modular Structure, see Component Diagram of system.
 This Section also includes Class Diagram and Sequence Diagram of System, That shows Structure and relationships in between
@@ -281,7 +281,7 @@ that is previous song of playing song in UI
 
 - **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire SQL database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
-## 2.3 User interface issues <a href="#uii"></a>
+## 2.3 User interface issues <a name="uii"></a>
 
 The UI is devised into 4 parts. These are
 - **Top Menu Pane**
@@ -310,13 +310,13 @@ Inside **Songs Queue Pane** a list of song tracks which are loaded from user def
 - *Available songs*: Can be loaded directly on music player from suggestions section.  
 - *Unavailable songs*: Can't be played directly but clicking of each such track will lead to opening of Internet browser and Google search results will be displayed corresponding to that track.
 
-**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*. 
+**Music Player Controls Pane** includes the following controls: *Play Music, Pause Music, Stop Music, Next Track, Previous Track, Seek Bar*.
 
 -------------------------------------------------------
 
-## 3. Detailed description of components <a href="#ddoc"></a>
+## 3. Detailed description of components <a name="ddoc"></a>
 
-## 3.1 Component template description <a href="#com_t"></a>
+## 3.1 Component template description <a name="com_t"></a>
 
 We are discussing components in below mentioned manner
 
@@ -349,7 +349,7 @@ Description of class Y functions in tabular form
 
 Our components are:
 
-### 3.2 Component: MusicPlayer <a href="#com_mp"></a>
+### 3.2 Component: MusicPlayer <a name="com_mp"></a>
 
 Description: This component as a whole handles functionality related to playing music and controlling music.
 Music Player functions are well defined by the methods that we have used in the corresponding classes.
@@ -381,7 +381,7 @@ Description: Controlling of Music.
 | +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be changed is entered  | Status:Success or failure | Controls the volume |
 
 
-### 3.3 Component: LocalStorage <a href="#com_ls"></a>
+### 3.3 Component: LocalStorage <a name="com_ls"></a>
 
 Description: This is the persistence layer of the system. It holds data related to songs.
 
@@ -410,7 +410,7 @@ Description: Functions related to overall maintenance of the LocalStorage.
 | +getIsConnected():boolean | void | returns the value of global variable isConnected.   | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
 | +setIsConnected(isConnected):void | isConnected variable is set | void | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
 
-### 3.4 Component: MetaData <a href="#com_md"></a>
+### 3.4 Component: MetaData <a name="com_md"></a>
 
 Description: This module handles metadata Manipulation and updation in the system, It is also responsible for
 fetching metadata from external sources like MusicBrainz.
@@ -428,7 +428,7 @@ Description: Helper functions related to metadata handling.
 | +getIsUpdated():int | void | returns the value of IsUpdated variable | getter function for IsUpdated function  |
 | +setIsUpdated(isUpdated) | isUpdated variable | void | sets the global variable IsUpdated |
 
-### 3.5 Component: Classifier <a href="#com_c"></a>
+### 3.5 Component: Classifier <a name="com_c"></a>
 
 Description: This component is the core of the system. It handles the part of recommendation of new songs based on a given song.
 
@@ -457,23 +457,23 @@ Description: This class manages Cache of songs that are suggested by the GetReco
 
 ---------------------------------
 
-# 4.0 Reuse and relationships to their products <a href="#rartop"></a>
+# 4.0 Reuse and relationships to their products <a name="rartop"></a>
 
 If a project is doing some enhancement work, it requires to look into reuse issues.
-But This project is not doing any enhancement work of existing Software but we are doing enhancement of 
-existing concept of a basic music player, which plays music, with the usual user requirements of 
-playing previous, next songs, adding and removing songs, and volume control. In addition to that, 
-the software will recommend music too, based on what the user is listening. 
-We already have many tools doing that, such as Pandora, Spotify, SoundCloud etc. But these services/applications suggest 
+But This project is not doing any enhancement work of existing Software but we are doing enhancement of
+existing concept of a basic music player, which plays music, with the usual user requirements of
+playing previous, next songs, adding and removing songs, and volume control. In addition to that,
+the software will recommend music too, based on what the user is listening.
+We already have many tools doing that, such as Pandora, Spotify, SoundCloud etc. But these services/applications suggest
 music from their existing online libraries, demand an account to be created and also an high speed internet connection to Stream Music.
 
-So, the enhancement this project offers to the user is Recommendation from the user's 
-offline collection and New Songs that we think User might like. This requires internet connection 
+So, the enhancement this project offers to the user is Recommendation from the user's
+offline collection and New Songs that we think User might like. This requires internet connection
 if the recommendations are not cached. But once cached, it recommends music even when the user is offline.
 
 ------------------------------------
 
-# 5.0 Design decisions and tradeoffs <a href="#ddat"></a>
+# 5.0 Design decisions and tradeoffs <a name="ddat"></a>
 
 Our Team is proficient with Python, other then that Python have all required components (frameworks and libraries) for our project.
 that's why we are going with Python to implement this project.
@@ -503,40 +503,40 @@ These are the existing Open Source frameworks/libraries/DataSources we are using
 
 Given below are the key components of *PyQt5*:
 
-- The **QtCore** module contains the center non-GUI classes, including the occasion circle and Qt's flag and opening component. 
-It likewise incorporates stage autonomous reflections for Unicode, strings, mapped records, shared memory, 
-standard expressions, and client and application settings. The QtGui module contains most of the GUI classes. 
-These incorporate various table, tree and rundown classes in view of the model–view–controller outline design. 
+- The **QtCore** module contains the center non-GUI classes, including the occasion circle and Qt's flag and opening component.
+It likewise incorporates stage autonomous reflections for Unicode, strings, mapped records, shared memory,
+standard expressions, and client and application settings. The QtGui module contains most of the GUI classes.
+These incorporate various table, tree and rundown classes in view of the model–view–controller outline design.
 Likewise gave is a refined 2D canvas gadget fit for putting away a large number of things including normal gadgets.
 
-- The **QtNetwork** module contains classes for composing UDP and TCP customers and servers. 
-It incorporates classes that execute FTP and HTTP customers and bolster DNS queries. 
+- The **QtNetwork** module contains classes for composing UDP and TCP customers and servers.
+It incorporates classes that execute FTP and HTTP customers and bolster DNS queries.
 Arrange occasions are incorporated with the occasion circle making it simple to create organized applications.
 
 - The **QtOpenGL** module contains classes that empower the utilization of OpenGL in rendering 3D design in PyQt applications.
 
-- The **QtSql** module contains classes that coordinate with open-source and restrictive SQL databases. 
-It incorporates editable information models for database tables that can be utilized with GUI classes. 
+- The **QtSql** module contains classes that coordinate with open-source and restrictive SQL databases.
+It incorporates editable information models for database tables that can be utilized with GUI classes.
 It additionally incorporates an execution of SQLite.
 
-Since these features are among the major requirements for our project, and a few of these are not 
+Since these features are among the major requirements for our project, and a few of these are not
 available with kivy, we chose PyQt over kivy.
 
 ### MusicBrainz
 
 - **Key features of MusicBrainz**
 
-    - MusicBrainz catches data about specialists, their recorded works, and the connections between them. 
-    Recorded works sections catch at any rate the collection title, track titles, and the length of every track. 
+    - MusicBrainz catches data about specialists, their recorded works, and the connections between them.
+    Recorded works sections catch at any rate the collection title, track titles, and the length of every track.
     These sections are kept up by volunteer editors who take after group composed style rules.
-    - Recorded works can likewise store data about the discharge date and nation, the CD ID, cover 
+    - Recorded works can likewise store data about the discharge date and nation, the CD ID, cover
     craftsmanship, acoustic unique mark, freestyle comment content and other metadata.
-    - Other than gathering metadata about music, MusicBrainz likewise permits looking into recordings 
+    - Other than gathering metadata about music, MusicBrainz likewise permits looking into recordings
     by their acoustic unique mark(finger print). A different application, for example, MusicBrainz Picard, must be utilized for this.
 
 ### Scikit-learn
-  - Scikit-learn is to a great extent written in Python, with some center calculations written in 
-    Cython to accomplish execution. Bolster vector machines are actualized by a Cython wrapper around LIBSVM; 
+  - Scikit-learn is to a great extent written in Python, with some center calculations written in
+    Cython to accomplish execution. Bolster vector machines are actualized by a Cython wrapper around LIBSVM;
     calculated relapse and straight bolster vector machines by a comparative wrapper around LIBLINEAR.
 
 - **Scikit-learn-Advantages**
@@ -544,23 +544,23 @@ available with kivy, we chose PyQt over kivy.
     - Responsibility to documentation and convenience
     - Models are picked and executed by a committed group of specialists
     - Covers most machine-learning errands
-    - scikit-learn can be scaled easily as per our requirements because we can use Cython to 
-    Compile Python into C for speed and performance 
+    - scikit-learn can be scaled easily as per our requirements because we can use Cython to
+    Compile Python into C for speed and performance
 
 
 ----------------------------------
 
-# 6.0 Pseudocode for components <a href="#pfc"></a>
+# 6.0 Pseudocode for components <a name="pfc"></a>
 
-We have not written application code as of now so we can not 
-provide Pseudocode, hence we are writing Pseudocode 
+We have not written application code as of now so we can not
+provide Pseudocode, hence we are writing Pseudocode
 in the form of steps.
 
 ## MusicPlayer
 
 #### ManageSongs
- 
-**add - Add new Songs** 
+
+**add - Add new Songs**
 
   - user clicks button
   - it opens a file selection Window
@@ -584,13 +584,13 @@ in the form of steps.
   - *Delete* returns *true* if it received true and also generated *true* from it's operations.
   - remove returns *true* if it received *true* from  *Delete*
   - Display *Success* or *failure* message in UI based on response from *remove*
- 
+
 **query - queries all the entries from LocalStorage**
   - *onEachStartup* triggers query function
   - *query* iterates over LocalStorage and gets data of each song with the help of *read* from *AccessLocalStorage* class
   - *query* returns that data in a custom python dictionary
   - we populate UI with data from returned Dictionary
- 
+
 **ResetAll**
   - when user clicks it asks for conformation for ResetAll.
   - if user conforms, it Calls *Dump* from *ManageLocalStorage* class to Delete LocalStorage
@@ -601,28 +601,28 @@ in the form of steps.
 **ManuallyGetRecommendation**
   - when user clicks it we call *ReadCache* to get suggestions from Cache for that song using it's SongID
   - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
-  - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+  - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch
   relevant songs from MusicBrainz and Local Music library
   - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
   - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
   - we use *WriteCache* cache from *ManageCache* class and write those predicted songs in Cache with a pre defined life.
   - WriteCache Cache response is used to trigger ReadCache again and populate UI with predicted songs
   - if we have a Cache hit then we just take that that and populate UI with those results
- 
+
 #### Control Music
- 
+
 **play**
   - user clicks on a song in UI to play it
   - we get *SongID* from UI and call *play*
-  - *play* goes and reads path for that *SongID* from *LocalStorage* using *read* from *AccessLocalStorage* class 
+  - *play* goes and reads path for that *SongID* from *LocalStorage* using *read* from *AccessLocalStorage* class
   - we play music file using that path
   - we fetches MetaData from that music file using *ReadMetaData* from *ManageMetaData* class
-  - if Metadata is not updated we trigger metadata updation using *FetchMetaDataFromMusicBrainz* and 
+  - if Metadata is not updated we trigger metadata updation using *FetchMetaDataFromMusicBrainz* and
   - write that metadata in Music file using *WriteMetaData*
   - we Display metadata in music player
   - we use *ReadCache* to get suggestions from Cache for that song using it's SongID
   - if we have a Cache miss we call *FetchRelevantSong* from *GetRecommendation* class with that SongID
-  - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch 
+  - it performs a Check for Metadata and if metadata is updated it will use that metadata to fetch
   relevant songs from MusicBrainz and Local Music library
   - we use Metadata of that song and MetaData of relevant songs and pass them to *Predict* function of *GetRecommendation* class
   - Classifier uses pre trained model to Predict song and returns a Dictionary of Recommended Songs
@@ -645,13 +645,13 @@ in the form of steps.
 **nextSong**
   - user clicks next button in UI
   - we pass *SongID* of currently playing song and get songID of the song that is next in UI to currently playing song
-  - we call play with passing *SongID* of next song 
+  - we call play with passing *SongID* of next song
 
 **prevSong**
   - user clicks previous button in UI
   - we pass *SongID* of currently playing song and get songID of the song that is previous in UI to currently playing song
   - we call play with passing *SongID* of next song.
- 
+
 **volControl**
   - user clicks on volume bar
   - we get value of Target Volume from UI and call *volControl* with it
@@ -670,14 +670,14 @@ in the form of steps.
   - calling functions passes *SongPath*
   - we use that *SongPath* and perform a Write operation on underlying SQLite Database
   - on Success we return true
- 
+
 **Delete**
   - calling functions passes *SongID*
   - we use that *SongID* and perform a Delete operation on underlying SQLite Database
   - on Success we return true
- 
+
 #### ManageLocalStorage
- 
+
 **Build**
   - when Called builds the underlying SQLite database
   - on Success returns true
@@ -685,12 +685,12 @@ in the form of steps.
 **Dump**
   - when Called Disconnects if connected then drops the underlying SQLite database
   - on Success returns true
- 
+
 **Connect**
   -when called initiates a connection to underlying SQLite Database
   - calls *setIsConnected* to set *isConnected* true
   - on Success returns true
- 
+
 **Disconnect**
   - if isConnected is true then Disconnect from underlying SQLite
   - call *setIsConnected* to set *isConnected* false
@@ -707,11 +707,11 @@ in the form of steps.
 ## MetaData
 
 #### ManageMetaData
- 
+
 **ReadMetaData**
   - calling function passes *SongID*, it goes and fetches path to that song
   - using that path of file it reads the MetaData of music file and returns it in Custom python dictionary to calling function.
- 
+
 **WriteMetaData**
   - calling function passes *SongID* and *SongMetadata*
   - it goes and fetches path to that music file using SongID
@@ -721,60 +721,60 @@ in the form of steps.
   - calling function passes *SongID*, it goes and fetches path to that song
   - using that *SongID* we call *ReadMetaData*
   - using that existing metadata that is returned by *ReadMetaData* it Fetches the missing metadata for music file.
-  - it merges the received data with existing and calls *WriteMetaData* with new *SongMetadata* and *songID* 
+  - it merges the received data with existing and calls *WriteMetaData* with new *SongMetadata* and *songID*
   - returns true on success
- 
+
 **EditMetaData**
   - user clicks EditMetaData from UI
   - it calls *ReadMetaData* with the help of *SongID* that we got from UI
   - we Display all of Metadata in UI Text boxes.
   - when user hits save, we that new Metadata from UI Text boxes and call *WriteMetaData* with *SongID* and new *SongMetaData*
-  - when Write returns we Display respective message to return value. 
- 
+  - when Write returns we Display respective message to return value.
+
 **getIsUpdated**
   - getter function for *isUpdated* member variable
 
 **setIsUpdated**
   - setter function for *isUpdated* member variable
- 
+
 ## Classifier
 
 #### ManageCache
- 
+
 **ReadCache**
   - calling function passes *SongID*
   - it uses that *songID* and does a lookup on underlying cache
   - if it have a Cache Hit, it returns Data in Custom dictionary
   - if it have a Cache miss, it returns Empty Dictionary
- 
+
 **WriteCache**
   - calling function passes *SongID* and *PredictedSongDict*
   - it write that data to Cache
   - returns true in success
- 
+
 **invalidateCache**
   - it gets triggered on Each started
   - it goes though Cache
   - if it finds any entry that is older then predefined life of Cache it remove them from Cache.
   - returns true on Success
- 
+
 **dumpCache**
   - it Removes all the entries from Cache
-  - returns True on Success 
- 
+  - returns True on Success
+
 **DeleteCache**
   - calling function passes *SongID*
   - it takes that *SongID* and removes all the entries from Cache
-  - returns true on Success 
- 
+  - returns true on Success
+
 #### GetRecommendation
- 
+
 **FetchRelevantSong**
   - It Gets called with * SongID*.
   - it goes and reads the Metadata song using *ReadMetaData* from *ManageMetaData* Class
   - it takes metadata returned from *ReadMetaData* and fetches songs with similar *genres*,*Singer*, *Language* and *Country*
   - Calls *Predict* function from *GetRecommendation* Class with *SongID* and *RelevantSongDict*
- 
+
 **Predict**
   - gets *SongID* and *RelevantSongDict* from Calling function
   - *Predict* Predicts songs based on pre Trained model
