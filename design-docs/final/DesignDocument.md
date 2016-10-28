@@ -30,62 +30,39 @@
 
 # Table of contents
 
-1. Introduction
-    
-    1.1 Purpose of this document
+[1. Introduction](#introduction)  
+   [1.1 Purpose of this document](#potd)  
+   [1.2 Scope of the development project](#sotdp)  
+   [1.3 Definitions, acronyms, and abbreviations](#daaa)  
+   [1.4 References](#ref)  
+   [1.5 Overview of document](#ood)  
+   
+[2. System architecture description](#sad)  
+   [2.1 Overview of modules / components](#oomc)  
+   [2.2 Structure and relationships](#sar)  
+   [2.3 User interface issues](#uii)  
+   
+[3. Detailed description of components](#ddoc)  
+   [3.1 Component template description](#com_td)  
+   [3.2 Component: MusicPlayer](#com_mp)  
+   [3.3 Component: LocalStorage](#com_ls)  
+   [3.4 Component: MetaData](#com_md)  
+   [3.5 Component: Classifier](#com_c)  
+   
+[4.0 Reuse and relationships to other products](#rartop)  
 
-    1.2 Scope of the development project
+[5.0 Design decisions and tradeoffs](#ddat)  
 
-    1.3 Definitions, acronyms, and abbreviations
+[6.0 Pseudocode for components](#pfc)  
 
-    1.4 References
-
-    1.5 Overview of document
-
-2. System architecture description
-
-    2.1 Overview of modules / components
-
-    2.2 Structure and relationships
-
-    2.3 User interface issues
-
-3. Detailed description of components
-
-    3.1 Component template description
-
-    3.2 Component: MusicPlayer
-
-        3.2.1 Class : ManageSongs
-        3.2.2 Class : ControlMusic
-
-    3.3 Component: LocalStorage
-
-        3.3.1 Class : AccessLocalStorage
-        3.3.2 Class : ManageLocalStorage
-
-    3.4 Component: MetaData
-
-        3.4.1 Class : ManageMetaData
-
-    3.5 Component: Classifier
-
-        3.5.1 Class : GetRecommendation
-        3.5.2 Class : ManageCache
-
-4. Reuse and relationships to other products
-
-5. Design decisions and tradeoffs
-
-6. Pseudocode for components
-
+[7.0 Appendices (if any)](#appendices)  
+<hr />
 
 ---------------------------------
 
-# 1. Introduction
+# 1. Introduction <a href="#introduction"></a>
 
-## 1.1 Purpose
-
+## 1.1 Purpose <a href="#potd"></a>
 The purpose of this document is to describe the implementation of the *Project Recommend ( Music Recommendation Software )* whose
 requirements have been described in detail in the SRS document submitted before.
 
@@ -102,7 +79,7 @@ classes to meet the desired requirements.
 
 **Sequence Diagram** : specific information about how objects operate with one another and in what order.
 
-## 1.2 Development Project Scope
+## 1.2 Development Project Scope <a href="#sotdp"></a>
 
 - Name of the project is "Project Recommend". It is a Desktop App.
 
@@ -126,7 +103,7 @@ library and recommend tracks.
 - This software is open source which means anyone can contribute and suggest changes and features to the project.
 
 
-## 1.3 Definitions, acronyms, and abbreviations
+## 1.3 Definitions, acronyms, and abbreviations <a href="#daaa"></a>
 
 - TBD means "To be Decided", these are the components that are not yet decided.
 - ** More abbreviations are to be written here, after the doc  completion**.
@@ -143,7 +120,7 @@ library and recommend tracks.
 | Cache | A software component in the system that preserves data for a defined life. |
 
 
-## 1.4 References
+## 1.4 References <a href="#ref"></a>
 
 - This document is written in github flavored Markdown.
 
@@ -155,7 +132,7 @@ library and recommend tracks.
 
 - - Sample Software Design document for [*ProjectTracker* - cs.utah.edu](https://www.cs.utah.edu/~jamesj/ayb2005/docs/SDS_v2.htm#Table_of_Contents)
 
-## 1.5 Overview
+## 1.5 Overview <a href="#ood"></a>
 
 - This document is divided into sections 2, 3, 4, 5, 6 and 7 with intended readers being, the developers
 and software managers but sections have been written in a manner that it can be understood by anyone having
@@ -170,9 +147,7 @@ This *Software Design Specification* also includes:
 
 The design has been made clear, using the class diagram and sequence diagram.
 
-------------------------------------
-
-# 2. System architecture description
+# 2. System architecture description <a href="#sad"></a>
 
 Project Recommend (Our Software/System) is strictly based on modular architecture, there are four modules
 in system that are functionally connected to each other as per Functional Cohesion paradigm and these components
@@ -195,7 +170,7 @@ As per definition one system is in Functional Cohesion  *when parts of a module 
 to a single well-defined task of the module* as we can see that in our system each module contains classes that all
 contribute in a single Task.
 
-## 2.1 Overview of modules / components
+## 2.1 Overview of modules / components <a href="#oomc"></a>
 
 The structure of our project is highly modularized. We have tried introducing as much functional cohesion as possible.
 For coupling we have tried to achieve data coupling.
@@ -214,7 +189,7 @@ System contains four modules that are mentioned below
 **Classifier**
     - Classifier handles all functionality related to Recommendation of songs for a songs
 
-## 2.2 Structure and relationships
+## 2.2 Structure and relationships <a href="#sar"></a>
 
 System is following modular Structure, see Component Diagram of system.
 This Section also includes Class Diagram and Sequence Diagram of System, That shows Structure and relationships in between
@@ -306,7 +281,7 @@ that is previous song of playing song in UI
 
 - **Reset-All** - This will invoke two functions, *dump* and *build* of *manageLocalStorage* class, first one will destroy the entire SQL database of local storage, and latter will rebuild and give an empty database. Both, these functions return a response of *true*, which is then forwarded to the user. One more function is invoked, *dumpCache*, of *manage cache* class, which clears the entire cache. This is also called at the same time as the above two functions.
 
-## 2.3 User interface issues
+## 2.3 User interface issues <a href="#uii"></a>
 
 The UI is devised into 4 parts. These are
 - **Top Menu Pane**
@@ -339,9 +314,9 @@ Inside **Songs Queue Pane** a list of song tracks which are loaded from user def
 
 -------------------------------------------------------
 
-## 3. Detailed description of components
+## 3. Detailed description of components <a href="#ddoc"></a>
 
-## 3.1 Component template description
+## 3.1 Component template description <a href="#com_t"></a>
 
 We are discussing components in below mentioned manner
 
@@ -374,7 +349,7 @@ Description of class Y functions in tabular form
 
 Our components are:
 
-### 3.2 Component: MusicPlayer
+### 3.2 Component: MusicPlayer <a href="#com_mp"></a>
 
 Description: This component as a whole handles functionality related to playing music and controlling music.
 Music Player functions are well defined by the methods that we have used in the corresponding classes.
@@ -406,7 +381,7 @@ Description: Controlling of Music.
 | +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be changed is entered  | Status:Success or failure | Controls the volume |
 
 
-### 3.3 Component: LocalStorage
+### 3.3 Component: LocalStorage <a href="#com_ls"></a>
 
 Description: This is the persistence layer of the system. It holds data related to songs.
 
@@ -435,7 +410,7 @@ Description: Functions related to overall maintenance of the LocalStorage.
 | +getIsConnected():boolean | void | returns the value of global variable isConnected.   | getter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared  |
 | +setIsConnected(isConnected):void | isConnected variable is set | void | setter function for the isConnected global variable. Once connection is established isConnected variable is set. On disconnection isConnected variable is cleared. |
 
-### 3.4 Component: MetaData
+### 3.4 Component: MetaData <a href="#com_md"></a>
 
 Description: This module handles metadata Manipulation and updation in the system, It is also responsible for
 fetching metadata from external sources like MusicBrainz.
@@ -453,7 +428,7 @@ Description: Helper functions related to metadata handling.
 | +getIsUpdated():int | void | returns the value of IsUpdated variable | getter function for IsUpdated function  |
 | +setIsUpdated(isUpdated) | isUpdated variable | void | sets the global variable IsUpdated |
 
-### 3.5 Component: Classifier
+### 3.5 Component: Classifier <a href="#com_c"></a>
 
 Description: This component is the core of the system. It handles the part of recommendation of new songs based on a given song.
 
@@ -482,7 +457,7 @@ Description: This class manages Cache of songs that are suggested by the GetReco
 
 ---------------------------------
 
-# 4.0 Reuse and relationships to their products
+# 4.0 Reuse and relationships to their products <a href="#rartop"></a>
 
 If a project is doing some enhancement work, it requires to look into reuse issues.
 But This project is not doing any enhancement work of existing Software but we are doing enhancement of 
@@ -498,7 +473,7 @@ if the recommendations are not cached. But once cached, it recommends music even
 
 ------------------------------------
 
-# 5.0 Design Decisions and tradeoffs
+# 5.0 Design decisions and tradeoffs <a href="#ddat"></a>
 
 Our Team is proficient with Python, other then that Python have all required components (frameworks and libraries) for our project.
 that's why we are going with Python to implement this project.
@@ -575,7 +550,7 @@ available with kivy, we chose PyQt over kivy.
 
 ----------------------------------
 
-# 6.0 Pseudocode for components
+# 6.0 Pseudocode for components <a href="#pfc"></a>
 
 We have not written application code as of now so we can not 
 provide Pseudocode, hence we are writing Pseudocode 
