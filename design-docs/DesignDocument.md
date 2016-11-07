@@ -56,6 +56,8 @@
 6.0[ Pseudocode for components](#pfc)  
 
 7.0[ Appendices (if any)](#appendices)  
+
+[References](#references)
 <hr />
 
 ---------------------------------
@@ -789,10 +791,11 @@ in the form of steps.
 
 ------------------------
 
-# References
+# References <a name="references"></a>
 
 - [Cohesion](https://en.wikipedia.org/wiki/Cohesion_(computer_science)#Types_of_cohesion)
 - [Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)#Types_of_coupling)
 - [Why not to use Global Variables](http://wiki.c2.com/?GlobalVariablesAreBad)
 - [Control flow with in UML sequence Diagrams](https://msdn.microsoft.com/en-us/library/dd465153.aspx)
 - [Project Recommend Github Organization ](https://github.com/ProjectRecommend)
+- [Object Oriented Programming in Python](https://www.tutorialspoint.com/python/python_classes_objects.htm)
