@@ -233,29 +233,31 @@ below we describes these actions and how they functionality and internally works
 
 #### based  on user actions
 
-- **Play** - Play takes *SongID* from selected song in UI and Goes to *LocalStorage*, fetches data including
+- **TriggerPlaySequence** - TriggerPlaySequence takes *SongID* from selected song in UI and Goes to *LocalStorage*, fetches data including
 absolute path to Music file. it also goes to *ReadMetaData* and Reads the MetaData for that Same SongID, after both returns
 we play the song.
 
     - For recommendation we *ReadCache* for that song, if we have a Cache hit, we will populate the
 Recommend song list.
-    - If there is a Cache miss we *FetchRelevantSong* based on metadata of given song.
-    - if we find that MetaData of song is not updated then we *FetchMetaDataFromMusicBrainz* and
-    Update the metadata and Continue with process.
+    - We store a flag in our local storage that tells us whether the metadata has been updated or not.
+    - If we find that MetaData of song is not updated then we *FetchMetaDataFromMusicBrainz* and
+    Update the metadata of the song.
+    - We then *FetchRelevantSong* based on metadata of given song that we had updated either earlier or just now.
     - After MetaData Check/Update and after fetching *RelevantSongs*, we will run our pre-trained Classifier (*Predict* function)
     to recommend songs.
-    - we will take that result and Write it to Cache with *WriteCache* and return that data back to
-    Play call to populate Recommend song list.
+    - We will take that result and write it to Cache with *WriteCache*.
+    
+- **Play** - Play takes the songID of the song and simply plays it. This function is called just after the TriggerPlaySequence function. This function only makes sure to play the song. This is separated from the TriggerPlaySequence function because that fucntion is only involved getting the recommendations for a particular song.
 
 - **Pause** - if a song is currently playing it pauses that song on that position.
     - It waits for the response from the **controlMusic** function of the **music palyer** module. Its return type is *boolean* and will return *true* if *pause* action is successful.
 
 - **Stop** - If a song is currently playing then it will stop it and set the position to start.
 if a song is already paused then it will set it's position in start.
-    - Similar to the *pause* action. Waits for an asynchronous response from the *controlMusic* function. Return type is also *boolean*, that is, returns *true* if a track is stopped successfully.
+    - Similar to the *pause* action. Return type is also *boolean*, that is, returns *true* if a track is stopped successfully.
 
 - **next song** - it will take the SongID of currently playing Song and Calls the *Play* with SongID of song
-that is next song of playing song in UI
+that is next under the UI view.
 
     - As soon as the user requests the *next song*, *nextSong* will be invoked at first, and the *play* method will be called internally, which will take the *song ID* of the current song as its argument, and will pick up the song that is next to the current one(**Note** - If *shuffle* is enabled, it will randomly pick up any song from the entire playlist.). *play* method will also return a boolean, but that will be used for internal decisions, **only**. Final response will contain only the output of *nextSong* method.
     - Since the *play* method is getting invoked here, all the actions associated with it will get executed too, as described in the *play* section.
@@ -373,7 +375,9 @@ Description: Controlling of Music.
 
 | function | input | output | description |
 |----------|-------|--------|-------------|
-| +Play(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | fetches absolute path to song file from Local Storage and plays music file |
+| +TriggerPlaySequence(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | fetches absolute path to song file from Local Storage, updates metadata if not updated already, recommends similar songs |
+| +Play(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | triggered by the user when he/she wants to play a song from his/her list of songs. |
+| +playSong(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status: Success or failure | simply plays the song based on the songPath fetched from the local storage |
 | +Pause():boolean  | void | Status:Success or failure | Pause the currently playing music if its playing |
 | +next(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the next song. |
 | +prev(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the previous song. |
@@ -395,10 +399,10 @@ Description: Helper functions to access LocalStorage.
 | function | input | output | description |
 |----------|-------|--------|-------------|
 | +Read(SongID: int):Dict | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of song data of given SongID from Local Storage | Reads entry of given SongID from Local Storage and returns it in custom dictionary. |
-| +Write(SongPath: String):boolean | SongPath:absolute path to the music file | Status:Success or failure | Creates a new entry for music file in LocalStorage if it's  not in LocalStorage |
-| +Update(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | Updates entry of given SongID in Local Storage |
+| +Write(SongPath: String):boolean | SongPath:absolute path to the music file | Status:Success or failure | Creates a new entry for music file in LocalStorage if it's not in LocalStorage |
 | +Delete(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | Deletes entry of given SongID from Local Storage |
-
+| +getSongPath(): string | void | string: the song path as a string | getter function for the song path that is accessed in various other classes |
+| +setSongPath(SongPath: string):boolean | SongPath: string that gives the song path in the local computer | status: Success or failure | setter function for the song path |
 
 #### Class: ManageLocalStorage
 
@@ -426,12 +430,12 @@ Description: Helper functions related to metadata handling.
 
 | function | input | output | description |
 |----------|-------|--------|-------------|
-| +ReadMetaData(SongID:int):Dict | SongID: an integer that defines the unique ID of the song  in the LocalStorage  | Dict: a dictionary containing the key value pairs of metadata that is returned from the song | Fetches path of the song from LocalStorage based on the ID and fetches the song metadata from the file |
-| +WriteMetaData(SongID:int):boolean | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise | Fetches path of the song from the LocalStorage based on the songID and writes metadata into that song  |
-| +FetchMetaDataFromMusicBrainz(SongID:int):boolean | SongID:an integer that defines the unique ID of the song in the LocalStorage    | returns true if method could successfully write into the music file, false otherwise | it fetches metadata form a song from MusicBrainz service |
-| +EditMetaData(SongID:int):boolean | SongID: the unique id of the song in the LocalStorage | returns true for success and false for failure | updates song metadata. |
-| +getIsUpdated():int | void | returns the value of IsUpdated variable | getter function for IsUpdated function  |
-| +setIsUpdated(isUpdated) | isUpdated variable | void | sets the global variable IsUpdated |
+| +ReadMetaData(SongPath: string):Dict | SongPath: the string that gives the song path | Dict: a dictionary containing the key value pairs of metadata that is returned from the song | reads the metadata from the song by accessing the song by the given path as the parameter. |
+| +WriteMetaData(SongPath:string, SongMetaData: Dict):boolean | SongPath: the string that gives the song path, SongMetaData: dictionary containing the song metadata. | returns true if method could successfully write into the music file, false otherwise | Writes the metadata into the music file given the path of the song. |
+| +FetchMetaDataFromMusicBrainz(SongMetaData: Dict):boolean | SongMetaData:dictionary that defines the song metadata read from the ReadMetaData function | returns true if method could successfully write into the music file, false otherwise | it fetches metadata form a song from MusicBrainz service |
+| +EditMetaData(SongPath: string):boolean | SongPath: the string that gives the song path | returns true for success and false for failure | updates song metadata. This corresponds to a manual updation of metadata |
+| +getSongMetaData():Dict | void | returns a dictionary that contains the metadata of the required song| getter function for SongMetaData data member |
+| +setSongMetaData(SongMetaData: Dict): void | SongMetaData: dictionary that contains the song metadata | void | setter function that sets the songMetaData data member. |
 
 ### 3.5 Component: Classifier <a name="com_c"></a>
 
@@ -445,8 +449,8 @@ Description: This class contains functions for fetching relevant songs of a song
 
 | function | input | output | description |
 |----------|-------|--------|-------------|
-| +FetchRelevantSong(SongID:int):Dict | SongID: id of the corresponding music file from Local Storage | Dict: Dictionary containing key value pairs of data of relevant Songs of the Song. | Reads data of given songID and Triggers MetaData Updation if MetaData of Given Song is not Updated. if Metadata is already updated, it reads that metadata otherwise waits for MetaData Updation to complete and then Reads it.After reading of metadata it Fetches relevant songs from that metadata from MusicBrainz Database and returns them in Custom Dictionary  |
-| +Predict(SongID: int, RelevantSongDict: Dict) : Dict | SongID: id of the corresponding music file from Local Storage.RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs |
+| +FetchRelevantSong(SongMetaData: Dict): Dict | SongMetaData: Dictionary that contains the song metadata | Dict: Dictionary containing key value pairs of data of relevant Songs of the Song. | Fetches the relevant songs given the metadata of the song as a parameter |
+| +Predict(SongMetaData: Dict, RelevantSongDict: Dict) : Dict | SongMetaData: Dictionary that contains the song metadata. RelevantSongDict: Custom Dictionary of Relevent Songs Returned by *FetchRelevantSong* | Dict: Dictionary containing key value pairs of data of predicted(Recommended) Songs of the Song. | Takes the Result of *FetchRelevantSong* and returns the recommended song, this is the step that uses our trained Classifier to recommend Songs |
 
 
 #### Class: ManageCache
@@ -456,11 +460,10 @@ Description: This class manages Cache of songs that are suggested by the GetReco
 | function | input | output | description |
 |----------|-------|--------|-------------|
 | +ReadCache(SongID:int): Dict | SongID: id of the corresponding music file from Local Storage | Dict : Custom dictionary of recommended songs of given SongID from cache | Reads cache for Recommended songs of a given song and if these is a cache miss it will trigger the *GetRecommendation* to get recommendation, if it triggered *GetRecommendation* then when *GetRecommendation* will write result to cache it will tries again and gets result from Cache. |
-| +WriteCache(PredictedSongDict:Dict) : boolean  | PredictedSongDict : Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function. | Status:Success or failure | It Takes Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function and Writes that into Cache. |
+| +WriteCache(PredictedSongDict:Dict, SongID: int) : boolean  | PredictedSongDict : Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function, SongID: unique ID of the song | Status:Success or failure | It Takes Dictionary of Predicted (Recommended) Songs that is returned by *Predict* function and Writes that into Cache. |
 | +invalidateCache():boolean | Void | Status:Success or failure | It gets triggered on each startup,it removes entries from Cache that are older then our pre-defined cache lifetime |
 | +dumpCache():boolean | Void | Status:Success or failure | It removes all entries from cache. |
 | +DeleteCache(SongID:int):boolean | SongID: integer that uniquely identifies the song in the LocalStorage | Status:Success or failure | Deletes specific songs from the cache. |
-
 
 ---------------------------------
 
