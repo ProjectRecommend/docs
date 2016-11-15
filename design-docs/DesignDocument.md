@@ -381,7 +381,7 @@ Description: Controlling of Music.
 | +Pause():boolean  | void | Status:Success or failure | Pause the currently playing music if its playing |
 | +next(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the next song. |
 | +prev(SongID:int):boolean | SongID: id of the corresponding music file from Local Storage | Status:Success or failure | play the previous song. |
-| +seek(minute:int, second:int): boolean | minute: target minute to seek second: target second to seek   | Status:Success or failure | Seeks currently playing song to required minute and second. |
+| +seek(second:int): boolean | target seconds to seek   | Status:Success or failure | Seeks currently playing song to required minute and second. |
 | +Stop():boolean  | void | Status:Success or failure | Stops the currently playing song if it is playing |
 | +volControl(TargetVol: int):boolean | TargetVol: the target volume that must be changed is entered  | Status:Success or failure | Controls the volume |
 
