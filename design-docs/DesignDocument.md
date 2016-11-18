@@ -246,7 +246,7 @@ Recommend song list.
     - After MetaData Check/Update and after fetching *RelevantSongs*, we will run our pre-trained Classifier (*Predict* function)
     to recommend songs.
     - We will take that result and write it to Cache with *WriteCache*.
-    
+
 - **Play** - Play takes the songID of the song and simply plays it. This function is called just after the TriggerPlaySequence function. This function only makes sure to play the song. This is separated from the TriggerPlaySequence function because that fucntion is only involved getting the recommendations for a particular song.
 
 - **Pause** - if a song is currently playing it pauses that song on that position.
