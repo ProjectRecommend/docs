@@ -58,6 +58,9 @@
 # 1. Purpose of this document
 This report is the PISE-PBL Project guidelines for course CS 301 Software Engineering, Semester I AY 2015-16 by NIIT University Education Technology Innovation Center.
 
+We are discussing the concepts of _Theory-Practice-Correspondence_ because, **first**, we want to prepare the students not only for the world of work of today, but also for the future times, where technology is going to become more and more powerful, exponentially. **second**, students will inventively team up to deliver new, organized data and process it in new route for astounding learning results – esteem making experiential discovering that it is, and, besides, classroom and its on-screen characters will be tested to keep up to this. **third**, brain adjusted experiential learning, separated guideline, and separated appraisal utilizing the Internet (and union innovation) - driven ET as data conveyance framework expands social nature of learning procedures.
+**fourth**, the educator now consistently surveys students' yield for "amount" of exertion, i.e. ,free work, "respectability" of learning yield for setting and circumstance of learning, i.e. , self-coordinated learning. **fifth**, psychological research, brain science and instruction writing verifies with above bits of knowledge as it associates "What research tells about human mind".
+
 It consists of the theory-practice correspondence table for each software engineering concept.
 
 ----------------------------------------
