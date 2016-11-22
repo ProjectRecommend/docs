@@ -23,7 +23,7 @@
 
 | Version  | Date | Description |
 |----------|------|-------------|
-| 1.0 | 15-Nov-2016 | Initial version of the report, based on the  format draft on PISE-PBL Project guidelines for Course CS 301 Software Engineering Semester I AY 2015-16 by NIIT University Innovation Center. |
+| 1.0 | 15-Nov-2016 | Initial version of the report, based on the  format draft on PISE-PBL Project guidelines for Course CS 301 Software Engineering Semester I AY 2015-16 by NIIT University Innovation Center. |
 | 1.1 | 17-Nov-2016 | Incorporated changes suggested during meeting on 16-Nov-2016. |
 | 1.2 | 18-Nov-2016 | Editing and omissions done by a member. |
 
