@@ -31,27 +31,27 @@
 
 # Table of contents
 
-1. [Purpose of this document]  
+1. [Purpose of this document](#potd)  
 
-2. [PISE-PBL Sub-Projects: SE Sub-Subjects]
+2. [PISE-PBL Sub-Projects: SE Sub-Subjects](#ppsp)
 
-    2.1 [Software Development Life Cycle (SDLC)]
+    2.1 [Software Development Life Cycle (SDLC)](#sdlc)
 
-    2.2 [Software Development Methodologies]
+    2.2 [Software Development Methodologies](#sdm)
 
-    2.3 [Requirements Analysis]
+    2.3 [Requirements Analysis](#ra)
 
-    2.4 [System Design]
+    2.4 [System Design](#sd)
 
-    2.5 [Coding]
+    2.5 [Coding](#coding)
 
-    2.6 [Testing]
+    2.6 [Testing](#testing)
 
-    2.7 [Software Project Management]
+    2.7 [Software Project Management](#spm)
 
 
 ---------------------------------
-# 1. Purpose of this document
+# 1. Purpose of this document <a name='potd'></a>
 This report is the PISE-PBL Project guidelines for course CS 301 Software Engineering, Semester I AY 2015-16 by NIIT University Education Technology Innovation Center.
 
 We are discussing the concepts of _Theory-Practice-Correspondence_ because, **first**, we want to prepare the students not only for the world of work of today, but also for the future times, where technology is going to become more and more powerful, exponentially, **second**, students will inventively team up to deliver new, organized data and process it in new route for astounding learning results – esteem making experiential discovering that it is, and, besides, classroom and its on-screen characters will be tested to keep up to this, **third**, brain adjusted experiential learning, separated guideline, and separated appraisal utilizing the Internet (and union innovation) - driven ET as data conveyance framework expands social nature of learning procedures, **fourth**, the educator now consistently surveys students' yield for "amount" of exertion, i.e., free work, "respectability" of learning yield for setting and circumstance of learning, i.e., self-coordinated learning, **fifth**, psychological research, brain science and instruction writing verifies with above bits of knowledge as it associates "What research tells about human mind".
@@ -59,25 +59,25 @@ We are discussing the concepts of _Theory-Practice-Correspondence_ because, **fi
 It consists of the links of the files containing separate theory-practice correspondence table for each software engineering concept.
 
 ----------------------------------------
-# 2. PISE-PBL Sub-Projects: SE Sub-Subjects
+# 2. PISE-PBL Sub-Projects: SE Sub-Subjects <a name='ppsp'></a>
 
-### 2.1 Software Development Life Cycle (SDLC)
+### 2.1 Software Development Life Cycle (SDLC) <a name='sdlc'></a>
 [link]()
 
-### 2.2 Software Development Methodologies
+### 2.2 Software Development Methodologies <a name='sdm'></a>
 [link]()
 
-### 2.3 Requirements Analysis
+### 2.3 Requirements Analysis <a name='ra'></a>
 [link]()
 
-### 2.4 System Design
+### 2.4 System Design <a name='sd'></a>
 [link]()
 
-### 2.5 Coding
+### 2.5 Coding <a name='coding'></a>
 [link]()
 
-### 2.6 Testing
+### 2.6 Testing <a name='testing'></a>
 [link]()
 
-### 2.7 Software Project Management
+### 2.7 Software Project Management <a name='spm'></a>
 [link]()
