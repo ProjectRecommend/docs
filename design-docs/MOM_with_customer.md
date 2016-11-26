@@ -3,7 +3,6 @@
   <h1>(Slack & Trello Data)<h1>
   <h2>Project Recommend</h2>
   <b> Music Recommendation System </b><br />
-  <b> Version <i>1.2</i></b>
 </div><br /><br />
 
 #### Team Project Recommend
@@ -20,8 +19,9 @@
 ## Purpose
 This document consists of the image evidences of meetings held within the group from the tools named **Slack**, a collaboration tool and **Trello**, a task management tool.
 
-The potential customer for our customer is any person who would like to use a music player software which recommends music also, from the offline as well as online pool of songs. Here the team members are acting as the customers themselves. Hence this document comes under MOM with customer.
+The potential customer for our customer is any person who would like to use a music player software which recommends music also, from the offline as well as online pool of songs. Here, the team members are acting as the customers themselves. Hence this document comes under MOM with customer.
 
-## Slack data
+## Videos
 
-## Trello data
+#### [Slack link]
+#### [Trello link]
