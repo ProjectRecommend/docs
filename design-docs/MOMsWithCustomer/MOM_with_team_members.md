@@ -22,6 +22,8 @@ This document consists of the image evidences of meetings held within the group 
 
 The potential customer for our customer is any person who would like to use a music player software which recommends music also, from the offline as well as online pool of songs. Here the team members are acting as the customers themselves. Hence this document comes under MOM with customer.
 
-## Slack data
+## Videos
 
-## Trello data
+#### [Slack link](https://www.youtube.com/watch?v=3bXDCTynINU "YouTube link")
+
+#### [Trello link](https://www.youtube.com/watch?v=YJ1f3xACWFw "YouTube link")
