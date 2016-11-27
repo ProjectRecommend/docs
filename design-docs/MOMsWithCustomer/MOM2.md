@@ -56,4 +56,4 @@ November 8, 2016
 
 November 10, 2016
 
-[Video link]()
+[Video link](https://www.youtube.com/watch?v=mhedqVXG2EY)
