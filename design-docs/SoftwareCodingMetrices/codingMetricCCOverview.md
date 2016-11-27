@@ -1,5 +1,5 @@
 
-Cyclomatic Complexity:
+## Cyclomatic Complexity:
 
 Parameter list:
 
