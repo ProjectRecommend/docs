@@ -4,7 +4,7 @@
   <b> Music Recommendation System </b><br />
 </div><br /><br />
 
-### Parameter list :
+### Parameter list:
 
 | CC score | Rank | Risk |
 | --- | --- | --- |
