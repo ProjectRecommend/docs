@@ -4,7 +4,7 @@
   <b> Music Recommendation System </b><br />
 </div><br /><br />
 
-### Paramter List:
+### Parameter List:
 
 | MI score | Rank |	Maintainability |
 | --- | --- | --- |
