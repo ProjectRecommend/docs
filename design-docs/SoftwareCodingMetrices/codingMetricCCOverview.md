@@ -1,9 +1,12 @@
+<div align=center>
+  <h1></h1>
+  <h2>Cyclomatic Complexity</h2>
+  <b> Music Recommendation System </b><br />
+</div><br /><br />
 
-## Cyclomatic Complexity:
+### Parameter list :
 
-Parameter list:
-
-| CC score	| Rank | Risk |
+| CC score | Rank | Risk |
 | --- | --- | --- |
 | 1 - 5 | A | low - simple block |
 | 6 - 10 | B | low - well structured and stable block |
