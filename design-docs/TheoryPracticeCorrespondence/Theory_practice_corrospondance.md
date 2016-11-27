@@ -62,22 +62,22 @@ It consists of the links of the files containing separate theory-practice corres
 # 2. PISE-PBL Sub-Projects: SE Sub-Subjects <a name='ppsp'></a>
 
 ### 2.1 Software Development Life Cycle (SDLC) <a name='sdlc'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject1.docx)
 
 ### 2.2 Software Development Methodologies <a name='sdm'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject2.docx)
 
 ### 2.3 Requirements Analysis <a name='ra'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject3.docx)
 
 ### 2.4 System Design <a name='sd'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject4.docx)
 
 ### 2.5 Coding <a name='coding'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject5.docx)
 
 ### 2.6 Testing <a name='testing'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject6.docx)
 
 ### 2.7 Software Project Management <a name='spm'></a>
-[link]()
+[link](https://github.com/ProjectRecommend/docs/blob/master/design-docs/TheoryPracticeCorrespondence/Subject7.docx)
