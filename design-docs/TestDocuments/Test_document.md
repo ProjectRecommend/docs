@@ -2,7 +2,7 @@
   <h1>Test Document</h1>
   <h2>Project Recommend</h2>
   <b> Music Recommendation System </b><br />
-  
+  <b> Version <i>1.0</i></b>
 </div><br /><br />
 
 
