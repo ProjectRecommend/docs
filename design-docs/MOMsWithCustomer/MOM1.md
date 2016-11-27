@@ -57,4 +57,4 @@ October 22, 2016
 October 24, 2016
 
 
-[Video link]()
+[Video link](https://www.youtube.com/watch?v=XHVl3E5rB2o)
