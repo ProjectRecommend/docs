@@ -3,7 +3,7 @@
   <h1>(Customers)<h1>
   <h2>Project Recommend</h2>
   <b> Music Recommendation System </b><br />
-  <b> Version <i>1.2</i></b>
+  
 </div><br /><br />
 
 #### Team Project Recommend
