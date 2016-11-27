@@ -11,21 +11,22 @@
 
 **Communication Medium**: Hindi/English
 
-**Date**: August 25,2016 &nbsp;&nbsp; **Time**: 7:00 p.m.&nbsp;&nbsp; **Location**: CR 102&nbsp;&nbsp; **Meeting Duration**: 15 minutes
+**Date**: October 15,2016 &nbsp;&nbsp; **Time**: 7:00 p.m.&nbsp;&nbsp; **Location**: CR 102&nbsp;&nbsp; **Meeting Duration**: 15 minutes
 
 
 
 **Attendees**:
 
-- Mahima Maheshwari
-- Vishal Yadav
-- Rohit Samineni
-- Shreyash Soni 
+- Chahat Suri (Btech. 3rd year BT student)
+- Mahima Christian (Btech. 3rd year BT student)
+- Rohit Samineni (Btech. 3rd year EC student)
+- Shreyash Soni (Btech. 3rd year EC student)
+- Vedank Kumar (Btech. 3rd year EC student)
+- VD Maheshwar Krishna (Btech. 3rd year EC student)
 
 
 
-
-**Meeting type**: Face to face
+**Meeting type**: In person
 
 
 
@@ -41,19 +42,19 @@
 
 ### Decisions
 
-1. Agreed on the deliverables.
+1. Agreed on the deliverables, that is, what exactly our customers want. We will be building a simple music player, but, our major goal will be to provide as accurate recommendations as possible.
 
 2. Schedule the activities.
 
-3. Regular meetings to keep a check our progress.
+3. Regular meetings will be held to keep a check our progress.
 
 
 
 ### Due Date
 
-September 10, 2016
+October 22, 2016
 
-September 13, 2016
+October 24, 2016
 
 
 [Video link]()

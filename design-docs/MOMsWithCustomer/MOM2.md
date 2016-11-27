@@ -11,7 +11,7 @@
 
 **Communication Medium**: Hindi/English
 
-**Date**: October 27,2016 &nbsp;&nbsp; **Time**: 5:00 p.m.&nbsp;&nbsp; **Location**: LT 101&nbsp;&nbsp; **Meeting Duration**: 15 minutes
+**Date**: October 25,2016 &nbsp;&nbsp; **Time**: 5:00 p.m.&nbsp;&nbsp; **Location**: LT 101&nbsp;&nbsp; **Meeting Duration**: 15 minutes
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-**Meeting type**: Face to face
+**Meeting type**: In person
 
 
 
