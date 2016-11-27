@@ -64,11 +64,11 @@ Parameter list:
     C 11:0 Ui_MainWindow - A (1)
     M 12:4 Ui_MainWindow.setupUi - A (1)
     M 331:4 Ui_MainWindow.retranslateUi - A (1)
-### File: Recommend\recommend\classifier\Get### File: Recommendation.py
-    M 32:4 Get### File: Recommendation.FetchRelevantSong - A (2)
-    C 26:0 Get### File: Recommendation - A (1)
-    M 28:4 Get### File: Recommendation.__init__ - A (1)
-    M 55:4 Get### File: Recommendation.Predict - A (1)
+### File: Recommend\recommend\classifier\Recommendation.py
+    M 32:4 Recommendation.FetchRelevantSong - A (2)
+    C 26:0 Recommendation - A (1)
+    M 28:4 Recommendation.__init__ - A (1)
+    M 55:4 Recommendation.Predict - A (1)
 ### File: Recommend\recommend\classifier\ManageCacheModule.py
     M 62:4 ManageCache.ReadCache - A (4)
     M 88:4 ManageCache.WriteCache - A (4)
