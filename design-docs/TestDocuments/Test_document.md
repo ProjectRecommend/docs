@@ -36,14 +36,14 @@
 | TEST_CASE | TEST_DATA | PRECONDITIONS | EXPECTED_RESULT |
 |---|---|---|----|
 | test_build | object of ManageLocalStorage | set connectionName | return True |
-| test_query | songPath | database and table with filled row available| don't return 'Query Failed' |
+| test_query | song path | database and table with filled row available| don't return 'Query Failed' |
 | test_dump | database object | database available | return True |
-| test_write | Song Metadata | database and table available | return True|
-| test_read | SongPath | database and table with entries with predefined value | return True |
-| test_update | SongPath | database and table with entries with predefined value | return True |
-| test_delete | SongID | database and table with entries | return True|
+| test_write | song metadata | database and table available | return True|
+| test_read | song path | database and table with entries with predefined value | return True |
+| test_update | song path | database and table with entries with predefined value | return True |
+| test_delete | song ID | database and table with entries | return True|
 | test_readMetaData | song path | object of ManageMetadataModule, SongPath | return True |
-| test_writeMetaData | Song path | preconditions of test_readMetaData | return True |
+| test_writeMetaData | song path | preconditions of test_readMetaData | return True |
 | test_getMetadataDict_fileValidity | dictionary of metadata | get metadata of sample song | return True |
 | test_getMetadataDict_fileNotEmpty | length of dictionay of metadata |same as test_getMetadataDict_fileValidity | return True |
 
