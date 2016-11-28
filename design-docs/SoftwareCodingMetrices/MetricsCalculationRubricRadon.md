@@ -53,7 +53,7 @@ Maintainability Index is a software metric which measures how maintainable (easy
 ![MI Formula](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/SoftwareCodingMetrices/MIFormula.PNG)
 
 Where:
-- V is the Halstead Volume (see below);
+- V is the Halstead Volume;
 - G is the total Cyclomatic Complexity;
 - L is the number of Source Lines of Code (SLOC);
 - C is the percent of comment lines (important: converted to radians).
