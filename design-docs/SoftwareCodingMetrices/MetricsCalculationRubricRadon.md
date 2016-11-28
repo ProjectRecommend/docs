@@ -17,7 +17,7 @@ The following are the definitions employed by Radon:
 - SLOC: The number of source lines of code - not necessarily corresponding to the LLOC.
 - Comments: The number of comment lines. Multi-line strings are not counted as comment since, to the Python interpreter, they are just strings.
 - Multi: The number of lines which represent multi-line strings.
-Blanks: The number of blank lines (or whitespace-only ones).
+- Blanks: The number of blank lines (or whitespace-only ones).
 
 #### The equation SLOC - Single comments - Multi = LOC should always hold. Additionally, comment stats are calculated:
 
@@ -25,7 +25,7 @@ Blanks: The number of blank lines (or whitespace-only ones).
 - C % S: the ratio between number of comment lines and SLOC, expressed as a percentage;
 - C + M % L: the ratio between number of comment and multiline strings lines and LOC, expressed as a percentage.
 
-#### Halstead Metrics: 
+#### Halstead Metrics:
 (important for calculation of Maintainability Index)
 
 Halstead’s goal was to identify measurable properties of software, and the relations between them. These numbers are statically computed from the source code:
@@ -50,12 +50,10 @@ From these values several values are calculated:
 
 Maintainability Index is a software metric which measures how maintainable (easy to support and change) the source code is. The maintainability index is calculated as a factored formula consisting of SLOC (Source Lines Of Code), Cyclomatic Complexity and Halstead volume.
 
-![MI Formula](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/SoftwareCodingMetrices/MIFormula.PNG) 
+![MI Formula](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/SoftwareCodingMetrices/MIFormula.PNG)
 
 Where:
 - V is the Halstead Volume (see below);
 - G is the total Cyclomatic Complexity;
 - L is the number of Source Lines of Code (SLOC);
 - C is the percent of comment lines (important: converted to radians).
-
-
