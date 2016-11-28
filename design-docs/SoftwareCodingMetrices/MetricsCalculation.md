@@ -1,0 +1,55 @@
+## Metrics
+
+### Cyclomatic Complexity:
+
+Cyclomatic Complexity corresponds to the number of decisions a block of code contains plus 1. This number (also called McCabe number) is equal to the number of linearly independent paths through the code. This number can be used as a guide when testing conditional logic in blocks.
+
+#### Radon calculates CC in the following manner:
+
+![CC Calculation Rubric](C:/Users/riflerRick/Desktop/NiitUniversityCSE_course/3rdyr/semester5/softwareEngineering/project/gitRepos/docs/design-docs/SoftwareCodingMetrices/CC.PNG)
+
+### Raw Metrics:
+
+The following are the definitions employed by Radon:
+
+- LOC: The total number of lines of code. It does not necessarily correspond to the number of lines in the file.
+- LLOC: The number of logical lines of code. Every logical line of code contains exactly one statement.
+- SLOC: The number of source lines of code - not necessarily corresponding to the LLOC.
+- Comments: The number of comment lines. Multi-line strings are not counted as comment since, to the Python interpreter, they are just strings.
+- Multi: The number of lines which represent multi-line strings.
+Blanks: The number of blank lines (or whitespace-only ones).
+
+#### The equation SLOC - Single comments - Multi = LOC should always hold. Additionally, comment stats are calculated:
+
+- C % L: the ratio between number of comment lines and LOC, expressed as a percentage;
+- C % S: the ratio between number of comment lines and SLOC, expressed as a percentage;
+- C + M % L: the ratio between number of comment and multiline strings lines and LOC, expressed as a percentage.
+
+#### Halstead Metrics: 
+(important for calculation of Maintainability Index)
+
+Halstead’s goal was to identify measurable properties of software, and the relations between them. These numbers are statically computed from the source code:
+
+- η1 = the number of distinct operators
+- η2 = the number of distinct operands
+- N1 = the total number of operators
+- N2 = the total number of operands
+
+From these values several values are calculated:
+
+- Program vocabulary: η=η1+η2
+- Program length: N=N1+N2
+- Calculated program length: Nˆ=η1log2η1+η2log2η2
+- Volume: V=Nlog2η
+- Difficulty: D=η12⋅N2η2
+- Effort: E=D⋅V
+- Time required to program: T=E18 seconds
+- Number of delivered bugs: B=V3000.
+
+### Maintainability Index:
+
+Maintainability Index is a software metric which measures how maintainable (easy to support and change) the source code is. The maintainability index is calculated as a factored formula consisting of SLOC (Source Lines Of Code), Cyclomatic Complexity and Halstead volume.
+
+![MI Formula](C:/Users/riflerRick/Desktop/NiitUniversityCSE_course/3rdyr/semester5/softwareEngineering/project/gitRepos/docs/design-docs/SoftwareCodingMetrices/MIFormula.png) 
+
+
