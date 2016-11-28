@@ -41,10 +41,10 @@ From these values several values are calculated:
 - Program length: N=N1+N2
 - Calculated program length: Nˆ=η1log2η1+η2log2η2
 - Volume: V=Nlog2η
-- Difficulty: D=η12⋅N2η2
+- Difficulty: D=(n1/2)*(N2/n2)
 - Effort: E=D⋅V
-- Time required to program: T=E18 seconds
-- Number of delivered bugs: B=V3000.
+- Time required to program: T=E/18 seconds
+- Number of delivered bugs: B=V/3000.
 
 ### Maintainability Index:
 
