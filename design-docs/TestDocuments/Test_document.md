@@ -1,6 +1,3 @@
-```` json
-color="blue"
-
 <div align=center>
   <h1>Test Document</h1>
   <h2>Project Recommend</h2>
