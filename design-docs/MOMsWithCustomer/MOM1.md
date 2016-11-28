@@ -46,7 +46,7 @@
 
 2. Schedule the activities.
 
-3. Regular meetings will be held to keep a check our progress.
+3. Regular meetings will be held to keep a check on our progress.
 
 
 
