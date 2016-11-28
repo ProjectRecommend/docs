@@ -17,7 +17,7 @@ The following are the definitions employed by Radon:
 - SLOC: The number of source lines of code - not necessarily corresponding to the LLOC.
 - Comments: The number of comment lines. Multi-line strings are not counted as comment since, to the Python interpreter, they are just strings.
 - Multi: The number of lines which represent multi-line strings.
-- Blanks: The number of blank lines (or whitespace-only ones).
+- Blanks: The number of blank lines (or whitespace-only once).
 
 #### The equation SLOC - Single comments - Multi = LOC should always hold. Additionally, comment stats are calculated:
 
