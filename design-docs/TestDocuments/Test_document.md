@@ -14,37 +14,41 @@
 - **S. Shakthi**  U101114FCS196
 - **Saumya Gupta**  U101114FCS126  
 
-## Unite Tests  
 
+## WhiteBox Testing
+## Unit Tests  
 |TEST_CASE|FUNCTION|RESULT|
 |---|----|----|
-| TC_01 | ManageLocalStorage.build| *PASSED* |
-| TC_02 | ManageLocalStorage.def dump| *PASSED* |
-| TC_03 | ManageLocalStorage.query| *PASSED* |
-| TC_04 | ManageLocalStorage.connect| *PASSED* |
-| TC_05 | ManageLocalStorage.disconnect| *PASSED* |
-| TC_06 | AccessLocalStorage.read| *PASSED* |
-| TC_07 | AccessLocalStorage.write| *PASSED* |
-| TC_08 | AccessLocalStorage.delete| *PASSED* |
-| TC_09 | AccessLocalStorage.update| *PASSED* |
-| TC_10 | ManageMetadataModule.ReadMetaData| *PASSED* |
-| TC_11 | ManageMetadataModule.WriteMetaData| *PASSED* |
-| TC_12 | tagsReadMetadata.getMetadataDict | -- |
-
+| test_build | ManageLocalStorage.build| *PASSED* |
+| test_query | ManageLocalStorage.query| *PASSED* |
+| test_dump | ManageLocalStorage.def dump| *PASSED* |
+| test_write | AccessLocalStorage.write| *PASSED* |
+| test_read | AccessLocalStorage.read| *PASSED* |
+| test_update | AccessLocalStorage.update| *PASSED* |
+| test_delete | AccessLocalStorage.delete| *PASSED* |
+| test_readMetaData | ManageMetadataModule.ReadMetaData| *PASSED* |
+| test_writeMetaData | ManageMetadataModule.WriteMetaData| *PASSED* |
+| test_getMetadataDict_fileValidity | tagsReadMetadata.getMetadataDict | *PASSED* |
+| test_getMetadataDict_fileNotEmpty | tagsReadMetadata.getMetadataDict | *PASSED* |
 
 ### Description of Test Cases
 
 | TEST_CASE | TEST_DATA | PRECONDITIONS | EXPECTED_RESULT |
 |---|---|---|----|
-| TC_01 |  |  |  |
-| TC_02 |  |  |  |
-| TC_03 |  |  |  |
-| TC_04 |  |  |  |
-| TC_05 |  |  |  |
-| TC_06 |  |  |  |
-| TC_07 |  |  |  |
-| TC_08 |  |  |  |
-| TC_09 |  |  |  |
-| TC_10 |  |  |  |
-| TC_11 |  |  |  |
-| TC_12 |  |  |  |
+| test_build | object of ManageLocalStorage | set connectionName | return True |
+| test_query | songPath | database and table with filled row available| don't return 'Query Failed' |
+| test_dump | database object | database available | return True |
+| test_write | Song Metadata | database and table available | return True|
+| test_read | SongPath | database and table with entries with predefined value | return True |
+| test_update | SongPath | database and table with entries with predefined value | return True |
+| test_delete | SongID | database and table with entries | return True|
+| test_readMetaData | song path | object of ManageMetadataModule, SongPath | return True |
+| test_writeMetaData | Song path | preconditions of test_readMetaData | return True |
+| test_getMetadataDict_fileValidity | dictionary of metadata | get metadata of sample song | return True |
+| test_getMetadataDict_fileNotEmpty | length of dictionay of metadata |same as test_getMetadataDict_fileValidity | return True |
+
+### Coverage Report
+| Module Covered | Statements | Miss | Cover |
+|---|---|---|---|---|
+| **LocalStorageModule** | 56  |  1  |  98% |
+| **ManageMetadataModule** | 34 | 3 | 91% |
