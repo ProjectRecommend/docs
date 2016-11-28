@@ -18,7 +18,7 @@
 **Attendees**:
 
 - Chahat Suri (Btech. 3rd year BT student)
-- Mahima Christian (Btech. 3rd year BT student)
+- Mahima Christian (Btech. 3rd year CSE student)
 - Rohit Samineni (Btech. 3rd year EC student)
 - Shreyash Soni (Btech. 3rd year EC student)
 - Vedank Kumar (Btech. 3rd year EC student)
