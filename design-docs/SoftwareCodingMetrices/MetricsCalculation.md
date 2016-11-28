@@ -6,7 +6,7 @@ Cyclomatic Complexity corresponds to the number of decisions a block of code con
 
 #### Radon calculates CC in the following manner:
 
-![CC Calculation Rubric](C:/Users/riflerRick/Desktop/NiitUniversityCSE_course/3rdyr/semester5/softwareEngineering/project/gitRepos/docs/design-docs/SoftwareCodingMetrices/CC.PNG)
+![CC Calculation Rubric](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/SoftwareCodingMetrices/CC.PNG)
 
 ### Raw Metrics:
 
@@ -50,6 +50,12 @@ From these values several values are calculated:
 
 Maintainability Index is a software metric which measures how maintainable (easy to support and change) the source code is. The maintainability index is calculated as a factored formula consisting of SLOC (Source Lines Of Code), Cyclomatic Complexity and Halstead volume.
 
-![MI Formula](C:/Users/riflerRick/Desktop/NiitUniversityCSE_course/3rdyr/semester5/softwareEngineering/project/gitRepos/docs/design-docs/SoftwareCodingMetrices/MIFormula.png) 
+![MI Formula](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/SoftwareCodingMetrices/MIFormula.PNG) 
+
+Where:
+- V is the Halstead Volume (see below);
+- G is the total Cyclomatic Complexity;
+- L is the number of Source Lines of Code (SLOC);
+- C is the percent of comment lines (important: converted to radians).
 
 
