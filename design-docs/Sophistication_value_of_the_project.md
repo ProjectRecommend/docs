@@ -21,3 +21,34 @@ According to whatever has been mentioned above, we have been successfully able t
 - From **nltk.tokenize**, we have imported _wordpunct_tokenize_.
 
 -  From **nltk.stem.lancaster**, we are importing _LancasterStemmer_ (It is a fast algorithm which effectively reduces your huge set of words.)
+
+# Taking Complexity into Account
+
+Complexity Adjustment Values (F_i) are used on a scale of 0 (least important) to 5(most important):
+
+1. Does the system require reliable backup and recovery?&nbsp;&nbsp;&nbsp; Value: **0**
+
+2. Are data communication required?&nbsp;&nbsp;&nbsp;Value: **3**
+3. Are there distributed processing functions?&nbsp;&nbsp;&nbsp;Value: **4**
+
+4. Is performance critical?&nbsp;&nbsp;&nbsp;Value: **5**
+
+5. System to be run in an existing, heavily utilized environment?&nbsp;&nbsp;&nbsp;Value: **3**
+
+6. Does the system require on-line data entry?&nbsp;&nbsp;&nbsp;Value: **0**
+
+7. On-line entry requires input over multiple screens or operations?&nbsp;&nbsp;&nbsp;Value: **0**
+
+8. Are the master files updated on-line?&nbsp;&nbsp;&nbsp;Value: **0**
+
+9. Are the inputs, outputs, files, or inquiries complex?&nbsp;&nbsp;&nbsp;Value: **3**
+
+10. Is the internal processing complex?&nbsp;&nbsp;&nbsp;Value: **5**
+
+11. Is the code designed to be reusable?&nbsp;&nbsp;&nbsp;Value: **5**
+
+12. Are conversion and instillation included in the design?&nbsp;&nbsp;&nbsp;Value: **3**
+
+13. Multiple installations in different organizations?&nbsp;&nbsp;&nbsp;Value: **0**
+
+14. Is the application designed to facilitate change and ease-of-use?&nbsp;&nbsp;&nbsp;Value: **5**

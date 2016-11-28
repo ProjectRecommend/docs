@@ -46,7 +46,7 @@
 
 1. Agreed to the changes what have to be done in future. Say for example, a feature of repeating the song has to be added.
 
-2. Regular meetings to keep a check our progress.
+2. Regular meetings to keep a check on our progress.
 
 
 
