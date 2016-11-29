@@ -42,7 +42,7 @@
 ### Decisions
 1. The customers seem to be satisfied with the product.
 2. A feature for creating multiple playlists has been consideredand will be implemented in future.
-3. Some minor improvements in the UI will be taken care of.
+3. Some minor improvements in the UI are to be done.
 
 
 
