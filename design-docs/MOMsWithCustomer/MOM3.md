@@ -16,9 +16,13 @@
 
 
 **Attendees**: 
+
 1. Shreyash Soni (Btech. 3rd year ECE student)
+
 2. Vanshika Rohatgi (Btech. 2rd year ECE student)
+
 3. Javin Juneja (Btech. 2rd year CSE student)
+
 4. Sakshi Jain (Btech. 3rd year CSE student)
 
 
