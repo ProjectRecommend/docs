@@ -7,7 +7,7 @@
 
 ### Meeting Information
 
-**Objective**:TBD
+**Objective**:To show the customers the final demo of our software and take their feedback.
 
 **Communication Medium**: Hindi/English
 
@@ -43,6 +43,7 @@
 1. The customers seem to be satisfied with the product.
 2. A feature for creating multiple playlists has been consideredand will be implemented in future.
 3. Some minor improvements in the UI are to be done.
+4. Feedback forms have been circulated to the customers.
 
 
 
