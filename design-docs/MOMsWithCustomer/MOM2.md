@@ -34,7 +34,7 @@
 
 ### Agenda Items
 
-1. To demonstrate the working of the player. (Obviously, whatever has been built till now.)
+1. To demonstrate the working of the player. (Obviously, whatever has been built till now).
 2. Answer their doubts, queries.
 3. Ask them to use it themselves and tell us, if modifications(if any), are required.
 4. To make them understand that our primary focus is _improvements in the recommendation system_ and _not building a full-fledged music player._
@@ -48,7 +48,7 @@
 
 2. Regular meetings to keep a check on our progress.
 
-3. Customers seemed to be satisfied with our current progreass.
+3. Customers seemed to be satisfied with our current progress.
 
 
 
