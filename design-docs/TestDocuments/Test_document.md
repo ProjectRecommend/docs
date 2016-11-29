@@ -30,13 +30,14 @@
 | test_writeMetaData | ManageMetadataModule.WriteMetaData| *PASSED* |
 | test_getMetadataDict_fileValidity | tagsReadMetadata.getMetadataDict | *PASSED* |
 | test_getMetadataDict_fileNotEmpty | tagsReadMetadata.getMetadataDict | *PASSED* |
+</br>
 
 ### Description of Test Cases
 
 | TEST_CASE | TEST_DATA | PRECONDITIONS | EXPECTED_RESULT |
 |---|---|---|----|
 | test_build | object of ManageLocalStorage | set connectionName | return True |
-| test_query | song path | database and table with filled row available| don't return 'Query Failed' |
+| test_query | song path | database and table with filled row available| shouldn't return 'Query Failed' |
 | test_dump | database object | database available | return True |
 | test_write | song metadata | database and table available | return True|
 | test_read | song path | database and table with entries with predefined value | return True |
@@ -46,9 +47,33 @@
 | test_writeMetaData | song path | preconditions of test_readMetaData | return True |
 | test_getMetadataDict_fileValidity | dictionary of metadata | get metadata of sample song | return True |
 | test_getMetadataDict_fileNotEmpty | length of dictionay of metadata |same as test_getMetadataDict_fileValidity | return True |
-
-### Coverage Report
+</br>
+### Coverage Report on modular level
 | Module Covered | Statements | Miss | Cover |
 |---|---|---|---|---|
 | **LocalStorageModule** | 56  |  1  |  98% |
 | **ManageMetadataModule** | 34 | 3 | 91% |
+
+* Some Modules are not covered in testing due to structural complexity. Will be tested in future.
+
+### Tools Used for Unit Testing
+* *Nose2* Module
+* *Unittest* Module
+
+## BlackBox Testing
+| ACTION | PRECONDITIONS | DESIRED_OUTPUT | OUTPUT | RESULT |
+|---|---|---|---|---|
+|Import Folder containing MP3 files having proper ID3 tagging| No existing database | Create database, create list of files in database, Load MP3 files into playlist | Database created, Tracks loaded | PASSED |
+|Import Folder containing MP3 files having proper ID3 tagging| database exist with different entries | Update database, insert list of files into database, Load MP3 files into playlist | Database updated, Tracks loaded | PASSED |
+| Import folder containing Mixed format files| NONE | Load MP3 files into playlist | ERROR - window closes, Program stops | FAILED|
+|Import Folder containing MP3 files only but with improper ID3 tagging| NONE |Load MP3 files into playlist|ERROR - window closes, Program stops| FAILED |
+| Delete the track after loading it into playlist and then restart the application | Import Folder containing MP3 files having proper ID3 tagging | Changes should reflect in playlist | ERROR - window closes, Program stops | FAILED |
+| Play song | Load songs into playlist | Song starts playing with sound output, Seek bar shows total duration of song and  passed duration with moving graphics. | As desired | PASSED |
+| Change volume | Play song | Volume should go up on moving the graphical volume level up and vice verse with level display in digits | As desired | PASSED |
+
+* Some tests are remaining and will be done soon.
+
+## Inference  
+* Application is designed to meet the basic requirements.
+* It lacks robustness.
+* Less portable and scalable due to poor exception handling.
