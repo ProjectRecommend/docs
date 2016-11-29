@@ -48,6 +48,8 @@
 
 2. Regular meetings to keep a check on our progress.
 
+3. Customers seemed to be satisfied with our current progreass.
+
 
 
 ### Due Date
