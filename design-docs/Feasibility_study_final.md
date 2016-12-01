@@ -67,7 +67,7 @@ This project is an open-source, we do not have any business goals, we do not hav
 
 #### 1.
 
-![Question 1](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q1.png)
+![Question 1](https://raw.githubusercontent.com/ProjectRecommend/docs/master/design-docs/images/q1.PNG)
 
 
 #### Inference:
