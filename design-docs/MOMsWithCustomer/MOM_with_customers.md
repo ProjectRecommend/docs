@@ -3,8 +3,8 @@
   <h1>(Customers)<h1>
   <h2>Project Recommend</h2>
   <b> Music Recommendation System </b><br />
-  
 </div><br /><br />
+
 
 #### Team Project Recommend
 
@@ -14,6 +14,7 @@
 - **Pranshu Sahijwani**  U101114FCS104
 - **S. Shakthi**  U101114FCS196
 - **Saumya Gupta**  U101114FCS128
+
 
 #### NIIT University
 
@@ -35,9 +36,7 @@ with a group of potential customers thrice during the course of our project.
 
 -------------------
 
-<div align=center>
-<h1>MOM-1</h1>
-</div>
+# MOM-1
 
 ### Meeting Information
 
@@ -86,9 +85,7 @@ October 22, 2016 *to* October 24, 2016
 
 --------------------------
 
-<div align=center>
-<h1>MOM-2</h1>
-</div>
+# MOM-2
 
 ### Meeting Information
 
@@ -123,8 +120,6 @@ if we are moving down the correct path in order to fulfil their expectations.
 system_ and _not building a full-fledged music player._
 
 
-
-
 ### Decisions
 
 1. Agreed to the changes what have to be done in future. Say for example,
@@ -140,10 +135,7 @@ November 8, 2016 *to* November 10, 2016
 
 ----------------------
 
-
-<div align=center>
-<h1>MOM-3</h1>
-</div>
+# MOM-3
 
 ### Meeting Information
 
